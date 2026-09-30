@@ -21,7 +21,7 @@ body {
 .site-header {
     position: sticky;
     top: 0;
-    z-index: 110;
+    z-index: 100;
     background: #eafaff;
     border-bottom: 1px solid #e6f3f6;
 }
