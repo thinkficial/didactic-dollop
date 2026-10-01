@@ -3,21 +3,16 @@
     margin: 0;
     padding: 0;
 }
-
 html {
     scroll-behavior: smooth;
 }
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: #173d4d;
     line-height: 1.6;
     background: white;
 }
-
-
 /* HEADER */
-
 .site-header {
     position: sticky;
     top: 0;
@@ -25,40 +20,33 @@ body {
     background: #eafaff;
     border-bottom: 1px solid #e6f3f6;
 }
-
 .navbar {
     max-width: 1200px;
     margin: auto;
     min-height: 82px;
     padding: 10px 24px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
 .brand img {
     width: 300px;
     display: block;
 }
-
 .nav-links {
     display: flex;
     list-style: none;
     gap: 26px;
     align-items: center;
 }
-
 .nav-links a {
     text-decoration: none;
     font-weight: bold;
     font-size: 14px;
 }
-
 .nav-links a:hover {
     color: #63cee1;
 }
-
 .menu-btn {
     display: none;
     border: none;
@@ -66,27 +54,20 @@ body {
     font-size: 28px;
     color: #173d4d;
 }
-
-
 /* HERO */
-
 .hero {
     min-height: 680px;
     padding: 80px 8%;
-
     display: grid;
     grid-template-columns: 1.2fr .8fr;
-
     gap: 60px;
     align-items: center;
-
     background: linear-gradient(
         135deg,
         #effcff,
         #ffffff
     );
 }
-
 .eyebrow {
     color: #58c9df;
     font-weight: 800;
@@ -94,26 +75,22 @@ body {
     font-size: 13px;
     margin-bottom: 12px;
 }
-
 .hero h1 {
     font-size: clamp(42px, 6vw, 70px);
     line-height: 1.05;
     margin-bottom: 22px;
 }
-
 .lead {
     font-size: 19px;
     color: #5e747c;
     max-width: 700px;
 }
-
 .hero-actions {
     display: flex;
     gap: 14px;
     flex-wrap: wrap;
     margin-top: 30px;
 }
-
 .btn {
     display: inline-block;
     border-radius: 7px;
@@ -123,422 +100,288 @@ body {
     border: 2px solid #63cee1;
     cursor: pointer;
 }
-
 .btn-primary {
     background: #63cee1;
     color: white;
 }
-
 .btn-primary:hover {
     background: #40b8d0;
 }
-
 .btn-outline {
     color: #3eafc6;
 }
-
 .hero-card {
     background: white;
     padding: 35px;
     border-radius: 20px;
-
     box-shadow:
         0 18px 50px rgba(53,166,187,.13);
-
     text-align: center;
 }
-
 .hero-card img {
     width: 100%;
     max-width: 350px;
 }
-
 .hero-card h2 {
     margin: 15px 0 7px;
 }
-
 .hero-card p {
     color: #6c7e84;
 }
-
-
 /* SECTIONS */
-
 .section {
     max-width: 1200px;
     margin: auto;
     padding: 90px 25px;
 }
-
 .section-light {
     max-width: none;
     background: #f3fcfe;
-
     padding-left: 8%;
     padding-right: 8%;
 }
-
 .section-heading {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 50px;
 }
-
 .section-heading h2 {
     font-size: 40px;
     line-height: 1.15;
     margin-bottom: 12px;
 }
-
 .section-heading > p:last-child {
     color: #6c7e84;
 }
-
-
 /* ABOUT */
-
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-
     gap: 60px;
     align-items: start;
 }
-
 .about-grid h3 {
     font-size: 30px;
     margin-bottom: 16px;
 }
-
 .about-grid p {
     color: #60757c;
     margin-bottom: 17px;
 }
-
 .about-highlight {
     padding: 35px;
     background: #f3fcfe;
-
     border-left: 5px solid #63cee1;
-
     border-radius: 12px;
 }
-
 .about-highlight span {
     display: inline-block;
-
     font-weight: 900;
-
     color: #63cee1;
-
     font-size: 24px;
-
     margin-top: 8px;
 }
-
 .about-highlight h3 {
     font-size: 21px;
     margin: 0 0 5px;
 }
-
-
 /* SERVICES */
-
 .cards {
     max-width: 1200px;
     margin: auto;
-
     display: grid;
-
     grid-template-columns:
         repeat(4, 1fr);
-
     gap: 22px;
 }
-
 .card {
     background: white;
-
     border: 1px solid #e0f1f4;
-
     border-radius: 14px;
-
     padding: 30px 23px;
-
     box-shadow:
         0 8px 25px
         rgba(39,135,154,.06);
-
     transition: .25s;
 }
-
 .card:hover {
     transform: translateY(-6px);
 }
-
 .icon {
     font-size: 34px;
     color: #63cee1;
     margin-bottom: 12px;
 }
-
 .card h3 {
     margin-bottom: 9px;
 }
-
 .card p {
     color: #687b82;
 }
-
-
 /* TEAM */
-
 .team-grid {
     display: grid;
-
     grid-template-columns:
         repeat(4, 1fr);
-
     gap: 22px;
 }
-
 .team-card {
     text-align: center;
-
     border: 1px solid #e0eef1;
-
     border-radius: 14px;
-
     padding: 28px 18px;
-
     background: white;
 }
-
 .avatar {
     width: 78px;
     height: 78px;
-
     margin: 0 auto 15px;
-
     border-radius: 50%;
-
     display: grid;
     place-items: center;
-
     background: #dff7fb;
-
     color: #36aec6;
-
     font-weight: 900;
-
     font-size: 21px;
 }
-
 .team-card h3 {
     font-size: 17px;
 }
-
 .team-card p {
     color: #61bfd2;
-
     font-weight: 700;
-
     margin-top: 5px;
 }
-
-
 /* CONTACT */
-
 .contact-grid {
     display: grid;
-
     grid-template-columns:
         1fr 1fr;
-
     gap: 60px;
 }
-
 .contact-details h3 {
     font-size: 28px;
     margin-bottom: 18px;
 }
-
 .contact-details p {
     margin: 12px 0;
     color: #64777d;
 }
-
 .contact-details a:not(.btn) {
     color: #31a9c1;
     text-decoration: none;
 }
-
 .contact-details .btn {
     margin-top: 18px;
 }
-
 .contact-form {
     display: flex;
-
     flex-direction: column;
-
     gap: 14px;
 }
-
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-
     padding: 14px;
-
     border: 1px solid #cfe4e8;
-
     border-radius: 7px;
-
     font: inherit;
-
     outline: none;
 }
-
 .contact-form input:focus,
 .contact-form textarea:focus {
     border-color: #63cee1;
 }
-
-
 /* FOOTER */
-
 footer {
     background: #173d4d;
-
     color: white;
-
     text-align: center;
-
     padding: 40px 20px;
 }
-
 footer img {
     width: 190px;
-
     background: white;
-
     padding: 7px;
-
     border-radius: 5px;
-
     margin-bottom: 14px;
 }
-
 footer p {
     opacity: .9;
-
     margin: 3px 0;
 }
-
-
 /* TABLET */
-
 @media (max-width: 950px) {
-
     .nav-links {
         display: none;
-
         position: absolute;
-
         top: 82px;
-
         left: 0;
         right: 0;
-
         background: white;
-
         padding: 20px 25px;
-
         flex-direction: column;
-
         box-shadow:
             0 8px 20px
             rgba(0,0,0,.08);
     }
-
     .nav-links.open {
         display: flex;
     }
-
     .menu-btn {
         display: block;
     }
-
     .hero {
         grid-template-columns: 1fr;
-
         text-align: center;
     }
-
     .hero-actions {
         justify-content: center;
     }
-
     .hero-card {
         max-width: 500px;
         margin: auto;
     }
-
     .about-grid,
     .contact-grid {
         grid-template-columns: 1fr;
     }
-
     .cards {
         grid-template-columns: repeat(2, 1fr);
     }
-
     .team-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
-
 /* MOBILE */
-
 @media (max-width: 600px) {
-
     .brand img {
         width: 155px;
     }
-
     .section {
         padding-top: 65px;
         padding-bottom: 65px;
     }
-
     .hero {
         padding-top: 60px;
     }
-
     .section-heading h2 {
         font-size: 31px;
     }
-
     .cards,
     .team-grid {
         grid-template-columns: 1fr;
     }
-
     .hero h1 {
         font-size: 42px;
     }
-
     .lead {
         font-size: 17px;
     }
-
     .testimonial {
         padding: 25px 20px;
     }
 }
-
 /* CONTACT SECTION */
 .contact {
     width: 100vw;
@@ -546,14 +389,12 @@ footer p {
     background-color: #eafaff;
     padding: 80px 8%;
     box-sizing: border-box;
-
     position: relative;
     left: 50%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
 }
-
 /* Contact content */
 .contact-container {
     width: 100%;
@@ -565,27 +406,23 @@ footer p {
     align-items: center;
     box-sizing: border-box;
 }
-
 /* Contact heading */
 .contact h2 {
     color: #173d4d;
     font-size: 40px;
     margin-bottom: 20px;
 }
-
 /* Contact text */
 .contact p {
     color: #173d4d;
     line-height: 1.7;
 }
-
 /* Form */
 .contact form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
-
 .contact input,
 .contact textarea {
     width: 100%;
@@ -595,11 +432,9 @@ footer p {
     border-radius: 8px;
     background: white;
 }
-
 .contact textarea {
     min-height: 150px;
 }
-
 /* Buttons */
 .contact button {
     padding: 14px 20px;
@@ -609,7 +444,6 @@ footer p {
     color: white;
     cursor: pointer;
 }
-
 /* Mobile */
 @media (max-width: 768px) {
     .contact {
@@ -618,9 +452,7 @@ footer p {
         margin-left: calc(50% - 50vw);
         padding: 60px 6%;
     }
-
     .contact-container {
         grid-template-columns: 1fr;
     }
 }
-
