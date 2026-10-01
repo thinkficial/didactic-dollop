@@ -386,7 +386,7 @@ footer p {
 /* CONTACT SECTION */
 .contact {
     width: 100vw;
-    min-height: 100vh;
+    min-height:auto;
     background-color: #eafaff;
     padding: 80px 8%;
     box-sizing: border-box;
@@ -456,4 +456,36 @@ footer p {
     .contact-container {
         grid-template-columns: 1fr;
     }
+}
+.footer {
+    width: 100%;
+    background-color: #dff7ff;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    color: #333;
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: nowrap;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 13px;
+}
+.footer {
+    width: 100%;
+    background-color: #dff7ff;
+    text-align: center;
+    padding: 25px 15px;
+    box-sizing: border-box;
+    color: #333;
+}
+
+.footer p {
+    margin: 6px 0;
+    font-size: 14px;
 }
