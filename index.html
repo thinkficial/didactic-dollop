@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Welcome to Thinkficial Engineering Network</title>
+
+    <style>
+      /* =========================================
+           BASIC RESET
+        ========================================= */
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        min-height: 100vh;
+        overflow: hidden;
+      }
+
+      /* =========================================
+           FRONT PAGE
+        ========================================= */
+
+      .front-page {
+        min-height: 50vh;
+
+        width: 100%;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        text-align: center;
+
+        position: relative;
+
+        overflow: hidden;
+
+        padding: 30px;
+
+        color: white;
+
+        /* Technology background */
+
+        background:
+          linear-gradient(rgba(3, 10, 35, 0.88), rgba(4, 25, 55, 0.92)),
+          url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=90");
+
+        background-size: cover;
+
+        background-position: center;
+
+        background-repeat: no-repeat;
+      }
+
+      /* =========================================
+           BACKGROUND GLOW EFFECTS
+        ========================================= */
+
+      .front-page::before {
+        content: "";
+
+        position: absolute;
+
+        width: 600px;
+
+        height: 600px;
+
+        border-radius: 50%;
+
+        background: rgba(80, 220, 255, 0.1);
+
+        filter: blur(100px);
+
+        top: -250px;
+
+        left: -200px;
+
+        pointer-events: none;
+      }
+
+      .front-page::after {
+        content: "";
+
+        position: absolute;
+
+        width: 500px;
+
+        height: 500px;
+
+        border-radius: 50%;
+
+        background: rgba(40, 80, 255, 0.12);
+
+        filter: blur(100px);
+
+        right: -200px;
+
+        bottom: -200px;
+
+        pointer-events: none;
+      }
+
+      /* =========================================
+           MAIN CONTENT
+        ========================================= */
+
+      .content {
+        width: 100%;
+
+        max-width: 950px;
+
+        padding: 30px;
+
+        position: relative;
+
+        z-index: 2;
+      }
+
+      /* =========================================
+           LOGO
+        ========================================= */
+
+      .logo-container {
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        margin-bottom: 100px;
+      }
+
+      .logo {
+        width: 300px;
+
+        max-width: 75vw;
+
+        height: auto;
+
+        display: block;
+
+        object-fit: contain;
+
+        filter: drop-shadow(0 0 18px rgba(110, 225, 255, 0.3));
+
+        animation: logoAppear 1.2s ease forwards;
+      }
+
+      /* =========================================
+           WELCOME TEXT
+        ========================================= */
+
+      .welcome-text {
+        font-size: 15px;
+
+        font-weight: bold;
+
+        letter-spacing: 6px;
+
+        color: #8de9fa;
+
+        margin-bottom: 80px;
+
+        animation: fadeIn 1.4s ease forwards;
+      }
+
+      /* =========================================
+           MAIN HEADING
+        ========================================= */
+
+      h1 {
+        font-size: 52px;
+
+        line-height: 1.15;
+
+        font-weight: 800;
+
+        letter-spacing: 1px;
+
+        color: #ffffff;
+
+        margin-bottom: 8px;
+
+        text-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+
+        animation: fadeInUp 1.2s ease forwards;
+      }
+
+      h1 span {
+        color: #8de9fa;
+      }
+
+      /* =========================================
+           SUBTITLE
+        ========================================= */
+
+      .subtitle {
+        font-size: 22px;
+
+        color: #d9e8ee;
+
+        margin-bottom: 22px;
+
+        animation: fadeInUp 1.5s ease forwards;
+      }
+
+      /* =========================================
+           DESCRIPTION
+        ========================================= */
+
+      .description {
+        max-width: 720px;
+
+        margin: 0 auto 35px;
+
+        font-size: 16px;
+
+        line-height: 1.8;
+
+        color: #d1dce1;
+
+        animation: fadeInUp 1.7s ease forwards;
+      }
+
+      /* =========================================
+           ENTER WEBSITE BUTTON
+        ========================================= */
+
+      .enter-button {
+        display: inline-block;
+
+        padding: 15px 35px;
+
+        background: #ffffff;
+
+        color: #07145c;
+
+        border-radius: 5px;
+
+        text-decoration: none;
+
+        font-size: 16px;
+
+        font-weight: bold;
+
+        letter-spacing: 0.5px;
+
+        transition: all 0.3s ease;
+
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+
+        animation: fadeInUp 2s ease forwards;
+      }
+
+      .enter-button:hover {
+        background: #8de9fa;
+
+        color: #06194c;
+
+        transform: translateY(-4px);
+
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+      }
+
+      .enter-button:active {
+        transform: translateY(-1px);
+      }
+
+      /* =========================================
+           FOOTER
+        ========================================= */
+
+      .footer {
+        position: absolute;
+
+        bottom: 18px;
+
+        left: 0;
+
+        width: 100%;
+
+        text-align: center;
+
+        font-size: 12px;
+
+        color: #9caeb5;
+
+        z-index: 3;
+      }
+
+      /* =========================================
+           ANIMATIONS
+        ========================================= */
+
+      @keyframes logoAppear {
+        0% {
+          opacity: 0;
+
+          transform: scale(0.7) translateY(-25px);
+        }
+
+        100% {
+          opacity: 1;
+
+          transform: scale(1) translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+
+          transform: translateY(25px);
+        }
+
+        100% {
+          opacity: 1;
+
+          transform: translateY(0);
+        }
+      }
+
+      /* =========================================
+           TABLET RESPONSIVE DESIGN
+        ========================================= */
+
+      @media (max-width: 768px) {
+        .content {
+          padding: 20px;
+        }
+
+        .logo {
+          width: 240px;
+        }
+
+        .welcome-text {
+          font-size: 13px;
+
+          letter-spacing: 4px;
+        }
+
+        h1 {
+          font-size: 40px;
+        }
+
+        .subtitle {
+          font-size: 19px;
+        }
+
+        .description {
+          font-size: 15px;
+
+          line-height: 1.7;
+        }
+      }
+
+      /* =========================================
+           MOBILE RESPONSIVE DESIGN
+        ========================================= */
+
+      @media (max-width: 480px) {
+        .front-page {
+          padding: 20px;
+        }
+
+        .content {
+          padding: 10px;
+        }
+
+        .logo-container {
+          margin-bottom: 25px;
+        }
+
+        .logo {
+          width: 210px;
+        }
+
+        .welcome-text {
+          font-size: 11px;
+
+          letter-spacing: 3px;
+
+          margin-bottom: 10px;
+        }
+
+        h1 {
+          font-size: 31px;
+
+          line-height: 1.2;
+        }
+
+        .subtitle {
+          font-size: 17px;
+
+          margin-bottom: 18px;
+        }
+
+        .description {
+          font-size: 14px;
+
+          line-height: 1.65;
+
+          margin-bottom: 28px;
+        }
+
+        .enter-button {
+          padding: 13px 27px;
+
+          font-size: 14px;
+        }
+
+        .footer {
+          font-size: 10px;
+
+          bottom: 10px;
+        }
+      }
+
+      /* =========================================
+           VERY SMALL PHONES
+        ========================================= */
+
+      @media (max-width: 350px) {
+        .logo {
+          width: 180px;
+        }
+
+        h1 {
+          font-size: 27px;
+        }
+
+        .subtitle {
+          font-size: 15px;
+        }
+
+        .description {
+          font-size: 13px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =========================================
+         THINKFICIAL FRONT PAGE
+    ========================================= -->
+
+    <main class="front-page">
+      <!-- MAIN CONTENT -->
+
+      <div class="content">
+        <!-- THINKFICIAL LOGO -->
+
+        <div class="logo-container">
+          <img
+            src="TEN Logo (1) (1).png"
+            alt="Thinkficial Engineering Network Logo"
+            class="logo"
+          />
+        </div>
+
+        <!-- WELCOME -->
+
+        <div class="welcome-text">WELCOME TO</div>
+
+        <!-- WEBSITE NAME -->
+
+        <h1>
+          <span>THINKFICIAL</span>
+
+          WEBSITE
+        </h1>
+
+        <!-- COMPANY NAME -->
+
+        <div class="subtitle">Thinkficial Engineering Network</div>
+
+        <!-- INTRODUCTION -->
+
+        <p class="description">
+          Welcome to Thinkficial Engineering Network. We provide innovative
+          technology solutions, ICT services, artificial intelligence solutions,
+          web development, consulting and professional technology training.
+        </p>
+
+        <!-- ENTER WEBSITE -->
+
+        <a href="home.html" class="enter-button"> ENTER WEBSITE </a>
+      </div>
+
+      <!-- FOOTER -->
+
+      <div class="footer">© 2026 Thinkficial Engineering Network</div>
+    </main>
+  </body>
+</html>
