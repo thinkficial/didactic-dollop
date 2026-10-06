@@ -1,0 +1,432 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    background:white;
+    line-height: 1.6;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    width: 100%;
+    min-height: 75px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: #111111;
+    letter-spacing: 1px;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: #0b63ce;
+}
+
+
+/* ================= HERO ================= */
+
+.academy-hero {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    padding: 80px 8%;
+    background: linear-gradient(
+        135deg,
+        #071c35,
+        #0b63ce
+    );
+}
+
+.hero-content {
+    max-width: 750px;
+    color: white;
+}
+
+.small-title,
+.section-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.small-title {
+    margin-bottom: 15px;
+}
+
+.hero-content h1 {
+    font-size: 58px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero-content p:not(.small-title) {
+    font-size: 19px;
+    max-width: 650px;
+    margin-bottom: 35px;
+}
+
+.hero-button,
+.cta-button {
+    display: inline-block;
+    padding: 14px 28px;
+    background: white;
+    color: #0b63ce;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+.hero-button:hover,
+.cta-button:hover {
+    opacity: 0.9;
+}
+
+
+/* ================= INTRO ================= */
+
+.academy-intro {
+    max-width: 900px;
+    margin: auto;
+    padding: 90px 25px;
+    text-align: center;
+}
+
+.academy-intro .section-label {
+    color: #0b63ce;
+    margin-bottom: 10px;
+}
+
+.academy-intro h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.academy-intro p:last-child {
+    color: #666;
+    font-size: 17px;
+}
+
+
+/* ================= COURSES ================= */
+
+.courses-section {
+    padding: 90px 7%;
+    background: #f7f9fc;
+}
+
+.section-heading {
+    max-width: 750px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.section-heading .section-label {
+    color: #0b63ce;
+}
+
+.section-heading h2 {
+    font-size: 40px;
+    margin: 10px 0 15px;
+}
+
+.section-heading p:last-child {
+    color: #666;
+}
+
+
+.courses-container {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* ================= COURSE CARD ================= */
+
+.course-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #e5e5e5;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
+}
+
+.course-number {
+    font-size: 13px;
+    font-weight: bold;
+    color: #0b63ce;
+    margin-bottom: 15px;
+}
+
+.course-card h3 {
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.course-card > p {
+    color: #666;
+    font-size: 14px;
+    min-height: 90px;
+}
+
+.course-info {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #eeeeee;
+    padding-top: 15px;
+    margin-top: 20px;
+
+    font-size: 14px;
+}
+
+.course-info span {
+    color: #777;
+}
+
+.course-price {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0b63ce;
+    margin: 20px 0;
+}
+
+.enroll-button {
+    display: block;
+    text-align: center;
+
+    padding: 12px;
+
+    background: #0b63ce;
+    color: white;
+
+    text-decoration: none;
+    font-weight: 700;
+
+    border-radius: 5px;
+}
+
+.enroll-button:hover {
+    background: #084d9d;
+}
+
+
+/* ================= PACKAGE ================= */
+
+.package-section {
+    padding: 90px 7%;
+    background: white;
+}
+
+.package-content {
+    max-width: 900px;
+    margin: auto;
+}
+
+.package-content .section-label {
+    color: #0b63ce;
+}
+
+.package-content h2 {
+    font-size: 38px;
+    margin: 10px 0 35px;
+}
+
+.package-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.package-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 18px;
+
+    background: #f7f9fc;
+    border-radius: 7px;
+}
+
+.package-item span {
+    color: #0b63ce;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+/* ================= CTA ================= */
+
+.academy-cta {
+    text-align: center;
+    padding: 90px 25px;
+
+    background: #071c35;
+    color: white;
+}
+
+.academy-cta h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.academy-cta p {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    color: #dce6f2;
+}
+
+.cta-button {
+    color: #071c35;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #111111;
+    color: white;
+    padding: 55px 7% 20px;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-content p {
+    color: #aaaaaa;
+}
+
+.footer-links {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.footer-links a {
+    color: #dddddd;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #333;
+    margin-top: 35px;
+    padding-top: 20px;
+    color: #888;
+    font-size: 13px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+
+    .courses-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-content h1 {
+        font-size: 45px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 15px 5%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .academy-hero {
+        padding: 70px 6%;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-content p:not(.small-title) {
+        font-size: 16px;
+    }
+
+    .courses-section {
+        padding: 65px 5%;
+    }
+
+    .courses-container {
+        grid-template-columns: 1fr;
+    }
+
+    .package-list {
+        grid-template-columns: 1fr;
+    }
+
+    .academy-intro h2,
+    .section-heading h2,
+    .package-content h2 {
+        font-size: 30px;
+    }
+
+    .academy-cta h2 {
+        font-size: 32px;
+    }
+
+}
