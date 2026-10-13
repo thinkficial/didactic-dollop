@@ -1,78 +1,172 @@
-// MOBILE MENU
 
-function toggleMenu() {
+"use strict";
 
-    const menu =
-        document.getElementById("navLinks");
+/* TEN ACADEMY — SHARED INTERACTIONS */
 
-    menu.classList.toggle("open");
+document.documentElement.classList.add("js-motion");
 
-}
+document.addEventListener("DOMContentLoaded", () => {
+    const menuButton = document.querySelector(".menu-btn");
+    const navLinks = document.querySelector(".nav-links");
 
+    function closeMenu() {
+        if (!menuButton || !navLinks) return;
 
-// CLOSE MOBILE MENU
+        navLinks.classList.remove("open", "show");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open navigation menu");
+        menuButton.textContent = "☰";
+    }
 
-document
-    .querySelectorAll("#navLinks a")
-    .forEach(link => {
+    function toggleMenu() {
+        if (!menuButton || !navLinks) return;
 
-        link.addEventListener("click", () => {
+        const opening = !navLinks.classList.contains("open");
 
-            document
-                .getElementById("navLinks")
-                .classList.remove("open");
+        navLinks.classList.toggle("open", opening);
+        navLinks.classList.toggle("show", opening);
+        menuButton.setAttribute("aria-expanded", String(opening));
+        menuButton.setAttribute(
+            "aria-label",
+            opening ? "Close navigation menu" : "Open navigation menu"
+        );
+        menuButton.textContent = opening ? "×" : "☰";
+    }
 
-        });
+    menuButton?.addEventListener("click", toggleMenu);
 
+    navLinks?.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", closeMenu);
     });
 
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape") closeMenu();
+    });
 
-// NEXT
+    document.addEventListener("click", event => {
+        if (
+            navLinks &&
+            menuButton &&
+            !navLinks.contains(event.target) &&
+            !menuButton.contains(event.target)
+        ) {
+            closeMenu();
+        }
+    });
 
-function nextTestimonial() {
+    // Highlight the navigation link for the current page.
+    const currentPage =
+        location.pathname.split("/").pop() || "index.html";
 
-    current =
-        (current + 1)
-        %
-        testimonials.length;
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        const target = new URL(link.href, location.href);
+        const targetPage = target.pathname.split("/").pop();
 
-    renderTestimonial();
+        if (targetPage === currentPage) {
+            link.classList.add("active");
+            link.setAttribute("aria-current", "page");
+        }
+    });
 
-}
+    // Automatically update the footer year.
+    document.querySelectorAll("[data-year]").forEach(element => {
+        element.textContent = new Date().getFullYear();
+    });
 
+    // Reveal sections as they enter the viewport.
+    const revealElements = document.querySelectorAll(".reveal");
 
-// PREVIOUS
+    if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
 
-function previousTestimonial() {
+        revealElements.forEach(element => observer.observe(element));
+    } else {
+        revealElements.forEach(element =>
+            element.classList.add("is-visible")
+        );
+    }
 
-    current =
-        (current - 1 +
-        testimonials.length)
-        %
-        testimonials.length;
+    // Contact form actions.
+    const form = document.getElementById("contactForm");
 
-    renderTestimonial();
+    if (form) {
+        const status = document.getElementById("formStatus");
+        const emailAddress =
+            "thinkficialengineeringnetwork@gmail.com";
+        const whatsappNumber = "2349082965308";
 
-}
+        function getDetails() {
+            return {
+                name: document.getElementById("name")?.value.trim() || "",
+                email: document.getElementById("email")?.value.trim() || "",
+                phone: document.getElementById("phone")?.value.trim() || "",
+                message:
+                    document.getElementById("message")?.value.trim() || ""
+            };
+        }
 
+        function formatMessage(d) {
+            return (
+                "Hello Thinkficial Engineering Network,\n\n" +
+                "I am contacting you through your website.\n\n" +
+                "Name: " + d.name + "\n" +
+                "Email: " + d.email + "\n" +
+                "Phone: " + d.phone + "\n\n" +
+                "Message:\n" + d.message
+            );
+        }
 
-// CONTACT FORM
+        function setStatus(message) {
+            if (status) status.textContent = message;
+        }
 
-function submitForm(event) {
+        form.addEventListener("submit", event => {
+            event.preventDefault();
 
-    event.preventDefault();
+            if (!form.reportValidity()) return;
 
-    const name =
-        document.getElementById("name").value;
+            const d = getDetails();
+            const subject = "Website Enquiry - TEN Academy";
 
+            const url =
+                "mailto:" + emailAddress +
+                "?subject=" + encodeURIComponent(subject) +
+                "&body=" + encodeURIComponent(formatMessage(d));
 
-    alert(
-        "Thank you, " +
-        name +
-        ". Please contact Thinkficial directly by email or WhatsApp to complete your enquiry."
-    );
+            setStatus(
+                "Opening your email application. Please review and send your message there."
+            );
 
+            window.location.href = url;
+        });
 
-    event.target.reset();
+        document.getElementById("whatsappBtn")?.addEventListener(
+            "click",
+            () => {
+                if (!form.reportValidity()) return;
 
-}
+                const d = getDetails();
+
+                if (!d.name || !d.email || !d.phone || !d.message) {
+                    setStatus("Please complete all fields first.");
+                    return;
+                }
+
+                const url =
+                    "https://wa.me/" + whatsappNumber +
+                    "?text=" + encodeURIComponent(formatMessage(d));
+
+                setStatus("Opening WhatsApp with your message prepared.");
+
+                window.open(url, "_blank", "noopener,noreferrer");
+            }
+        );
+    }
+});

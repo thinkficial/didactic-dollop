@@ -1,0 +1,2279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Explore the technology, ICT, AI, consulting, training, web development and information research services offered by Thinkficial Engineering Network - TEN Academy.">
+
+    <title>Our Services | Thinkficial Engineering Network</title>
+    ```html
+<style>
+/* =========================================
+   TEN ACADEMY — MODERN SERVICES PAGE
+   Colors: Blue, Black & White
+========================================= */
+
+:root {
+    --primary: #0866ff;
+    --primary-dark: #0047c2;
+    --primary-light: #eaf2ff;
+    --black: #080d18;
+    --dark: #101827;
+    --gray: #667085;
+    --light-gray: #f5f8ff;
+    --white: #ffffff;
+    --border: #e4eaf3;
+    --shadow: 0 15px 40px rgba(8, 28, 65, 0.09);
+    --shadow-hover: 0 25px 55px rgba(8, 102, 255, 0.16);
+    --radius: 20px;
+    --transition: all 0.35s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background: var(--white);
+    color: var(--dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+button {
+    font: inherit;
+}
+
+::selection {
+    background: var(--primary);
+    color: var(--white);
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(228, 234, 243, 0.8);
+    box-shadow: 0 3px 20px rgba(8, 13, 24, 0.04);
+}
+
+.navbar {
+    width: min(1200px, 92%);
+    min-height: 82px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.brand img {
+    width: 75px;
+    height: 65px;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.brand:hover img {
+    transform: scale(1.06);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+}
+
+.nav-links a {
+    position: relative;
+    display: inline-block;
+    padding: 11px 15px;
+    color: #344054;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary);
+    background: var(--primary-light);
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 5px;
+    height: 2px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    transform: scaleX(1);
+}
+
+.menu-btn {
+    display: none;
+    width: 46px;
+    height: 46px;
+    color: var(--white);
+    background: var(--primary);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 25px;
+    transition: var(--transition);
+}
+
+.menu-btn:hover {
+    background: var(--primary-dark);
+    transform: scale(1.04);
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.services-hero {
+    position: relative;
+    min-height: 590px;
+    padding: 110px 5%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(8, 102, 255, 0.34),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 15% 100%,
+            rgba(0, 71, 194, 0.30),
+            transparent 40%
+        ),
+        linear-gradient(120deg, #070b14 0%, #101b32 55%, #07152d 100%);
+}
+
+/* Decorative background glow */
+
+.services-hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 420px;
+    height: 420px;
+    right: -100px;
+    top: -120px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 45px rgba(255, 255, 255, 0.025),
+        0 0 0 90px rgba(255, 255, 255, 0.02);
+    animation: floatGlow 8s ease-in-out infinite;
+}
+
+.services-hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 280px;
+    height: 280px;
+    left: -140px;
+    bottom: -170px;
+    border-radius: 50%;
+    background: rgba(8, 102, 255, 0.18);
+    filter: blur(40px);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        );
+    background-size: 45px 45px;
+    mask-image: linear-gradient(to right, black, transparent);
+}
+
+.hero-content {
+    width: min(1200px, 100%);
+    margin: auto;
+    color: var(--white);
+    animation: fadeUp 0.9s ease both;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.services-hero .eyebrow {
+    color: #78aaff;
+}
+
+.services-hero .eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 2px;
+    background: #78aaff;
+}
+
+.hero-content h1 {
+    max-width: 850px;
+    margin-bottom: 25px;
+    font-size: clamp(42px, 6vw, 76px);
+    font-weight: 850;
+    line-height: 1.08;
+    letter-spacing: -2.5px;
+}
+
+.hero-content h1 span {
+    display: block;
+    color: #6da4ff;
+    background: linear-gradient(90deg, #73aaff, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+    max-width: 650px;
+    margin-bottom: 35px;
+    color: #c7d1e2;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+.hero-buttons,
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 52px;
+    padding: 14px 25px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    color: var(--white);
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        #3585ff
+    );
+    box-shadow: 0 8px 25px rgba(8, 102, 255, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(
+        135deg,
+        var(--primary-dark),
+        var(--primary)
+    );
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(8, 102, 255, 0.4);
+}
+
+.btn-outline {
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.btn-outline:hover {
+    color: var(--white);
+    border-color: var(--primary);
+    background: rgba(8, 102, 255, 0.15);
+    transform: translateY(-4px);
+}
+
+.btn-white {
+    color: var(--primary-dark);
+    background: var(--white);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.btn-white:hover {
+    color: var(--white);
+    background: var(--black);
+    transform: translateY(-4px);
+}
+
+.btn-whatsapp {
+    color: var(--white);
+    background: #087bff;
+}
+
+.btn-whatsapp:hover {
+    background: #0058cf;
+    transform: translateY(-4px);
+}
+
+/* =========================================
+   GENERAL SECTION STYLES
+========================================= */
+
+.section {
+    width: min(1200px, 92%);
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.section-heading {
+    max-width: 720px;
+    margin-bottom: 55px;
+}
+
+.section-heading.centered {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.section-heading h2 {
+    margin-bottom: 18px;
+    color: var(--black);
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -1.3px;
+}
+
+.section-heading > p:last-child {
+    color: var(--gray);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+/* =========================================
+   INTRODUCTION SECTION
+========================================= */
+
+.intro {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.intro-card {
+    position: relative;
+    padding: 32px;
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.intro-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        #80b1ff
+    );
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.intro-card:hover::before {
+    transform: scaleX(1);
+}
+
+.intro-card:hover {
+    border-color: #b5d0ff;
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-8px);
+}
+
+.intro-number {
+    margin-bottom: 22px;
+    color: var(--primary);
+    font-size: 38px;
+    font-weight: 850;
+    letter-spacing: -2px;
+    opacity: 0.9;
+}
+
+.intro-card h3 {
+    margin-bottom: 12px;
+    color: var(--black);
+    font-size: 21px;
+    font-weight: 750;
+}
+
+.intro-card p {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* =========================================
+   SERVICES SECTION
+========================================= */
+
+.services-section {
+    position: relative;
+    background:
+        radial-gradient(
+            circle at 100% 0,
+            rgba(8, 102, 255, 0.06),
+            transparent 35%
+        ),
+        var(--light-gray);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    align-items: stretch;
+}
+
+.service-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 28px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 5px 20px rgba(8, 13, 24, 0.025);
+    overflow: hidden;
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+.service-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+        135deg,
+        rgba(8, 102, 255, 0.07),
+        transparent 55%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: #a9c9ff;
+    box-shadow: var(--shadow-hover);
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+.service-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 62px;
+    height: 62px;
+    margin-bottom: 24px;
+    color: var(--primary);
+    background: linear-gradient(
+        135deg,
+        #eaf2ff,
+        #f4f8ff
+    );
+    border: 1px solid #dbe8ff;
+    border-radius: 17px;
+    font-size: 29px;
+    transition: var(--transition);
+}
+
+.service-card:hover .service-icon {
+    color: var(--white);
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        #4990ff
+    );
+    border-color: transparent;
+    transform: rotate(-5deg) scale(1.08);
+    box-shadow: 0 10px 22px rgba(8, 102, 255, 0.25);
+}
+
+.service-number {
+    position: absolute;
+    top: 30px;
+    right: 28px;
+    color: #c5d0e0;
+    font-size: 17px;
+    font-weight: 800;
+    transition: var(--transition);
+}
+
+.service-card:hover .service-number {
+    color: var(--primary);
+}
+
+.service-card h3 {
+    margin-bottom: 14px;
+    color: var(--black);
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.service-card > p {
+    margin-bottom: 22px;
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.service-card ul {
+    display: grid;
+    gap: 11px;
+    margin-bottom: 28px;
+    list-style: none;
+}
+
+.service-card ul li {
+    position: relative;
+    padding-left: 27px;
+    color: #344054;
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.service-card ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 19px;
+    height: 19px;
+    color: var(--primary);
+    background: var(--primary-light);
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.service-card ul li:hover {
+    padding-left: 32px;
+    color: var(--primary-dark);
+}
+
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    align-self: flex-start;
+    margin-top: auto;
+    padding-top: 15px;
+    color: var(--primary);
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.service-link:hover {
+    gap: 15px;
+    color: var(--primary-dark);
+}
+
+/* Featured service */
+
+.service-card.featured {
+    border: 1px solid var(--primary);
+    box-shadow: 0 10px 35px rgba(8, 102, 255, 0.09);
+}
+
+.service-card.featured:hover {
+    box-shadow: 0 25px 55px rgba(8, 102, 255, 0.2);
+}
+
+.service-badge {
+    position: absolute;
+    top: 22px;
+    right: 20px;
+    z-index: 2;
+    padding: 6px 11px;
+    color: var(--white);
+    background: var(--primary);
+    border-radius: 30px;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.service-card.featured .service-number {
+    top: 88px;
+}
+
+/* =========================================
+   WHO WE SERVE
+========================================= */
+
+.audience {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.audience-card {
+    padding: 30px 25px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    transition: var(--transition);
+}
+
+.audience-card:hover {
+    background: var(--black);
+    border-color: var(--black);
+    box-shadow: 0 20px 35px rgba(8, 13, 24, 0.15);
+    transform: translateY(-8px);
+}
+
+.audience-card span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    margin-bottom: 22px;
+    color: var(--primary);
+    background: var(--primary-light);
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 850;
+    transition: var(--transition);
+}
+
+.audience-card:hover span {
+    color: var(--white);
+    background: var(--primary);
+}
+
+.audience-card h3 {
+    margin-bottom: 12px;
+    color: var(--black);
+    font-size: 19px;
+    font-weight: 800;
+    transition: var(--transition);
+}
+
+.audience-card p {
+    color: var(--gray);
+    font-size: 13px;
+    line-height: 1.9;
+    transition: var(--transition);
+}
+
+.audience-card:hover h3 {
+    color: var(--white);
+}
+
+.audience-card:hover p {
+    color: #c7d1e2;
+}
+
+/* =========================================
+   OUR PROCESS
+========================================= */
+
+.process-section {
+    background: linear-gradient(
+        135deg,
+        #f5f8ff,
+        #ffffff 60%,
+        #edf4ff
+    );
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: 1fr 45px 1fr 45px 1fr;
+    align-items: center;
+    gap: 15px;
+}
+
+.process-item {
+    padding: 30px 20px;
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.process-item:hover {
+    background: var(--white);
+    border-color: var(--border);
+    box-shadow: var(--shadow);
+    transform: translateY(-6px);
+}
+
+.process-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 22px;
+    color: var(--white);
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        #448dff
+    );
+    border: 6px solid #dce9ff;
+    border-radius: 50%;
+    font-size: 19px;
+    font-weight: 850;
+    box-shadow: 0 8px 20px rgba(8, 102, 255, 0.15);
+    transition: var(--transition);
+}
+
+.process-item:hover .process-icon {
+    transform: scale(1.1) rotate(8deg);
+}
+
+.process-item h3 {
+    margin-bottom: 12px;
+    color: var(--black);
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.process-item p {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.process-line {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        #a9c9ff,
+        var(--primary),
+        #a9c9ff
+    );
+    opacity: 0.7;
+}
+
+/* =========================================
+   CALL TO ACTION
+========================================= */
+
+.cta-section {
+    position: relative;
+    padding: 85px 5%;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 90% 0,
+            rgba(75, 145, 255, 0.25),
+            transparent 35%
+        ),
+        linear-gradient(120deg, #080d18, #102448);
+}
+
+.cta-section::before {
+    content: "";
+    position: absolute;
+    top: -130px;
+    right: 10%;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    box-shadow: 0 0 0 40px rgba(255, 255, 255, 0.025);
+    pointer-events: none;
+}
+
+.cta-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 45px;
+    width: min(1200px, 100%);
+    margin: auto;
+}
+
+.cta-container > div:first-child {
+    max-width: 700px;
+}
+
+.cta-section .eyebrow {
+    color: #79adff;
+}
+
+.cta-section h2 {
+    margin-bottom: 20px;
+    color: var(--white);
+    font-size: clamp(30px, 4vw, 45px);
+    font-weight: 850;
+    line-height: 1.25;
+    letter-spacing: -1px;
+}
+
+.cta-section p:not(.eyebrow) {
+    color: #c5d0e0;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.cta-buttons {
+    flex-shrink: 0;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    color: #c3ccdc;
+    background: #060a12;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr 0.8fr;
+    gap: 35px;
+    width: min(1200px, 92%);
+    margin: auto;
+    padding-top: 75px;
+    padding-bottom: 65px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.footer-column.company {
+    max-width: 290px;
+}
+
+.footer-column h2 {
+    margin-bottom: 5px;
+    color: var(--white);
+    font-size: 19px;
+    font-weight: 850;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+}
+
+.footer-column h3 {
+    position: relative;
+    margin-bottom: 13px;
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 850;
+    letter-spacing: 1.5px;
+}
+
+.footer-column h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 30px;
+    height: 2px;
+    background: var(--primary);
+}
+
+.footer-column p {
+    color: #9aa8bd;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.footer-column > a {
+    color: #aab5c7;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.footer-column > a:hover {
+    color: #6da4ff;
+    transform: translateX(5px);
+}
+
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 37px;
+    height: 37px;
+    color: var(--white);
+    background: #141e30;
+    border: 1px solid #253149;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 800;
+    transition: var(--transition);
+}
+
+.social-icons a:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(8, 102, 255, 0.25);
+}
+
+.footer-bottom {
+    padding: 23px 5%;
+    text-align: center;
+    border-top: 1px solid #1b2638;
+}
+
+.footer-bottom p {
+    color: #8492a8;
+    font-size: 12px;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatGlow {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(18px) rotate(5deg);
+    }
+}
+
+/* =========================================
+   KEYBOARD ACCESSIBILITY
+========================================= */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #79adff;
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 1000px) {
+    .navbar {
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 2px;
+    }
+
+    .nav-links a {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .audience-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .cta-container {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr 30px 1fr 30px 1fr;
+        gap: 8px;
+    }
+}
+
+/* =========================================
+   MOBILE NAVIGATION
+========================================= */
+
+@media (max-width: 768px) {
+    .navbar {
+        position: relative;
+        min-height: 72px;
+        width: 90%;
+    }
+
+    .brand img {
+        width: 65px;
+        height: 58px;
+    }
+
+    .menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.98);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        box-shadow: 0 20px 45px rgba(8, 13, 24, 0.14);
+
+        /* Hidden until your toggleMenu() function opens it */
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: var(--transition);
+    }
+
+    .nav-links.show {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 13px 15px;
+        font-size: 14px;
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    .services-hero {
+        min-height: 530px;
+        padding: 85px 6%;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(39px, 9vw, 60px);
+        letter-spacing: -1.8px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .section {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .intro-card {
+        padding: 27px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service-card {
+        padding: 28px 25px;
+    }
+
+    .audience-grid {
+        gap: 15px;
+    }
+
+    .audience-card {
+        padding: 25px 20px;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .process-line {
+        width: 2px;
+        height: 30px;
+        margin: auto;
+    }
+
+    .process-item {
+        padding: 25px 20px;
+    }
+
+    .cta-section {
+        padding: 70px 6%;
+    }
+
+    .cta-container {
+        gap: 30px;
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 40px 25px;
+        padding-top: 60px;
+        padding-bottom: 50px;
+    }
+
+    .footer-column.company {
+        max-width: none;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE DEVICES
+========================================= */
+
+@media (max-width: 480px) {
+    .services-hero {
+        min-height: 500px;
+        padding: 70px 5%;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .hero-buttons {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+        font-size: 31px;
+    }
+
+    .audience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-section h2 {
+        font-size: 31px;
+    }
+
+    .cta-buttons {
+        align-items: stretch;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .footer-column {
+        width: 100%;
+    }
+}
+</style>
+
+  <script>
+     ```javascript
+function toggleMenu() {
+    const navLinks = document.getElementById("navLinks");
+    const menuButton = document.querySelector(".menu-btn");
+
+    if (!navLinks || !menuButton) return;
+
+    const isOpen = navLinks.classList.toggle("show");
+
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+    menuButton.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+    );
+}
+
+// Close the mobile menu after selecting a link.
+document.querySelectorAll("#navLinks a").forEach(link => {
+    link.addEventListener("click", () => {
+        const navLinks = document.getElementById("navLinks");
+        const menuButton = document.querySelector(".menu-btn");
+
+        navLinks?.classList.remove("show");
+        menuButton?.setAttribute("aria-expanded", "false");
+        menuButton?.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+        );
+    });
+});
+```
+
+  </script>
+
+
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header class="site-header">
+
+        <nav class="navbar">
+
+            <a class="brand" href="index.html">
+                <img src="TEN Logo.png"
+                     alt="Thinkficial Engineering Network Logo">
+            </a>
+
+            <button class="menu-btn"
+                    onclick="toggleMenu()"
+                    aria-label="Open navigation menu">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="index.html#about">About</a>
+                </li>
+
+                <li>
+                    <a href="services.html"
+                       class="active">
+                        Services
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#team">
+                        Management Team
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             PAGE HERO
+        ========================== -->
+
+        <section class="services-hero">
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    WHAT WE DO
+                </p>
+
+                <h1>
+                    Technology Solutions
+                    <span>Built For You</span>
+                </h1>
+
+                <p class="hero-description">
+                    At Thinkficial Engineering Network,
+                    we provide practical technology,
+                    ICT and AI solutions designed to
+                    help individuals, organizations and
+                    businesses achieve their goals.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#services"
+                       class="btn btn-primary">
+                        Explore Our Services
+                    </a>
+
+                    <a href="index.html#contact"
+                       class="btn btn-outline">
+                        Talk To Us
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             INTRODUCTION
+        ========================== -->
+
+        <section class="intro section">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    TEN ACADEMY
+                </p>
+
+                <h2>
+                    Professional Services
+                    For A Digital World
+                </h2>
+
+                <p>
+                    We combine technology, creativity,
+                    research and professional knowledge
+                    to provide solutions that create
+                    real value for our clients.
+                </p>
+
+            </div>
+
+            <div class="intro-grid">
+
+                <div class="intro-card">
+
+                    <div class="intro-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Technology
+                    </h3>
+
+                    <p>
+                        We use modern digital tools and
+                        technologies to solve business
+                        and organizational challenges.
+                    </p>
+
+                </div>
+
+
+                <div class="intro-card">
+
+                    <div class="intro-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Expertise
+                    </h3>
+
+                    <p>
+                        Our team provides practical
+                        technical knowledge and
+                        professional guidance.
+                    </p>
+
+                </div>
+
+
+                <div class="intro-card">
+
+                    <div class="intro-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Innovation
+                    </h3>
+
+                    <p>
+                        We continuously explore better
+                        ways to use ICT and AI to improve
+                        productivity and performance.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SERVICES
+        ========================== -->
+
+        <section id="services"
+                 class="services-section">
+
+            <div class="section">
+
+                <div class="section-heading centered">
+
+                    <p class="eyebrow">
+                        OUR SERVICES
+                    </p>
+
+                    <h2>
+                        What We Can Do For You
+                    </h2>
+
+                    <p>
+                        Explore our range of technology,
+                        consulting, research and training
+                        services.
+                    </p>
+
+                </div>
+
+
+                <div class="service-grid">
+
+                    <!-- SERVICE 1 -->
+
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            ⚙
+                        </div>
+
+                        <div class="service-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Technology Consulting
+                        </h3>
+
+                        <p>
+                            We provide technology and
+                            technical knowledge to help
+                            clients make better decisions,
+                            solve problems and improve
+                            their operations.
+                        </p>
+
+                        <ul>
+                            <li>
+                                Technology consultation
+                            </li>
+
+                            <li>
+                                Technical guidance
+                            </li>
+
+                            <li>
+                                Digital strategy
+                            </li>
+
+                            <li>
+                                Technology solutions
+                            </li>
+                        </ul>
+
+                        <a href="index.html#contact"
+                           class="service-link">
+                            Request This Service →
+                        </a>
+
+                    </article>
+
+
+                    <!-- SERVICE 2 -->
+
+                    <article class="service-card featured">
+
+                        <div class="service-badge">
+                            POPULAR
+                        </div>
+
+                        <div class="service-icon">
+                            &lt;/&gt;
+                        </div>
+
+                        <div class="service-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Web Application Development
+                        </h3>
+
+                        <p>
+                            We design and develop modern,
+                            responsive and user-friendly
+                            web applications for businesses,
+                            organizations and individuals.
+                        </p>
+
+                        <ul>
+                            <li>
+                                Business websites
+                            </li>
+
+                            <li>
+                                Web applications
+                            </li>
+
+                            <li>
+                                Responsive design
+                            </li>
+
+                            <li>
+                                Website maintenance
+                            </li>
+                        </ul>
+
+                        <a href="index.html#contact"
+                           class="service-link">
+                            Build With Us →
+                        </a>
+
+                    </article>
+
+
+                    <!-- SERVICE 3 -->
+
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            🔎
+                        </div>
+
+                        <div class="service-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Information Research
+                        </h3>
+
+                        <p>
+                            We search, organize, analyze
+                            and filter information to help
+                            clients find useful answers and
+                            make informed decisions.
+                        </p>
+
+                        <ul>
+                            <li>
+                                Online research
+                            </li>
+
+                            <li>
+                                Information gathering
+                            </li>
+
+                            <li>
+                                Data organization
+                            </li>
+
+                            <li>
+                                Research support
+                            </li>
+                        </ul>
+
+                        <a href="index.html#contact"
+                           class="service-link">
+                            Request Research →
+                        </a>
+
+                    </article>
+
+
+                    <!-- SERVICE 4 -->
+
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            🎓
+                        </div>
+
+                        <div class="service-number">
+                            04
+                        </div>
+
+                        <h3>
+                            ICT Training
+                        </h3>
+
+                        <p>
+                            We provide practical ICT training
+                            designed to help individuals and
+                            organizations improve their digital
+                            skills and productivity.
+                        </p>
+
+                        <ul>
+                            <li>
+                                Computer training
+                            </li>
+
+                            <li>
+                                Digital skills
+                            </li>
+
+                            <li>
+                                ICT tools
+                            </li>
+
+                            <li>
+                                Organizational training
+                            </li>
+                        </ul>
+
+                        <a href="index.html#contact"
+                           class="service-link">
+                            Start Training →
+                        </a>
+
+                    </article>
+
+
+                    <!-- SERVICE 5 -->
+
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            🤖
+                        </div>
+
+                        <div class="service-number">
+                            05
+                        </div>
+
+                        <h3>
+                            AI Solutions
+                        </h3>
+
+                        <p>
+                            We help individuals and
+                            organizations explore practical
+                            applications of artificial
+                            intelligence and digital tools.
+                        </p>
+
+                        <ul>
+                            <li>
+                                AI tool consultation
+                            </li>
+
+                            <li>
+                                AI-assisted workflows
+                            </li>
+
+                            <li>
+                                Productivity solutions
+                            </li>
+
+                            <li>
+                                AI training
+                            </li>
+                        </ul>
+
+                        <a href="index.html#contact"
+                           class="service-link">
+                            Explore AI Solutions →
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             WHO WE SERVE
+        ========================== -->
+
+        <section class="audience section">
+
+            <div class="section-heading centered">
+
+                <p class="eyebrow">
+                    WHO WE SERVE
+                </p>
+
+                <h2>
+                    Solutions For Different Needs
+                </h2>
+
+                <p>
+                    Our services are designed to support
+                    different types of clients and
+                    organizations.
+                </p>
+
+            </div>
+
+
+            <div class="audience-grid">
+
+                <div class="audience-card">
+
+                    <span>01</span>
+
+                    <h3>
+                        Individuals
+                    </h3>
+
+                    <p>
+                        Digital skills, training,
+                        research and technology support
+                        for individuals.
+                    </p>
+
+                </div>
+
+
+                <div class="audience-card">
+
+                    <span>02</span>
+
+                    <h3>
+                        Businesses
+                    </h3>
+
+                    <p>
+                        Technology solutions that help
+                        businesses improve efficiency,
+                        visibility and productivity.
+                    </p>
+
+                </div>
+
+
+                <div class="audience-card">
+
+                    <span>03</span>
+
+                    <h3>
+                        Corporations
+                    </h3>
+
+                    <p>
+                        Professional technology,
+                        consulting and training services
+                        for larger organizations.
+                    </p>
+
+                </div>
+
+
+                <div class="audience-card">
+
+                    <span>04</span>
+
+                    <h3>
+                        Agencies & Firms
+                    </h3>
+
+                    <p>
+                        Practical digital solutions,
+                        research and professional support
+                        for agencies and private firms.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             OUR PROCESS
+        ========================== -->
+
+        <section class="process-section">
+
+            <div class="section">
+
+                <div class="section-heading centered">
+
+                    <p class="eyebrow">
+                        HOW WE WORK
+                    </p>
+
+                    <h2>
+                        Simple. Professional. Effective.
+                    </h2>
+
+                    <p>
+                        Our approach keeps every project
+                        clear, organized and focused on
+                        achieving your objectives.
+                    </p>
+
+                </div>
+
+
+                <div class="process-grid">
+
+                    <div class="process-item">
+
+                        <div class="process-icon">
+                            01
+                        </div>
+
+                        <h3>
+                            Understand
+                        </h3>
+
+                        <p>
+                            We listen to your needs,
+                            challenges and objectives.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-line"></div>
+
+
+                    <div class="process-item">
+
+                        <div class="process-icon">
+                            02
+                        </div>
+
+                        <h3>
+                            Plan
+                        </h3>
+
+                        <p>
+                            We identify the right approach
+                            and develop a practical solution.
+                        </p>
+
+                    </div>
+
+
+                    <div class="process-line"></div>
+
+
+                    <div class="process-item">
+
+                        <div class="process-icon">
+                            03
+                        </div>
+
+                        <h3>
+                            Deliver
+                        </h3>
+
+                        <p>
+                            We execute the solution while
+                            maintaining quality and efficiency.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CALL TO ACTION
+        ========================== -->
+
+        <section class="cta-section">
+
+            <div class="cta-container">
+
+                <div>
+
+                    <p class="eyebrow">
+                        LET'S WORK TOGETHER
+                    </p>
+
+                    <h2>
+                        Have a project or
+                        challenge in mind?
+                    </h2>
+
+                    <p>
+                        Talk to Thinkficial Engineering
+                        Network today and let's explore
+                        how technology can help you.
+                    </p>
+
+                </div>
+
+                <div class="cta-buttons">
+
+                    <a href="index.html#contact"
+                       class="btn btn-white">
+                        Contact Us
+                    </a>
+
+                    <a href="https://wa.me/2349082965308"
+                       target="_blank"
+                       class="btn btn-whatsapp">
+                        WhatsApp Us
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <!-- COMPANY -->
+
+            <div class="footer-column company">
+
+                <h2>
+                    THINKFICIAL<br>
+                    ENGINEERING NETWORK
+                </h2>
+
+                <p>
+                    Technology, ICT, AI solutions,
+                    consulting, training and professional
+                    services for a better digital future.
+                </p>
+
+            </div>
+
+
+            <!-- SERVICES -->
+
+            <div class="footer-column">
+
+                <h3>
+                    SERVICES
+                </h3>
+
+                <a href="#services">
+                    Consulting
+                </a>
+
+                <a href="#services">
+                    Web Applications
+                </a>
+
+                <a href="#services">
+                    Information Research
+                </a>
+
+                <a href="#services">
+                    ICT Training
+                </a>
+
+                <a href="#services">
+                    AI Solutions
+                </a>
+
+            </div>
+
+
+            <!-- COMPANY -->
+
+            <div class="footer-column">
+
+                <h3>
+                    COMPANY
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="index.html#about">
+                    About Us
+                </a>
+
+                <a href="index.html#team">
+                    Management Team
+                </a>
+
+                <a href="index.html#contact">
+                    Contact Us
+                </a>
+
+            </div>
+
+
+            <!-- CONNECT -->
+
+            <div class="footer-column">
+
+                <h3>
+                    CONNECT WITH US
+                </h3>
+
+                <a href="mailto:thinkficialengineeringnetwork@gmail.com">
+                    Email Us
+                </a>
+
+                <a href="https://wa.me/2349082965308"
+                   target="_blank">
+                    WhatsApp
+                </a>
+
+                <div class="social-icons">
+
+                    <a href="#">
+                        f
+                    </a>
+
+                    <a href="#">
+                        𝕏
+                    </a>
+
+                    <a href="#">
+                        in
+                    </a>
+
+                    <a href="#">
+                        ◎
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK LINKS -->
+
+            <div class="footer-column">
+
+                <h3>
+                    QUICK LINKS
+                </h3>
+
+                <a href="#">
+                    Services
+                </a>
+
+                <a href="index.html#about">
+                    About Us
+                </a>
+
+                <a href="index.html#contact">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Thinkficial Engineering Network.
+                All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+</body>
+</html>
