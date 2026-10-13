@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Management Team | Thinkficial Engineering Network</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --navy: #07145c;
+        --dark-navy: #050b3f;
+        --cyan: #13a6c8;
+        --light: #f5f7fb;
+        --white: #ffffff;
+        --text: #333b50;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--light);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      /* NAVIGATION */
+      header {
+        background: var(--white);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .navbar {
+        max-width: 1200px;
+        margin: auto;
+        padding: 12px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .logo img {
+        width: 175px;
+        max-height: 70px;
+        object-fit: contain;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+      }
+
+      .nav-links a {
+        color: var(--navy);
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--cyan);
+      }
+
+      .nav-links .contact-btn {
+        background: var(--navy);
+        color: var(--white);
+        padding: 11px 18px;
+        border-radius: 5px;
+      }
+
+      .nav-links .contact-btn:hover {
+        background: var(--cyan);
+        color: var(--white);
+      }
+
+      /* PAGE HERO */
+      .page-hero {
+        background: linear-gradient(
+          120deg,
+          rgba(5, 11, 63, 0.97),
+          rgba(7, 20, 92, 0.91)
+        );
+        color: var(--white);
+        text-align: center;
+        padding: 85px 20px;
+      }
+
+      .page-hero .tag {
+        color: #65e0f5;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 13px;
+        font-weight: bold;
+        margin-bottom: 12px;
+      }
+
+      .page-hero h1 {
+        font-size: clamp(32px, 5vw, 48px);
+        margin-bottom: 15px;
+      }
+
+      .page-hero p {
+        max-width: 720px;
+        margin: auto;
+        color: #e1e8ff;
+        font-size: 17px;
+      }
+
+      /* INTRODUCTION */
+      .intro {
+        text-align: center;
+        max-width: 850px;
+        margin: auto;
+        padding: 65px 24px 35px;
+      }
+
+      .intro h2 {
+        color: var(--navy);
+        font-size: 30px;
+        margin-bottom: 15px;
+      }
+
+      .intro h2 span {
+        color: var(--cyan);
+      }
+
+      .intro p {
+        color: #5b6478;
+        font-size: 16px;
+      }
+
+      /* MANAGEMENT TEAM */
+      .team-section {
+        max-width: 1200px;
+        margin: auto;
+        padding: 25px 24px 80px;
+      }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 28px;
+      }
+
+      .team-card {
+        background: var(--white);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 22px rgba(7, 20, 92, 0.08);
+        text-align: center;
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+      }
+
+      .team-card:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 12px 28px rgba(7, 20, 92, 0.15);
+      }
+
+      .team-photo {
+        height: 290px;
+        background: #e8edf7;
+        overflow: hidden;
+      }
+
+      .team-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
+      }
+
+      .team-info {
+        padding: 24px 18px 28px;
+      }
+
+      .team-info h3 {
+        color: var(--navy);
+        font-size: 21px;
+        margin-bottom: 6px;
+      }
+
+      .team-info .role {
+        display: inline-block;
+        color: #0786a5;
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 12px;
+      }
+
+      .team-info p {
+        color: #626b7e;
+        font-size: 14px;
+      }
+
+      /* CTA */
+      .team-cta {
+        background: var(--navy);
+        color: var(--white);
+        padding: 55px 24px;
+        text-align: center;
+      }
+
+      .team-cta h2 {
+        font-size: 30px;
+        margin-bottom: 12px;
+      }
+
+      .team-cta p {
+        color: #e1e8ff;
+        margin-bottom: 25px;
+      }
+
+      .btn {
+        display: inline-block;
+        background: var(--cyan);
+        color: var(--white);
+        padding: 13px 25px;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+
+      .btn:hover {
+        background: var(--white);
+        color: var(--navy);
+      }
+
+      /* FOOTER */
+      footer {
+        background: var(--dark-navy);
+        color: var(--white);
+        padding: 45px 24px 20px;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1.5fr;
+        gap: 35px;
+      }
+
+      .footer-logo {
+        width: 180px;
+        max-height: 75px;
+        object-fit: contain;
+        margin-bottom: 15px;
+      }
+
+      .footer-column h3 {
+        color: #55d8f0;
+        margin-bottom: 15px;
+      }
+
+      .footer-column p,
+      .footer-column a {
+        color: #dce3ff;
+        font-size: 14px;
+        display: block;
+        margin-bottom: 9px;
+        overflow-wrap: anywhere;
+      }
+
+      .footer-column a:hover {
+        color: #55d8f0;
+      }
+
+      .footer-bottom {
+        max-width: 1200px;
+        margin: 30px auto 0;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        text-align: center;
+        color: #c3cbe5;
+        font-size: 13px;
+      }
+
+      /* RESPONSIVE DESIGN */
+      @media (max-width: 900px) {
+        .navbar {
+          flex-direction: column;
+        }
+
+        .nav-links {
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 15px;
+        }
+
+        .team-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .footer-content {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 560px) {
+        .navbar {
+          padding: 12px;
+        }
+
+        .logo img {
+          width: 150px;
+        }
+
+        .nav-links {
+          gap: 12px;
+          font-size: 13px;
+        }
+
+        .nav-links .contact-btn {
+          padding: 8px 11px;
+        }
+
+        .page-hero {
+          padding: 60px 18px;
+        }
+
+        .intro h2 {
+          font-size: 25px;
+        }
+
+        .team-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .team-photo {
+          height: 320px;
+        }
+
+        .footer-content {
+          grid-template-columns: 1fr;
+          gap: 25px;
+        }
+      }
+
+      /* Mobile navigation and page-entry animations */
+      .mobile-menu-toggle {
+        display: none;
+        width: 44px;
+        height: 42px;
+        padding: 9px;
+        border: 1px solid rgba(7, 20, 92, 0.16);
+        border-radius: 8px;
+        background: #fff;
+        cursor: pointer;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .mobile-menu-toggle span {
+        display: block;
+        width: 23px;
+        height: 2px;
+        background: #07145c;
+        border-radius: 2px;
+        transition:
+          transform 0.25s ease,
+          opacity 0.2s ease;
+      }
+      .mobile-menu-toggle[aria-expanded="true"] span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .mobile-menu-toggle[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+      }
+      .mobile-menu-toggle[aria-expanded="true"] span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+      body {
+        animation: pageEnter 0.65s ease both;
+      }
+      @keyframes pageEnter {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @media (max-width: 700px) {
+        .navbar,
+        nav:has(.mobile-menu-toggle) {
+          position: relative;
+        }
+        .mobile-menu-toggle {
+          display: flex;
+        }
+        .navbar {
+          flex-direction: row !important;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+        .navbar .nav-links,
+        nav .nav-links {
+          display: none !important;
+          width: 100%;
+          flex-direction: column;
+          align-items: stretch;
+          justify-content: flex-start;
+          gap: 0 !important;
+          padding: 8px 0 10px;
+          margin: 0;
+          flex-wrap: nowrap;
+          background: #fff;
+        }
+        .navbar .nav-links.mobile-open,
+        nav .nav-links.mobile-open {
+          display: flex !important;
+          animation: menuDrop 0.22s ease both;
+        }
+        .nav-links li {
+          width: 100%;
+          list-style: none;
+        }
+        .nav-links a {
+          display: block;
+          width: 100%;
+          padding: 12px 10px;
+          font-size: 14px !important;
+          border-radius: 6px;
+        }
+        .nav-links .contact-button,
+        .nav-links .contact-btn {
+          margin-top: 5px;
+          text-align: center;
+        }
+        @keyframes menuDrop {
+          from {
+            opacity: 0;
+            transform: translateY(-8px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVIGATION -->
+    <header>
+      <nav class="navbar">
+        <a href="home.html" class="logo">
+          <img
+            src="TEN Logo (1) (1).png"
+            alt="Thinkficial Engineering Network Logo"
+          />
+        </a>
+
+        <div class="nav-links">
+          <a href="home.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="academy.html">Academy</a>
+          <a href="management.html" class="active">Management</a>
+          <a href="contact.html" class="contact-btn">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <p class="tag">The People Behind TEN</p>
+      <h1>Meet Our Management Team</h1>
+      <p>
+        Meet the people contributing their skills, leadership, and commitment to
+        the growth and development of Thinkficial Engineering Network.
+      </p>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section class="intro">
+      <h2>Our <span>Management Team</span></h2>
+      <p>
+        Our team brings together people with different responsibilities and
+        strengths, working toward a shared goal of delivering technology-driven
+        solutions, encouraging innovation, and supporting continuous learning.
+      </p>
+    </section>
+
+    <!-- TEAM MEMBERS -->
+    <section class="team-section">
+      <div class="team-grid">
+        <article class="team-card">
+          <div class="team-photo">
+            <img src="augustine.jpg" alt="Augustine" loading="lazy" />
+          </div>
+          <div class="team-info">
+            <h3>Augustine</h3>
+            <span class="role">Management Team</span>
+            <p>
+              Contributing to the coordination and development of Thinkficial
+              Engineering Network.
+            </p>
+          </div>
+        </article>
+
+        <article class="team-card">
+          <div class="team-photo">
+            <img src="raphael.jpg" alt="Raphael" loading="lazy" />
+          </div>
+          <div class="team-info">
+            <h3>Raphael</h3>
+            <span class="role">Management Team</span>
+            <p>
+              Supporting teamwork, organizational activities, and the company's
+              shared objectives.
+            </p>
+          </div>
+        </article>
+
+        <article class="team-card">
+          <div class="team-photo">
+            <img src="lilian.jpg" alt="Lilian" loading="lazy" />
+          </div>
+          <div class="team-info">
+            <h3>Lilian</h3>
+            <span class="role">Management Team</span>
+            <p>
+              Contributing to the team's activities and the continued
+              development of the organization.
+            </p>
+          </div>
+        </article>
+
+        <article class="team-card">
+          <div class="team-photo">
+            <img src="grace.jpg" alt="Grace" loading="lazy" />
+          </div>
+          <div class="team-info">
+            <h3>Grace</h3>
+            <span class="role">Management Team</span>
+            <p>
+              Working with the team to support organizational goals and
+              effective collaboration.
+            </p>
+          </div>
+        </article>
+
+        <article class="team-card">
+          <div class="team-photo">
+            <img src="samuel.jpg" alt="Samuel" loading="lazy" />
+          </div>
+          <div class="team-info">
+            <h3>Samuel</h3>
+            <span class="role">Management Team</span>
+            <p>
+              Supporting the company's ongoing initiatives and collaborative
+              work.
+            </p>
+          </div>
+        </article>
+
+        <article class="team-card">
+          <div class="team-photo">
+            <img src="favour.jpg" alt="Favour" loading="lazy" />
+          </div>
+          <div class="team-info">
+            <h3>Favour</h3>
+            <span class="role">Management Team</span>
+            <p>
+              Contributing to the team's shared vision and organizational
+              development.
+            </p>
+          </div>
+        </article>
+
+        <article class="team-card">
+          <div class="team-photo">
+            <img src="maryrose.jpg" alt="Maryrose" loading="lazy" />
+          </div>
+          <div class="team-info">
+            <h3>Maryrose</h3>
+            <span class="role">Management Team</span>
+            <p>
+              Supporting the organization's work through collaboration and
+              commitment to its goals.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="team-cta">
+      <h2>Want to Connect With TEN?</h2>
+      <p>
+        Get in touch with Thinkficial Engineering Network to learn more about
+        our work, services, and initiatives.
+      </p>
+      <a href="contact.html" class="btn">Contact Our Team</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-column">
+          <img
+            src="TEN Logo (1) (1).png"
+            alt="Thinkficial Engineering Network Logo"
+            class="footer-logo"
+          />
+
+          <p>
+            Thinkficial Engineering Network is focused on technology,
+            engineering, innovation, and digital development.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <a href="home.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="academy.html">Academy</a>
+          <a href="management.html">Management</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>Contact Information</h3>
+          <p>Phone: <a href="tel:09063577772">09063577772</a></p>
+          <p>
+            WhatsApp:
+            <a
+              href="https://wa.me/2349082965308"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              09082965308
+            </a>
+          </p>
+          <p>
+            Email:
+            <a href="mailto:thinkficialengineeringnetwork@gmail.com">
+              thinkficialengineeringnetwork@gmail.com
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          &copy; <span id="year"></span>
+          Thinkficial Engineering Network. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <script>
+      (function () {
+        const menu = document.querySelector(".nav-links");
+        const nav = menu && menu.closest("nav");
+        if (!menu || !nav) return;
+
+        const toggle = document.createElement("button");
+        toggle.type = "button";
+        toggle.className = "mobile-menu-toggle";
+        toggle.setAttribute("aria-label", "Open navigation menu");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-controls", "mobile-navigation");
+        toggle.innerHTML = "<span></span><span></span><span></span>";
+        menu.id = "mobile-navigation";
+        nav.insertBefore(toggle, menu);
+
+        function closeMenu() {
+          menu.classList.remove("mobile-open");
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.setAttribute("aria-label", "Open navigation menu");
+        }
+        toggle.addEventListener("click", function () {
+          const open = toggle.getAttribute("aria-expanded") !== "true";
+          toggle.setAttribute("aria-expanded", String(open));
+          toggle.setAttribute(
+            "aria-label",
+            open ? "Close navigation menu" : "Open navigation menu",
+          );
+          menu.classList.toggle("mobile-open", open);
+        });
+        menu.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", closeMenu);
+        });
+        window.addEventListener("resize", function () {
+          if (window.innerWidth > 700) closeMenu();
+        });
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") closeMenu();
+        });
+      })();
+    </script>
+  </body>
+</html>
+```
