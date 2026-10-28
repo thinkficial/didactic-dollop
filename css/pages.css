@@ -1,0 +1,133 @@
+/* TEN WEBSITE | Page-specific sections */
+.about-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 38px;
+  align-items: center;
+}
+
+.highlight-panel {
+  padding: 34px;
+  border-radius: 18px;
+  background: #eaf4ff;
+  border: 1px solid #d4e7fc;
+}
+.highlight-panel strong {
+  display: block;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.service-card ul {
+  margin-top: 15px;
+}
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+}
+.course-card .course-label {
+  color: var(--blue);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+.course-card p {
+  flex: 1;
+}
+
+.team-card {
+  overflow: hidden;
+  padding: 0;
+}
+.team-photo {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  background: #e7eff8;
+}
+.avatar {
+  display: grid;
+  place-items: center;
+  height: 250px;
+  background: linear-gradient(135deg, #183a60, #0b5cab);
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+.team-info {
+  padding: 22px;
+}
+.team-info p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 34px;
+  align-items: start;
+}
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.contact-list li {
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+  overflow-wrap: anywhere;
+}
+.contact-list strong {
+  display: block;
+  margin-bottom: 3px;
+}
+.form-field {
+  margin-bottom: 18px;
+}
+.form-field label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+.form-field input,
+.form-field textarea {
+  display: block;
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 13px;
+  border: 1px solid #91a3b9;
+  border-radius: 8px;
+  color: var(--ink);
+  background: #fff;
+}
+.form-field textarea {
+  min-height: 145px;
+  resize: vertical;
+}
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--blue);
+}
+.form-help,
+.form-status {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.form-status {
+  min-height: 24px;
+  margin: 16px 0 0;
+  font-weight: 700;
+  color: #084982;
+}
+
+@media (max-width: 800px) {
+  .about-layout,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
