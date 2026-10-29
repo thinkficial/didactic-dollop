@@ -1,7 +1,75 @@
 "use strict";
 
-// This is a static site: these actions prepare drafts, not deliver messages.
+// Contact-page drafts, motion controls, scroll reveals and character counting.
+// This static site prepares message drafts; visitors send them in the selected app.
 document.addEventListener("DOMContentLoaded", () => {
+  const page = document.querySelector(".contact-page");
+  if (!page) return;
+  page.classList.add("contact-motion-ready");
+
+  const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const toggle = page.querySelector(".contact-motion-toggle");
+  const reveals = page.querySelectorAll("[data-contact-reveal]");
+  let paused = false;
+  let observer;
+
+  function updateMotion() {
+    const stop = paused || preference.matches;
+    page.classList.toggle("contact-motion-paused", stop);
+    toggle.hidden = preference.matches;
+    toggle.setAttribute("aria-pressed", String(paused));
+    toggle.querySelector("[data-motion-label]").textContent = paused
+      ? "Resume animation"
+      : "Pause animation";
+    toggle.querySelector("[data-motion-symbol]").textContent = paused
+      ? "▶"
+      : "Ⅱ";
+    if (stop) {
+      reveals.forEach((element) => element.classList.add("is-visible"));
+      observer?.disconnect();
+    }
+  }
+
+  if (!preference.matches && "IntersectionObserver" in window) {
+    observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.1 },
+    );
+    reveals.forEach((element) => observer.observe(element));
+    page.classList.add("contact-reveal-ready");
+    page.addEventListener("focusin", (event) => {
+      event.target
+        .closest("[data-contact-reveal]")
+        ?.classList.add("is-visible");
+    });
+  }
+  toggle.addEventListener("click", () => {
+    paused = !paused;
+    updateMotion();
+  });
+  preference.addEventListener("change", updateMotion);
+  document.addEventListener("visibilitychange", () => {
+    page.classList.toggle("contact-tab-hidden", document.hidden);
+  });
+  updateMotion();
+
+  const message = page.querySelector("#message");
+  const count = page.querySelector("#message-count");
+  if (message && count) {
+    const updateCount = () => {
+      count.textContent = `${message.value.length} / ${message.maxLength}`;
+    };
+    message.addEventListener("input", updateCount);
+    window.addEventListener("pageshow", updateCount);
+    updateCount();
+  }
+
   const form = document.querySelector("#contactForm");
   if (!form) return;
 

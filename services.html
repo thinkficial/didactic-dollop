@@ -1,190 +1,238 @@
-
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore technology consulting, web application development, information research, ICT training and practical AI solutions from Thinkficial Engineering Network.">
+  <meta name="theme-color" content="#091529">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Our Services | Thinkficial Engineering Network">
+  <meta property="og:description" content="Practical technology, research, web development, ICT training and AI solutions.">
 
-    <meta
-      name="description"
-      content="Discover technology consulting, web application development, information research, ICT training and practical AI solutions from Thinkficial Engineering Network."
-    />
-    <meta name="theme-color" content="#091529" />
+  <title>Our Services | Thinkficial Engineering Network</title>
 
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="Our Services | Thinkficial Engineering Network"
-    />
-    <meta
-      property="og:description"
-      content="Explore technology, research, web development, ICT training and AI solutions for individuals, businesses and organizations."
-    />
+  <link rel="icon" type="image/png" href="assets/images/TEN_svg.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <title>Our Services | Thinkficial Engineering Network</title>
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/services.css">
 
-    <!-- Confirm whether your actual folder is named asssets or assets. -->
-    <link
-      rel="icon"
-      type="image/png"
-      href="asssets/images/TEN%20Logo.png"
-    />
+  <script src="js/main.js" defer></script>
+  <script src="js/services.js" defer></script>
+</head>
 
-    
-    <link rel="stylesheet" href="css/pages.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/services.css" />
+<body class="services-page" id="top">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <script src="js/main.js" defer></script>
-  </head>
+  <!-- Shared navigation -->
+  <header data-site-header class="shared-header shared-fallback">
+    <nav class="shared-container" aria-label="Main navigation">
+      <a href="index.html">TEN Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html" aria-current="page">Services</a>
+      <a href="academy.html">Academy</a>
+      <a href="management.html">Management</a>
+      <a href="contact.html">Let's Talk</a>
+    </nav>
+  </header>
 
-  <body class="services-page">
-    <a class="skip-link" href="#main-content">
-      Skip to main content
-    </a>
+  <main id="main-content">
 
-    <header class="site-header">
-      <nav class="navbar container" aria-label="Main navigation">
-        <a
-          class="brand"
-          href="index.html"
-          aria-label="Thinkficial Engineering Network home"
-        >
-          <img
-            src="asssets/images/TEN%20Logo.png"
-            alt=""
-            width="52"
-            height="55"
-          />
-          <span>
-            THINKFICIAL<br />
-            ENGINEERING NETWORK
-          </span>
-        </a>
+    <!-- HERO -->
+    <section class="sv-hero" aria-labelledby="sv-hero-title">
+      <div class="sv-gridlines" aria-hidden="true"></div>
 
-        <button
-          class="menu-btn"
-          type="button"
-          aria-controls="site-navigation"
-          aria-expanded="false"
-          aria-label="Open navigation menu"
-        >
-          ☰
-        </button>
-
-        <ul class="nav-links" id="site-navigation">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li>
-            <a href="services.html" aria-current="page">Services</a>
-          </li>
-          <li><a href="academy.html">Academy</a></li>
-          <li><a href="management.html">Management</a></li>
-          <li>
-            <a href="contact.html" class="nav-contact">Contact</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-
-    <main id="main-content">
-      <!-- Page introduction -->
-      <section class="page-hero">
-        <div class="container">
-          <p class="eyebrow">Our services</p>
-
-          <h1>Technology solutions built around your needs.</h1>
-
-          <p class="lead">
-            We help individuals, businesses and organizations solve
-            technical challenges, develop digital products, strengthen
-            digital skills and explore practical applications of AI.
+      <div class="sv-container sv-hero-grid">
+        <div class="sv-hero-copy">
+          <p class="sv-kicker">
+            <span class="sv-pulse" aria-hidden="true"></span>
+            WHAT WE DO / TEN SERVICES
           </p>
 
-          <a class="btn" href="#our-services">
-            Explore Our Services
-          </a>
-        </div>
-      </section>
+          <h1 id="sv-hero-title">
+            Ideas engineered <em>into impact.</em>
+          </h1>
 
-      <!-- Main service offerings -->
-      <section class="section" id="our-services">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">What we do</p>
+          <p class="sv-hero-lead">
+            Technology should make the next step clearer.
+            We combine technical thinking, digital creativity
+            and practical learning to help you build what matters.
+          </p>
 
-            <h2>Services designed to move you forward</h2>
+          <div class="sv-actions">
+            <a class="sv-button sv-button-primary" href="#our-services">
+              Explore our expertise
+              <span aria-hidden="true">↗</span>
+            </a>
 
-            <p>
-              From technical guidance to practical implementation,
-              explore our services and find the right starting point
-              for your next project.
-            </p>
+            <a class="sv-button sv-button-outline" href="contact.html">
+              Start a conversation
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
 
-          <div class="grid grid-2">
-            <article
-              class="card service-card"
-              id="technology-consulting"
-            >
-              <p class="eyebrow">Service 01</p>
+          <div class="sv-hero-note">
+            <span>01 — 05</span>
+            <span>FIVE DISCIPLINES. ONE CONNECTED APPROACH.</span>
+          </div>
+        </div>
 
-              <h3>Technology Consulting</h3>
+        <!-- Animated technology visualization -->
+        <div class="sv-visual" aria-hidden="true">
+          <div class="sv-visual-halo"></div>
+          <div class="sv-orbit sv-orbit-one"></div>
+          <div class="sv-orbit sv-orbit-two"></div>
+          <div class="sv-orbit sv-orbit-three"></div>
+
+          <div class="sv-core">
+            <div class="sv-core-inner">
+              TEN
+              <span>ENGINEERING NETWORK</span>
+            </div>
+          </div>
+
+          <div class="sv-float sv-float-top">
+            <span class="sv-float-dot"></span>
+            Strategy &amp; systems
+          </div>
+
+          <div class="sv-float sv-float-bottom">
+            Digital solutions
+            <span aria-hidden="true">↗</span>
+          </div>
+
+          <span class="sv-star sv-star-one">✳</span>
+          <span class="sv-star sv-star-two">✳</span>
+        </div>
+      </div>
+
+      <div class="sv-container sv-hero-bottom">
+        <span>BUILT AROUND YOUR AMBITION</span>
+        <a href="#our-services">
+          SCROLL TO EXPLORE
+          <span aria-hidden="true">↓</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- EXPERTISE TICKER -->
+    <div class="sv-ticker" aria-label="Our areas of expertise">
+      <div class="sv-ticker-track" aria-hidden="true">
+        <span>TECHNOLOGY CONSULTING</span><b>✳</b>
+        <span>WEB DEVELOPMENT</span><b>✳</b>
+        <span>INFORMATION RESEARCH</span><b>✳</b>
+        <span>ICT TRAINING</span><b>✳</b>
+        <span>AI SOLUTIONS</span><b>✳</b>
+
+        <span>TECHNOLOGY CONSULTING</span><b>✳</b>
+        <span>WEB DEVELOPMENT</span><b>✳</b>
+        <span>INFORMATION RESEARCH</span><b>✳</b>
+        <span>ICT TRAINING</span><b>✳</b>
+        <span>AI SOLUTIONS</span><b>✳</b>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="sv-section sv-expertise"
+             id="our-services"
+             aria-labelledby="sv-services-title">
+      <div class="sv-container">
+
+        <div class="sv-section-head" data-sv-reveal>
+          <div>
+            <p class="sv-section-label">01 / OUR EXPERTISE</p>
+            <h2 id="sv-services-title">
+              What can we <em>build together?</em>
+            </h2>
+          </div>
+          <p>
+            Different challenges call for different thinking.
+            Explore our connected services and find the
+            right place to begin.
+          </p>
+        </div>
+
+        <div class="sv-services-grid">
+
+          <!-- SERVICE 01 -->
+          <article class="sv-service sv-featured"
+                   id="technology-consulting"
+                   data-sv-reveal>
+            <div class="sv-service-top">
+              <span class="sv-service-index">01 / STRATEGY</span>
+              <span class="sv-service-symbol" aria-hidden="true">◎</span>
+            </div>
+
+            <div class="sv-service-content">
+              <h3>Technology<br>Consulting</h3>
 
               <p>
-                Make more informed technology decisions with guidance
-                tailored to your goals, challenges and available resources.
+                Make more informed technology decisions with
+                guidance tailored to your goals, challenges
+                and available resources.
               </p>
 
-              <ul class="check-list">
+              <ul>
                 <li>Technology consultation</li>
                 <li>Technical problem-solving guidance</li>
                 <li>Digital strategy and planning</li>
                 <li>Technology assessment and recommendations</li>
               </ul>
 
+              <a href="contact.html" class="sv-service-link">
+                Discuss technology consulting
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- SERVICE 02 -->
+          <article class="sv-service"
+                   id="web-development"
+                   data-sv-reveal>
+            <div class="sv-service-top">
+              <span class="sv-service-index">02 / DEVELOPMENT</span>
+              <span class="sv-service-symbol" aria-hidden="true">⌘</span>
+            </div>
+
+            <div class="sv-service-content">
+              <h3>Web Application<br>Development</h3>
+
               <p>
-                <a href="contact.html">
-                  Discuss technology consulting
-                </a>
-              </p>
-            </article>
-
-            <article
-              class="card service-card"
-              id="web-development"
-            >
-              <p class="eyebrow">Service 02</p>
-
-              <h3>Web Application Development</h3>
-
-              <p>
-                Establish a stronger digital presence with websites
-                and web applications designed around your users,
-                business objectives and operational needs.
+                Establish a stronger digital presence with
+                websites and web applications designed around
+                your users, business objectives and
+                operational needs.
               </p>
 
-              <ul class="check-list">
+              <ul>
                 <li>Business and organizational websites</li>
                 <li>Custom web applications</li>
                 <li>Responsive, mobile-friendly interfaces</li>
                 <li>Website updates and maintenance</li>
               </ul>
 
-              <p>
-                <a href="contact.html">
-                  Discuss your web project
-                </a>
-              </p>
-            </article>
+              <a href="contact.html" class="sv-service-link">
+                Discuss your web project
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
 
-            <article
-              class="card service-card"
-              id="information-research"
-            >
-              <p class="eyebrow">Service 03</p>
+          <!-- SERVICE 03 -->
+          <article class="sv-service"
+                   id="information-research"
+                   data-sv-reveal>
+            <div class="sv-service-top">
+              <span class="sv-service-index">03 / INSIGHT</span>
+              <span class="sv-service-symbol" aria-hidden="true">⌕</span>
+            </div>
 
-              <h3>Information Research</h3>
+            <div class="sv-service-content">
+              <h3>Information<br>Research</h3>
 
               <p>
                 Turn information into useful insights through
@@ -192,202 +240,243 @@
                 organized data that support informed decisions.
               </p>
 
-              <ul class="check-list">
+              <ul>
                 <li>Online and desk research</li>
                 <li>Information gathering and verification</li>
                 <li>Data organization and documentation</li>
                 <li>Research and information support</li>
               </ul>
 
+              <a href="contact.html" class="sv-service-link">
+                Discuss your research needs
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- SERVICE 04 -->
+          <article class="sv-service"
+                   id="ict-training"
+                   data-sv-reveal>
+            <div class="sv-service-top">
+              <span class="sv-service-index">04 / LEARNING</span>
+              <span class="sv-service-symbol" aria-hidden="true">✳</span>
+            </div>
+
+            <div class="sv-service-content">
+              <h3>ICT<br>Training</h3>
+
               <p>
-                <a href="contact.html">
-                  Discuss your research needs
-                </a>
-              </p>
-            </article>
-
-            <article
-              class="card service-card"
-              id="ict-training"
-            >
-              <p class="eyebrow">Service 04</p>
-
-              <h3>ICT Training</h3>
-
-              <p>
-                Build practical digital confidence through learning
-                designed to improve computer proficiency, productivity
-                and the effective use of everyday ICT tools.
+                Build practical digital confidence through
+                learning designed to improve computer
+                proficiency, productivity and the effective
+                use of everyday ICT tools.
               </p>
 
-              <ul class="check-list">
+              <ul>
                 <li>Computer literacy and practical training</li>
                 <li>Digital skills development</li>
                 <li>Productivity software and ICT tools</li>
                 <li>Training for teams and organizations</li>
               </ul>
 
+              <a href="contact.html" class="sv-service-link">
+                Enquire about ICT training
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- SERVICE 05 -->
+          <article class="sv-service sv-ai"
+                   id="ai-solutions"
+                   data-sv-reveal>
+            <div class="sv-service-top">
+              <span class="sv-service-index">05 / INNOVATION</span>
+              <span class="sv-service-symbol" aria-hidden="true">✦</span>
+            </div>
+
+            <div class="sv-service-content">
+              <h3>AI<br>Solutions</h3>
+
               <p>
-                <a href="contact.html">
-                  Enquire about ICT training
-                </a>
-              </p>
-            </article>
-
-            <article
-              class="card service-card"
-              id="ai-solutions"
-            >
-              <p class="eyebrow">Service 05</p>
-
-              <h3>AI Solutions</h3>
-
-              <p>
-                Explore practical ways to use artificial intelligence
-                to support productivity, streamline workflows and
-                approach everyday tasks more effectively.
+                Explore practical ways to use artificial
+                intelligence to support productivity,
+                streamline workflows and approach everyday
+                tasks more effectively.
               </p>
 
-              <ul class="check-list">
+              <ul>
                 <li>AI tools and use-case consultation</li>
                 <li>AI-assisted workflow planning</li>
                 <li>Productivity and process improvements</li>
                 <li>Practical AI skills and training</li>
               </ul>
 
-              <p>
-                <a href="contact.html">
-                  Discuss AI solutions
-                </a>
-              </p>
-            </article>
-          </div>
+              <a href="contact.html" class="sv-service-link">
+                Discuss AI solutions
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Target audiences -->
-      <section class="section section-alt" id="who-we-serve">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Who we serve</p>
+    <!-- WHO WE SERVE -->
+    <section class="sv-section sv-audiences"
+             id="who-we-serve"
+             aria-labelledby="sv-audiences-title">
+      <div class="sv-container">
 
-            <h2>Support for different goals and challenges</h2>
-
-            <p>
-              We work with people and teams with different technology
-              needs, from building new skills to improving digital
-              operations.
-            </p>
-          </div>
-
-          <div class="grid grid-3">
-            <article class="card">
-              <h3>Individuals</h3>
-
-              <p>
-                Develop digital skills, access research support and
-                get guidance with personal technology projects.
-              </p>
-            </article>
-
-            <article class="card">
-              <h3>Businesses</h3>
-
-              <p>
-                Build a stronger online presence and explore practical
-                digital solutions that support business operations.
-              </p>
-            </article>
-
-            <article class="card">
-              <h3>Organizations</h3>
-
-              <p>
-                Strengthen team capabilities through ICT training,
-                technical guidance and digital improvement initiatives.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- Conversion-focused call to action -->
-      <section class="cta">
-        <div class="container">
+        <div class="sv-section-head" data-sv-reveal>
           <div>
-            <h2>Let's work on your next idea.</h2>
-
-            <p>
-              Tell us what you want to achieve, the challenge you're
-              facing or the service you need. We'll discuss the
-              appropriate next steps.
-            </p>
+            <p class="sv-section-label">02 / WHO WE SERVE</p>
+            <h2 id="sv-audiences-title">
+              Technology for <em>every ambition.</em>
+            </h2>
           </div>
-
-          <a class="btn btn-light" href="contact.html">
-            Discuss Your Project
-          </a>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div>
-          <h2>Thinkficial Engineering Network</h2>
 
           <p>
-            Technology consulting, digital solutions, research
-            and practical ICT training.
+            Whether you're learning, growing a business or
+            strengthening an organization, we meet you where you are.
           </p>
         </div>
 
-        <div>
-          <h3>Quick Links</h3>
+        <div class="sv-audience-grid">
+          <article class="sv-audience" data-sv-reveal>
+            <span class="sv-audience-icon" aria-hidden="true">↗</span>
+            <span class="sv-audience-number">01</span>
+            <h3>Individuals</h3>
+            <p>
+              Develop digital skills, access research support
+              and get guidance with personal technology projects.
+            </p>
+          </article>
 
-          <ul class="footer-links">
-            <li><a href="about.html">About</a></li>
-            <li>
-              <a href="services.html" aria-current="page">Services</a>
-            </li>
-            <li><a href="academy.html">Academy</a></li>
-            <li><a href="management.html">Our Team</a></li>
-          </ul>
-        </div>
+          <article class="sv-audience" data-sv-reveal>
+            <span class="sv-audience-icon" aria-hidden="true">◈</span>
+            <span class="sv-audience-number">02</span>
+            <h3>Businesses</h3>
+            <p>
+              Build a stronger online presence and explore
+              practical digital solutions that support
+              business operations.
+            </p>
+          </article>
 
-        <div>
-          <h3>Contact</h3>
-
-          <ul class="footer-links">
-            <li>
-              <a href="mailto:thinkficialengineeringnetwork@gmail.com">
-                Email us
-              </a>
-            </li>
-
-            <li>
-              <a href="tel:+2349063577772">Call us</a>
-            </li>
-
-            <li>
-              <a
-                href="https://wa.me/2349082965308"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                WhatsApp
-              </a>
-            </li>
-
-            <li><a href="contact.html">Contact form</a></li>
-          </ul>
+          <article class="sv-audience" data-sv-reveal>
+            <span class="sv-audience-icon" aria-hidden="true">◎</span>
+            <span class="sv-audience-number">03</span>
+            <h3>Organizations</h3>
+            <p>
+              Strengthen team capabilities through ICT training,
+              technical guidance and digital improvement initiatives.
+            </p>
+          </article>
         </div>
       </div>
+    </section>
 
-      <div class="container footer-bottom">
-        &copy; <span data-year>2026</span>
-        Thinkficial Engineering Network. All rights reserved.
+    <!-- OUR PROCESS -->
+    <section class="sv-section sv-process"
+             aria-labelledby="sv-process-title">
+      <div class="sv-container sv-process-layout">
+
+        <div data-sv-reveal>
+          <p class="sv-section-label">03 / HOW WE WORK</p>
+          <h2 id="sv-process-title">
+            A clearer path <em>from idea to action.</em>
+          </h2>
+
+          <p class="sv-process-intro">
+            We focus on understanding the challenge before
+            recommending a direction.
+          </p>
+
+          <a class="sv-inline-link" href="contact.html">
+            Let's talk about your project
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="sv-steps">
+          <div class="sv-step" data-sv-reveal>
+            <span>01</span>
+            <div>
+              <h3>Understand</h3>
+              <p>Tell us about your goals, needs and constraints.</p>
+            </div>
+          </div>
+
+          <div class="sv-step" data-sv-reveal>
+            <span>02</span>
+            <div>
+              <h3>Explore</h3>
+              <p>
+                We discuss suitable approaches and
+                practical next steps.
+              </p>
+            </div>
+          </div>
+
+          <div class="sv-step" data-sv-reveal>
+            <span>03</span>
+            <div>
+              <h3>Move forward</h3>
+              <p>
+                Agree on a direction for your project,
+                training or support needs.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-    </footer>
-  </class=>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="sv-contact"
+             aria-labelledby="sv-contact-title">
+      <div class="sv-container sv-contact-inner">
+
+        <div data-sv-reveal>
+          <p class="sv-section-label">04 / LET'S CONNECT</p>
+          <h2 id="sv-contact-title">
+            Your next big idea <em>starts here.</em>
+          </h2>
+          <p>
+            Tell us what you want to achieve, the challenge
+            you're facing or the service you need.
+            We'll discuss the appropriate next steps.
+          </p>
+        </div>
+
+        <a class="sv-contact-circle"
+           href="contact.html"
+           aria-label="Discuss your project">
+          <span aria-hidden="true">↗</span>
+          <strong>Discuss your project</strong>
+        </a>
+      </div>
+
+      <span class="sv-contact-watermark" aria-hidden="true">
+        POSSIBILITIES.
+      </span>
+    </section>
+
+  </main>
+
+  <!-- Shared footer -->
+  <footer data-site-footer class="shared-footer shared-fallback">
+    <div class="shared-container">
+      <p>Thinkficial Engineering Network</p>
+      <a href="mailto:thinkficialengineeringnetwork@gmail.com">
+        Email Our Team
+      </a>
+      <a href="contact.html">Contact Details</a>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+</body>
 </html>
