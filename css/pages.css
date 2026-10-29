@@ -71,6 +71,71 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================================
+   MANAGEMENT CARDS — HOVER RISE & GLOW
+   ========================================= */
+
+.team-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+  border: 1px solid rgba(0, 180, 255, 0.12);
+  will-change: transform;
+}
+
+/* Rise and glow on hover */
+.team-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(0, 180, 255, 0.7);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.18),
+    0 0 15px rgba(0, 180, 255, 0.25),
+    0 0 35px rgba(0, 180, 255, 0.15);
+}
+
+/* Avatar glow */
+.team-card .avatar {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background-color 0.35s ease;
+}
+
+.team-card:hover .avatar {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(0, 180, 255, 0.4);
+}
+
+/* Team member text */
+.team-card .team-info h3 {
+  transition: color 0.3s ease;
+}
+
+.team-card:hover .team-info h3 {
+  color: #00b4ff;
+}
+
+/* Keyboard accessibility */
+.team-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 0 0 3px rgba(0, 180, 255, 0.3);
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .team-card,
+  .team-card .avatar,
+  .team-card .team-info h3 {
+    transition: none;
+  }
+
+  .team-card:hover,
+  .team-card:hover .avatar {
 /* ==========================================
    THINKFICIAL ACADEMY - PREMIUM ENHANCEMENTS
    ========================================== */
