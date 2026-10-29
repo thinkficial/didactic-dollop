@@ -71,3 +71,149 @@
     grid-template-columns: 1fr;
   }
 }
+/* ==========================================
+   THINKFICIAL ACADEMY - PREMIUM ENHANCEMENTS
+   ========================================== */
+
+/* 1. Smooth course card animation */
+.course-card {
+  position: relative;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(9, 21, 41, 0.12);
+  border-color: rgba(0, 123, 255, 0.35);
+}
+
+/* 2. Animated blue accent line */
+.course-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  height: 3px;
+  border-radius: 3px;
+  background: #087bdf;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.course-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* 3. Course heading animation */
+.course-card h3 {
+  transition: color 0.3s ease;
+}
+
+.course-card:hover h3 {
+  color: #087bdf;
+}
+
+/* 4. Premium learning panel hover */
+.highlight-panel {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.highlight-panel:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 32px rgba(9, 21, 41, 0.1);
+}
+
+/* 5. Subtle course label glow */
+.course-card .course-label {
+  transition: color 0.3s ease,
+              text-shadow 0.3s ease;
+}
+
+.course-card:hover .course-label {
+  text-shadow: 0 0 10px rgba(8, 123, 223, 0.2);
+}
+
+/* 6. Reduced-motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .course-card,
+  .course-card::before,
+  .course-card h3,
+  .course-card .course-label,
+  .highlight-panel {
+    transition: none;
+  }
+
+  .course-card:hover,
+  .highlight-panel:hover {
+    transform: none;
+  }
+}
+
+/* ===================================
+   ACADEMY HERO - PREMIUM EFFECTS
+   =================================== */
+
+/* 1. Smooth heading entrance */
+.academy-hero h1 {
+  animation: academyFadeUp 0.9s ease both;
+  transition: text-shadow 0.35s ease;
+}
+
+/* Soft heading glow on hover */
+.academy-hero h1:hover {
+  text-shadow: 0 0 22px rgba(135, 206, 250, 0.3);
+}
+
+/* 2. Subtitle entrance */
+.academy-hero .lead {
+  animation: academyFadeUp 1s ease 0.15s both;
+}
+
+/* 3. Eyebrow text entrance */
+.academy-hero .eyebrow {
+  animation: academyFadeUp 0.7s ease both;
+}
+
+/* 4. Premium button animation */
+.academy-hero .btn {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  animation: academyFadeUp 1s ease 0.3s both;
+}
+
+.academy-hero .btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.25);
+}
+
+/* 5. Smooth entrance keyframes */
+@keyframes academyFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 6. Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .academy-hero h1,
+  .academy-hero .lead,
+  .academy-hero .eyebrow,
+  .academy-hero .btn {
+    animation: none;
+  }
+}
+
