@@ -17,6 +17,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/contact.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <script src="js/main.js" defer></script>
     <script src="js/contact.js" defer></script>
   </head>
@@ -54,40 +55,15 @@
         </symbol>
       </defs>
     </svg>
-    <header class="contact-header">
-      <nav class="contact-nav contact-container" aria-label="Main navigation">
-        <a
-          class="contact-brand"
-          href="index.html"
-          aria-label="Thinkficial Engineering Network, home"
-          ><img
-            src="assets/images/TEN_Logo.png"
-            alt="Thinkficial Engineering Network"
-            width="1184"
-            height="461"
-        /></a>
-        <button
-          class="menu-btn contact-menu"
-          type="button"
-          aria-controls="site-navigation"
-          aria-expanded="false"
-          aria-label="Open navigation menu"
-        >
-          ☰
-        </button>
-        <ul class="nav-links contact-nav-links" id="site-navigation">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="academy.html">Academy</a></li>
-          <li><a href="management.html">Management</a></li>
-          <li>
-            <a class="contact-nav-contact" href="#enquiry-form"
-              >Let’s Talk
-              <svg aria-hidden="true"><use href="#icon-diagonal" /></svg
-            ></a>
-          </li>
-        </ul>
+    <!-- Replaced by components/layout.html; these links also work without JavaScript. -->
+    <header data-site-header class="shared-header shared-fallback">
+      <nav class="shared-container" aria-label="Main navigation">
+        <a href="index.html">TEN Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="academy.html">Academy</a>
+        <a href="management.html">Management</a>
+        <a href="#enquiry-form">Let’s Talk</a>
       </nav>
     </header>
     <main id="main-content">
@@ -368,58 +344,14 @@
         </div>
       </section>
     </main>
-    <footer class="contact-footer">
-      <div class="contact-container contact-footer-grid">
-        <div class="contact-footer-brand">
-          <a
-            href="index.html"
-            aria-label="Thinkficial Engineering Network, home"
-            ><img
-              src="assets/images/TEN_Logo.png"
-              alt="Thinkficial Engineering Network"
-              width="1184"
-              height="461"
-              loading="lazy"
-          /></a>
-          <p>Ideas. Skills. Possibilities.<br />Thoughtfully connected.</p>
-        </div>
-        <div>
-          <h2>Explore TEN</h2>
-          <ul>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Our Services</a></li>
-            <li><a href="academy.html">TEN Academy</a></li>
-            <li><a href="management.html">Our People</a></li>
-          </ul>
-        </div>
-        <div>
-          <h2>Get In Touch</h2>
-          <ul>
-            <li>
-              <a href="mailto:thinkficialengineeringnetwork@gmail.com"
-                >Email Our team
-                <svg aria-hidden="true"><use href="#icon-diagonal" /></svg
-              ></a>
-            </li>
-            <li><a href="tel:+2349063577772">Call Us</a></li>
-            <li>
-              <a
-                href="https://wa.me/2349082965308"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Chat On WhatsApp
-                <svg aria-hidden="true"><use href="#icon-diagonal" /></svg
-              ></a>
-            </li>
-            <li><a href="contact.html">Contact Details</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="contact-container contact-footer-bottom">
-        <p>
-          &copy; <span data-year>2026</span> Thinkficial Engineering Network.
-        </p>
-        <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+    <footer data-site-footer class="shared-footer shared-fallback">
+      <div class="shared-container">
+        <p>Thinkficial Engineering Network</p>
+        <a href="mailto:thinkficialengineeringnetwork@gmail.com"
+          >Email Our Team</a
+        >
+        <a href="contact.html">Contact Details</a>
+        <a href="#top">Back to top ↑</a>
       </div>
     </footer>
   </body>
