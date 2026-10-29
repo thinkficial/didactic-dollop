@@ -1,0 +1,94 @@
+<!-- Shared navbar and footer. URLs are relative to the site root resolved by main.js. -->
+<template id="site-header-template">
+  <header class="shared-header">
+    <nav class="shared-nav shared-container" aria-label="Main navigation">
+      <a
+        class="shared-brand"
+        href="index.html"
+        aria-label="Thinkficial Engineering Network, home"
+        ><img
+          src="assets/images/TEN_Logo.png"
+          alt="Thinkficial Engineering Network"
+          width="1184"
+          height="461"
+      /></a>
+      <button
+        class="shared-menu"
+        type="button"
+        aria-controls="site-navigation"
+        aria-expanded="false"
+        aria-label="Open navigation menu"
+      >
+        ☰
+      </button>
+      <ul class="shared-nav-links" id="site-navigation">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="academy.html">Academy</a></li>
+        <li><a href="management.html">Management</a></li>
+        <li>
+          <a class="shared-nav-contact" data-contact-link href="contact.html"
+            >Let’s Talk
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 17 17 7M7 7h10v10" /></svg
+          ></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</template>
+<template id="site-footer-template">
+  <footer class="shared-footer">
+    <div class="shared-container shared-footer-grid">
+      <div class="shared-footer-brand">
+        <a href="index.html" aria-label="Thinkficial Engineering Network, home"
+          ><img
+            src="assets/images/TEN_Logo.png"
+            alt="Thinkficial Engineering Network"
+            width="1184"
+            height="461"
+            loading="lazy"
+        /></a>
+        <p>Ideas. Skills. Possibilities.<br />Thoughtfully connected.</p>
+      </div>
+      <div>
+        <h2>Explore TEN</h2>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="academy.html">TEN Academy</a></li>
+          <li><a href="management.html">Our People</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Get In Touch</h2>
+        <ul>
+          <li>
+            <a href="mailto:thinkficialengineeringnetwork@gmail.com"
+              >Email Our team
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 17 17 7M7 7h10v10" /></svg
+            ></a>
+          </li>
+          <li><a href="tel:+2349063577772">Call Us</a></li>
+          <li>
+            <a
+              href="https://wa.me/2349082965308"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Chat On WhatsApp
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 17 17 7M7 7h10v10" /></svg
+            ></a>
+          </li>
+          <li><a href="contact.html">Contact Details</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="shared-container shared-footer-bottom">
+      <p>&copy; <span data-year>2026</span> Thinkficial Engineering Network.</p>
+      <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+</template>

@@ -25,6 +25,7 @@ This project is a reorganized, six-page version of the earlier `didactic-dollop`
     - [HTML](#html)
     - [CSS](#css)
     - [JavaScript](#javascript)
+    - [Adopt the shared navbar and footer](#adopt-the-shared-navbar-and-footer)
   - [Contact form behavior](#contact-form-behavior)
   - [How to customize the website](#how-to-customize-the-website)
     - [Image guidance](#image-guidance)
@@ -40,19 +41,19 @@ This project is a reorganized, six-page version of the earlier `didactic-dollop`
 
 ## Website pages
 
-| Page | File | Purpose |
-| --- | --- | --- |
-| Home | `index.html` | Introduces TEN, previews services and TEN Academy, and links to enquiries. |
-| About | `about.html` | Describes TEN's background, mission, vision, and values. |
-| Services | `services.html` | Presents technology consulting, web development, research, ICT training, and AI-related services. |
-| Academy | `academy.html` | Introduces training areas and listed courses; availability must be confirmed with TEN. |
-| Management | `management.html` | Displays team names, roles, and available portraits. |
-| Contact | `contact.html` | Displays contact channels and prepares email/WhatsApp enquiry drafts. |
+| Page       | File              | Purpose                                                                                           |
+| ---------- | ----------------- | ------------------------------------------------------------------------------------------------- |
+| Home       | `index.html`      | Introduces TEN, previews services and TEN Academy, and links to enquiries.                        |
+| About      | `about.html`      | Describes TEN's background, mission, vision, and values.                                          |
+| Services   | `services.html`   | Presents technology consulting, web development, research, ICT training, and AI-related services. |
+| Academy    | `academy.html`    | Introduces training areas and listed courses; availability must be confirmed with TEN.            |
+| Management | `management.html` | Displays team names, roles, and available portraits.                                              |
+| Contact    | `contact.html`    | Displays contact channels and prepares email/WhatsApp enquiry drafts.                             |
 
 ## Features
 
 - Responsive layout with desktop navigation and a collapsible mobile menu.
-- Consistent header, navigation, footer, colors, and typography across six pages.
+- Shared premium navbar and footer on Home and Contact, ready for other pages to adopt.
 - Active-page indication using `aria-current="page"`.
 - Semantic HTML sections, skip-to-content link, visible form labels, and keyboard-accessible controls.
 - Reduced-motion CSS preference support and lazy-loaded team portraits.
@@ -63,12 +64,12 @@ This project is a reorganized, six-page version of the earlier `didactic-dollop`
 
 ## Technology stack
 
-| Technology | Use |
-| --- | --- |
-| HTML5 | Page content, structure, forms, and accessibility markup. |
-| CSS3 | Global design system, page-specific styles, and responsive layouts. |
+| Technology         | Use                                                                           |
+| ------------------ | ----------------------------------------------------------------------------- |
+| HTML5              | Page content, structure, forms, and accessibility markup.                     |
+| CSS3               | Global design system, page-specific styles, and responsive layouts.           |
 | Vanilla JavaScript | Mobile navigation, current-page indicator, footer year, and enquiry handling. |
-| Local image assets | Organization logos and available staff portraits. |
+| Local image assets | Organization logos and available staff portraits.                             |
 
 **No React, bundler, npm packages, database, backend, or build process are required.**
 
@@ -82,18 +83,22 @@ ten-refactored/
 ├── academy.html
 ├── management.html
 ├── contact.html
+├── components/
+│   └── layout.html           # Single source for the premium navbar and footer
 ├── css/
 │   ├── style.css             # Global styling and shared components
-│   └── pages.css             # Individual page layouts and form/team styles
+│   ├── pages.css             # About, Services, Academy, and Management layouts
+│   ├── home.css              # Home content and animation styles
+│   └── contact.css           # Contact content and animation styles
 ├── js/
 │   ├── main.js               # Navigation and footer interactions
-│   └── contact.js            # Contact form validation and draft handoff
-├── asssets/
+│   ├── home.js               # Home motion and service slider
+│   └── contact.js            # Contact motion, validation, and draft handoff
+├── assets/
 │   └── images/
-│       ├── TEN Logo.png
+│       ├── TEN_Logo.png
+│       ├── TEN_svg.png
 │       ├── TEN Logo 2.png
-│       ├── TEN Logo (1) (1).png
-│       ├── TEN Logo (2).png
 │       ├── ENGR. AUGUSTINE.jpg
 │       ├── MR RAPHAEL Alemoh.jpg
 │       ├── MISS Lilian.jpg
@@ -102,7 +107,7 @@ ten-refactored/
 └── README.md
 ```
 
-All paths are relative to the project root. The image folder is named `asssets` (with three `s` characters), matching the files in this checkout; **do not rename files without updating their references**.
+All paths are relative to the project root. Current images are in `assets/images/`; keep filenames and references in sync.
 
 ## Getting started
 
@@ -132,7 +137,7 @@ py -m http.server 8000 --bind 127.0.0.1
 
 Then open **<http://127.0.0.1:8000/>** in your browser. Stop the server with `Ctrl+C`.
 
-Alternatively, open `index.html` with the **Live Server** extension in VS Code. You can also open the HTML file directly, but a local HTTP server is preferred for consistent testing.
+Alternatively, open `index.html` with the **Live Server** extension in VS Code. Use HTTP for preview: shared HTML imports require Live Server or another local server. Opening via `file://` shows basic fallback links instead of the full shared layout.
 
 ### 3. Explore the pages
 
@@ -144,11 +149,11 @@ Visit the Home, About, Services, Academy, Management, and Contact pages. Check b
 
 ### HTML
 
-Each `.html` file owns its page-specific content and loads these shared stylesheets:
+Each `.html` file owns its page content. The older pages load the following stylesheets; Home and Contact use their respective page stylesheet followed by `css/style.css`:
 
 ```html
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/pages.css" />
 ```
 
 Every page also loads the shared JavaScript:
@@ -166,14 +171,54 @@ Only the contact page loads the additional form script:
 ### CSS
 
 - `css/style.css`: color variables, resets, typography, navigation, buttons, sections, cards, footer, breakpoints, and accessibility-related styles.
-- `css/pages.css`: page-specific layouts, academy/course cards, management profiles, and contact form styles.
+- `css/pages.css`: About, Services, Academy, and Management layouts.
+- `css/home.css` and `css/contact.css`: their respective page content, responsiveness, and animations; navbar/footer rules live in `css/style.css`.
 
 ### JavaScript
 
-- `js/main.js`: opens/closes the mobile menu, updates its accessibility state, highlights the current page, and sets the footer year.
+- `js/main.js`: imports the shared HTML, initializes navigation and active-page state, updates the footer year, and follows the page motion controls. It also supports pages that still use the older markup.
 - `js/contact.js`: validates name, email, phone, and message before preparing an email or WhatsApp draft.
 
-**Important maintenance note:** Header and footer markup is currently repeated across the six HTML pages. When changing navigation or footer links, update *every* page to keep them consistent. A shared template system is a possible future improvement, not part of the present dependency-free implementation.
+### Adopt the shared navbar and footer
+
+Home and Contact already import both components from **one file**, `components/layout.html`. Edit that file to update their markup, `css/style.css` for their styles, and `js/main.js` for their behavior. The other four pages retain their current markup until their owners adopt this layout.
+
+For teammates working on another page:
+
+1. Keep the page-specific stylesheet, then load the shared stylesheet. Load `main.js` once with `defer`:
+
+   ```html
+   <link rel="stylesheet" href="css/pages.css" />
+   <link rel="stylesheet" href="css/style.css" />
+   <script src="js/main.js" defer></script>
+   ```
+
+2. Replace the old header and footer with these placeholders. The inner links remain usable if the import cannot load. Add `id="top"` to the body for the footer's back-to-top link:
+
+   ```html
+   <body id="top">
+     <header data-site-header class="shared-header shared-fallback">
+       <nav class="shared-container" aria-label="Main navigation">
+         <a href="index.html">TEN Home</a>
+         <a href="contact.html">Let’s Talk</a>
+       </nav>
+     </header>
+
+     <main><!-- Your page content --></main>
+
+     <footer data-site-footer class="shared-footer shared-fallback">
+       <div class="shared-container">
+         <a href="contact.html">Contact Details</a>
+         <a href="#top">Back to top ↑</a>
+       </div>
+     </footer>
+   </body>
+   ```
+
+3. Use the same DM Sans Google Fonts stylesheet as Home/Contact for matching typography. Keep page styles scoped to page content so they do not override shared components. Remove obsolete header/footer markup and page-specific header/footer rules.
+4. Preview through Live Server and verify mobile navigation and the active page. Publish `components/` alongside `css/`, `js/`, and `assets/`.
+
+The loader makes one request for both templates and resolves component links/images from the site root using the location of `js/main.js`, including GitHub Pages repository subpaths. Nested pages must adjust their stylesheet/script and fallback link paths. Icons are inline SVG and need no page-specific sprite. On Contact, “Let’s Talk” jumps to `#enquiry-form`; elsewhere it opens Contact. Page scripts that need the imported markup can listen for the document's `site:layout-ready` event.
 
 ## Contact form behavior
 
@@ -196,31 +241,32 @@ For direct form submissions in a later version, choose a reputable hosted form s
 
 ## How to customize the website
 
-| Change | Where to edit |
-| --- | --- |
-| Homepage text or calls to action | `index.html` |
-| Organization description, mission, or vision | `about.html` |
-| Offered services | `services.html` |
-| Course descriptions or training information | `academy.html` |
-| Team members and roles | `management.html` |
-| Visible contact details and form labels | `contact.html` |
-| Email/WhatsApp draft destinations | `js/contact.js` |
-| Site colors and shared design | `css/style.css` (`:root` variables) |
-| Team photos, forms, or page layouts | `css/pages.css` |
-| Navigation behavior | `js/main.js` |
-| Logos and portrait images | `asssets/images/` |
+| Change                                       | Where to edit                       |
+| -------------------------------------------- | ----------------------------------- |
+| Homepage text or calls to action             | `index.html`                        |
+| Organization description, mission, or vision | `about.html`                        |
+| Offered services                             | `services.html`                     |
+| Course descriptions or training information  | `academy.html`                      |
+| Team members and roles                       | `management.html`                   |
+| Visible contact details and form labels      | `contact.html`                      |
+| Email/WhatsApp draft destinations            | `js/contact.js`                     |
+| Site colors and shared design                | `css/style.css` (`:root` variables) |
+| Team photos, forms, or page layouts          | `css/pages.css`                     |
+| Shared navbar/footer markup                  | `components/layout.html`            |
+| Navigation and shared import behavior        | `js/main.js`                        |
+| Logos and portrait images                    | `assets/images/`                    |
 
 ### Image guidance
 
 Keep image references accurate and encode spaces as `%20` in image URLs, e.g.:
 
 ```html
-<img src="asssets/images/TEN%20Logo.png" alt="" width="52" height="55">
+<img src="assets/images/TEN_Logo.png" alt="" width="52" height="55" />
 ```
 
 Use descriptive alternative text for informative images and `alt=""` for decorative images. Compress photographs before adding them and only use images you have permission to publish.
 
-Five management portraits are mapped to the existing files in `asssets/images/`. The remaining four entries use initials as placeholders; **do not substitute unrelated photographs**. Confirm each identity, photograph, role, and spelling with the organization.
+Five management portraits are mapped to the existing files in `assets/images/`. The remaining four entries use initials as placeholders; **do not substitute unrelated photographs**. Confirm each identity, photograph, role, and spelling with the organization.
 
 ## Migration from the original project
 
@@ -234,7 +280,7 @@ The earlier `didactic-dollop` archive included alternative pages and overlapping
 - Styling/scripts in the root, including `style.css`, `academy.css`, and `app.js`.
 - An image directory named `asssets/` (with three `s` characters).
 
-The reorganized version uses one canonical file for each page, puts assets under `asssets/images/`, and separates shared styles and scripts into `css/` and `js/`. The Academy page is a single valid HTML document rather than containing two document structures.
+The reorganized version uses one canonical file for each page, puts assets under `assets/images/`, and separates shared styles and scripts into `css/` and `js/`. The Academy page is a single valid HTML document rather than containing two document structures.
 
 The page text and presentation have been **edited and simplified**, not copied verbatim in every location. Treat this as a refactor and content refresh, **not a guaranteed one-to-one content preservation**.
 
@@ -299,7 +345,7 @@ General steps:
 1. Finish the pre-launch checklist and approve the content.
 2. Upload the **contents** of the `ten-refactored` folder as the published site root.
 3. Ensure `index.html` is at the host's site root.
-4. Preserve the `css/`, `js/`, and `asssets/images/` folder paths.
+4. Preserve the `components/`, `css/`, `js/`, and `assets/images/` folder paths.
 5. After publishing, test every route, image, navigation control, and contact action on the live URL.
 
 This README does not assert that a live deployment currently exists. Any host-specific configuration must be documented after the actual hosting provider is selected.
@@ -309,7 +355,7 @@ This README does not assert that a live deployment currently exists. Any host-sp
 ### Current limitations
 
 - Static-only contact handoff; no backend, database, inbox integration, or delivery confirmation.
-- Headers and footers are duplicated across HTML files.
+- About, Services, Academy, and Management still use their older layout until their owners adopt the shared component.
 - Four management profiles have initial-based placeholders, pending approved photos.
 - No automated browser tests, deployment pipeline, or confirmed live hosting configuration.
 - Course offerings, team details, contact numbers, and descriptive claims require organizational verification.
@@ -320,7 +366,7 @@ This README does not assert that a live deployment currently exists. Any host-sp
 2. Add real course details: duration, schedules, prerequisites, fees, and enrollment requirements.
 3. Introduce a secure hosted enquiry form if direct submissions are required.
 4. Add a privacy notice and data-handling information if collecting personal data through an integrated form.
-5. Introduce HTML templating only if the number of pages or maintenance burden increases.
+5. Adopt the shared navbar/footer on the remaining four pages.
 6. Add automated checks for links, HTML validity, accessibility, and responsive behavior.
 7. Add page-specific social-sharing metadata and verify SEO content before launch.
 
