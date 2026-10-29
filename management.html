@@ -16,18 +16,10 @@
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
-    <header class="site-header">
-      <nav class="navbar container" aria-label="Main navigation">
-        <a
-          class="brand"
-          href="index.html"
-          aria-label="Thinkficial Engineering Network, home"
-        >
-          <img src="asssets/images/TEN%20Logo.png" alt="" width="52" height="55" />
-          <span>THINKFICIAL<br />ENGINEERING NETWORK</span>
-        </a>
+    <header data-site-header class="shared-header shared-fallback">
+      <nav class="shared-container" aria-label="Main navigation">
         <button
-          class="menu-btn"
+          class="shared-menu-btn"
           type="button"
           aria-controls="site-navigation"
           aria-expanded="false"
@@ -35,7 +27,7 @@
         >
           ☰
         </button>
-        <ul class="nav-links" id="site-navigation">
+        <ul class="shared-nav-links" id="site-navigation">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
@@ -43,6 +35,7 @@
           <li><a href="management.html">Management</a></li>
           <li><a href="contact.html" class="nav-contact">Contact</a></li>
         </ul>
+
       </nav>
     </header>
 
@@ -71,14 +64,7 @@
 
           <div class="grid grid-3">
             <article class="card team-card">
-              <img
-                class="team-photo"
-                src="asssets/images/ENGR.%20AUGUSTINE.jpg"
-                alt="Portrait of Engr. Augustine Umeliwu"
-                loading="lazy"
-                width="360"
-                height="250"
-              />
+              <div class="avatar" aria-label="Photograph not available">AU</div>
               <div class="team-info">
                 <h3>Engr. Augustine Umeliwu</h3>
                 <p>Manager</p>
@@ -86,14 +72,7 @@
             </article>
 
             <article class="card team-card">
-              <img
-                class="team-photo"
-                src="asssets/images/MR%20RAPHAEL%20Alemoh.jpg"
-                alt="Portrait of Raphael Alemoh"
-                loading="lazy"
-                width="360"
-                height="250"
-              />
+              <div class="avatar" aria-label="Photograph not available">RA</div>
               <div class="team-info">
                 <h3>Raphael Alemoh</h3>
                 <p>CTO</p>
@@ -101,14 +80,7 @@
             </article>
 
             <article class="card team-card">
-              <img
-                class="team-photo"
-                src="asssets/images/MISS%20Lilian.jpg"
-                alt="Portrait of Miss Lilian Iwuorah"
-                loading="lazy"
-                width="360"
-                height="250"
-              />
+              <div class="avatar" aria-label="Photograph not available">LI</div>
               <div class="team-info">
                 <h3>Miss Lilian Iwuorah</h3>
                 <p>Virtual Assistant</p>
@@ -116,14 +88,7 @@
             </article>
 
             <article class="card team-card">
-              <img
-                class="team-photo"
-                src="asssets/images/MISS%20Grace%20Ogbonna.jpg"
-                alt="Portrait of Miss Grace Ogbonna"
-                loading="lazy"
-                width="360"
-                height="250"
-              />
+              <div class="avatar" aria-label="Photograph not available">GO</div>
               <div class="team-info">
                 <h3>Miss Grace Ogbonna</h3>
                 <p>Digital Marketer</p>
@@ -139,14 +104,7 @@
             </article>
 
             <article class="card team-card">
-              <img
-                class="team-photo"
-                src="asssets/images/MISS%20Favour%20Barrau.jpg"
-                alt="Portrait of Miss Favour Barau"
-                loading="lazy"
-                width="360"
-                height="250"
-              />
+              <div class="avatar" aria-label="Photograph not available">FB</div>
               <div class="team-info">
                 <h3>Miss Favour Barau</h3>
                 <p>Brand Manager</p>
@@ -185,55 +143,16 @@
           <div>
             <h2>Want to speak with the team?</h2>
             <p>We welcome enquiries about projects, training and services.</p>
-          </div>
-          <a class="btn btn-light" href="contact.html">Contact TEN</a>
-        </div>
+         
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div>
-          <h2>Thinkficial Engineering Network</h2>
-          <p>
-            Technology, consultancy, digital solutions and practical ICT
-            training.
-          </p>
-        </div>
-        <div>
-          <h3>Quick Links</h3>
-          <ul class="footer-links">
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="academy.html">Academy</a></li>
-            <li><a href="management.html">Our Team</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Contact</h3>
-          <ul class="footer-links">
-            <li>
-              <a href="mailto:thinkficialengineeringnetwork@gmail.com"
-                >Email us</a
-              >
-            </li>
-            <li><a href="tel:+2349063577772">Call us</a></li>
-            <li>
-              <a
-                href="https://wa.me/2349082965308"
-                target="_blank"
-                rel="noopener noreferrer"
-                >WhatsApp</a
-              >
-            </li>
-            <li><a href="contact.html">Contact form</a></li>
-          </ul>
-        </div>
+    <footer data-site-footer class="shared-footer shared-fallback">
+      <div class="shared-container">
+        <a href="contact.html">contact details</a>
+         <a href="stop">Back to top </a>
       </div>
-      <div class="container footer-bottom">
-        &copy; <span data-year>2026</span> Thinkficial Engineering Network. All
-        rights reserved.
-      </div>
+
     </footer>
   </body>
 </html>
