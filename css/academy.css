@@ -1,0 +1,500 @@
+
+/* =========================================
+   THINKFICIAL ACADEMY - PREMIUM HERO
+   ========================================= */
+
+/* MAIN HERO BACKGROUND */
+.academy-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  background: linear-gradient(
+    115deg,
+    #071427 0%,
+    #0b2039 55%,
+    #10395c 100%
+  );
+
+  color: #ffffff;
+  padding: 85px 0 28px;
+}
+
+/* SUBTLE TECHNOLOGY GRID */
+.academy-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(108, 199, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(108, 199, 255, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 54px 54px;
+}
+
+/* SOFT BLUE BACKGROUND GLOW */
+.academy-hero::after {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: -180px;
+  right: -160px;
+  z-index: -1;
+  pointer-events: none;
+
+  background: radial-gradient(
+    circle,
+    rgba(26, 154, 228, 0.2),
+    transparent 70%
+  );
+}
+
+/* HERO TWO-COLUMN LAYOUT */
+.academy-hero .academy-hero-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 40px;
+  min-height: 480px;
+}
+
+/* LEFT CONTENT */
+.academy-hero-copy {
+  position: relative;
+  z-index: 2;
+}
+
+/* SMALL TOP LABEL */
+.academy-hero .academy-kicker {
+  color: #77e4ff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  margin-bottom: 24px;
+}
+
+/* BIG HEADLINE */
+.academy-hero .academy-hero-copy h1 {
+  font-size: clamp(2.7rem, 5.5vw, 5.8rem);
+  font-weight: 850;
+  line-height: 1.06;
+  letter-spacing: -0.055em;
+  color: #ffffff;
+  max-width: 760px;
+  margin: 0 0 30px;
+}
+
+/* CYAN HIGHLIGHTED WORDS */
+.academy-hero .academy-hero-copy h1 span {
+  display: block;
+  color: #7ce5ff;
+}
+
+/* DESCRIPTION */
+.academy-hero .academy-hero-copy .lead {
+  color: #bfd7f0;
+  font-size: 1.08rem;
+  line-height: 1.9;
+  max-width: 560px;
+}
+
+/* BUTTON ROW */
+.academy-hero .academy-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+/* SHARED BUTTON TRANSITIONS */
+.academy-hero .academy-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.academy-hero .academy-actions .btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 183, 255, 0.2);
+}
+
+/* SECOND BUTTON */
+.academy-hero .academy-btn-outline {
+  background: rgba(255, 255, 255, 0.035);
+  color: #ffffff;
+  border: 1px solid rgba(145, 205, 255, 0.35);
+}
+
+.academy-hero .academy-btn-outline:hover {
+  color: #7ce5ff;
+  border-color: #7ce5ff;
+}
+
+/* BOTTOM LABELS */
+.academy-hero-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  margin-top: 65px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+.academy-hero-meta strong {
+  color: #7ce5ff;
+  letter-spacing: 0.12em;
+}
+
+.academy-hero-meta span {
+  color: #a0bad3;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+/* =========================================
+   ANIMATED TEN ORBIT
+   ========================================= */
+
+.academy-visual {
+  position: relative;
+  width: 100%;
+  height: 460px;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+}
+
+/* ALL ORBIT RINGS */
+.academy-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* FIRST ROTATING RING */
+.orbit-one {
+  width: 340px;
+  height: 340px;
+
+  border: 1.5px solid rgba(101, 218, 255, 0.28);
+  border-top-color: #63dfff;
+  border-right-color: #63dfff;
+
+  animation: tenRotate 18s linear infinite;
+}
+
+/* SECOND ROTATING RING */
+.orbit-two {
+  width: 390px;
+  height: 390px;
+
+  border: 1px dashed rgba(101, 218, 255, 0.27);
+  border-left-color: rgba(101, 218, 255, 0.8);
+
+  animation: tenRotateReverse 28s linear infinite;
+}
+
+/* THIRD ELLIPTICAL RING */
+.orbit-three {
+  width: 290px;
+  height: 430px;
+
+  border: 1.5px solid rgba(101, 218, 255, 0.55);
+
+  animation: tenEllipse 22s linear infinite;
+}
+
+/* ORBIT ANIMATIONS */
+@keyframes tenRotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes tenRotateReverse {
+  from {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+@keyframes tenEllipse {
+  from {
+    transform: translate(-50%, -50%) rotate(25deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(385deg);
+  }
+}
+
+/* CENTER TEN CIRCLE */
+.academy-emblem {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle at 40% 30%,
+    #174e75,
+    #081a30 75%
+  );
+
+  border: 1px solid rgba(124, 229, 255, 0.45);
+
+  box-shadow:
+    0 0 55px rgba(0, 177, 255, 0.15),
+    inset 0 0 35px rgba(0, 0, 0, 0.25);
+
+  animation: tenFloat 5s ease-in-out infinite;
+}
+
+/* INNER DOTTED CIRCLE */
+.academy-emblem::before {
+  content: "";
+  position: absolute;
+  inset: 20px;
+  border: 1px dashed rgba(124,229,255,0.35);
+  border-radius: 50%;
+}
+
+.academy-emblem strong {
+  color: #ffffff;
+  font-size: 4.5rem;
+  letter-spacing: -0.06em;
+  line-height: 1;
+}
+
+.academy-emblem span {
+  margin-top: 13px;
+  color: #b8eaff;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  font-weight: 700;
+}
+
+/* FLOATING MOVEMENT */
+@keyframes tenFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* FLOATING INFORMATION TAGS */
+.academy-float-tag {
+  position: absolute;
+  z-index: 3;
+
+  padding: 14px 18px;
+  border-radius: 10px;
+
+  background: rgba(8, 31, 55, 0.9);
+  border: 1px solid rgba(124, 229, 255, 0.35);
+
+  color: #d5efff;
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  animation: tenFloat 6s ease-in-out infinite;
+}
+
+.tag-one {
+  left: 0;
+  bottom: 60px;
+}
+
+.tag-two {
+  right: 0;
+  top: 30px;
+  animation-delay: -2s;
+}
+
+/* HERO BOTTOM */
+.academy-hero .academy-hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 22px;
+
+  border-top: 1px solid rgba(255,255,255,0.14);
+
+  color: #a5c8e5;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+/* =========================================
+   LIGHT BLUE MOVING HEADLINE STRIP
+   ========================================= */
+
+.academy-ticker {
+  width: 100%;
+  overflow: hidden;
+  background: #7ce5ff;
+  color: #091529;
+
+  padding: 15px 0;
+}
+
+/* TWO IDENTICAL GROUPS MOVE TOGETHER */
+.academy-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: academyMarquee 32s linear infinite;
+}
+
+.academy-ticker-group {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.academy-ticker-group span {
+  display: inline-block;
+  padding: 0 22px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+/* CONTINUOUS HEADLINE MOVEMENT */
+@keyframes academyMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* PAUSE HEADLINES ON HOVER */
+.academy-ticker:hover .academy-ticker-track {
+  animation-play-state: paused;
+}
+
+/* =========================================
+   TABLET AND MOBILE
+   ========================================= */
+
+@media (max-width: 900px) {
+  .academy-hero .academy-hero-layout {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .academy-hero {
+    padding-top: 65px;
+  }
+
+  .academy-hero-meta {
+    margin-top: 35px;
+  }
+
+  .academy-visual {
+    height: 420px;
+  }
+}
+
+@media (max-width: 520px) {
+  .academy-hero {
+    padding: 55px 0 25px;
+  }
+
+  .academy-hero .academy-hero-copy h1 {
+    font-size: clamp(2.5rem, 10vw, 3.5rem);
+  }
+
+  .academy-hero .academy-hero-copy .lead {
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
+  .academy-visual {
+    height: 330px;
+  }
+
+  .orbit-one {
+    width: 235px;
+    height: 235px;
+  }
+
+  .orbit-two {
+    width: 275px;
+    height: 275px;
+  }
+
+  .orbit-three {
+    width: 200px;
+    height: 305px;
+  }
+
+  .academy-emblem {
+    width: 195px;
+    height: 195px;
+  }
+
+  .academy-emblem strong {
+    font-size: 3.25rem;
+  }
+
+  .academy-emblem span {
+    font-size: 0.44rem;
+  }
+
+  .academy-float-tag {
+    font-size: 0.6rem;
+    padding: 9px 10px;
+  }
+
+  .academy-hero .academy-hero-bottom {
+    font-size: 0.58rem;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+  .academy-orbit,
+  .academy-emblem,
+  .academy-float-tag,
+  .academy-ticker-track {
+    animation: none;
+  }
+}
