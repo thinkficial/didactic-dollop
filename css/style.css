@@ -215,18 +215,6 @@ p {
 .card p:last-child {
   margin-bottom: 0;
 }
-.card-icon {
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  margin-bottom: 18px;
-  background: #e4f1ff;
-  border-radius: 11px;
-  color: var(--blue);
-  font-size: 1.4rem;
-  font-weight: 800;
-}
 .stack > * + * {
   margin-top: 18px;
 }
@@ -272,66 +260,24 @@ p {
 .btn-light:hover {
   background: #e6f2ff;
 }
-.btn-outline {
-  border-color: #c4d4eb;
-  background: transparent;
-  color: #fff;
-}
-.btn-outline:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
 .btn-row {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 25px;
 }
-.btn-row-center {
-  justify-content: center;
-}
-.hero,
 .page-hero {
   background: linear-gradient(130deg, var(--navy), var(--navy-light));
   color: #fff;
 }
-.hero {
-  padding-block: 96px;
-}
-.hero-layout {
-  display: grid;
-  grid-template-columns: 1.45fr 0.9fr;
-  align-items: center;
-  gap: 50px;
-}
-.hero .eyebrow,
 .page-hero .eyebrow {
   color: var(--cyan);
 }
-.hero p,
 .page-hero p {
   color: #e1ebf8;
 }
-.hero p:last-child,
 .page-hero p:last-child {
   margin-bottom: 0;
-}
-.hero-visual {
-  display: grid;
-  place-items: center;
-  min-height: 300px;
-  padding: 34px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid #49627c;
-  border-radius: 22px;
-  text-align: center;
-}
-.hero-visual img {
-  max-height: 195px;
-  width: auto;
-  margin-bottom: 18px;
-}
-.hero-visual strong {
-  font-size: 1.25rem;
 }
 .page-hero {
   padding-block: 75px;
@@ -406,9 +352,6 @@ p {
   .grid-3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .hero-layout {
-    gap: 28px;
-  }
   .nav-links {
     gap: 12px;
   }
@@ -444,12 +387,6 @@ p {
   .js .nav-links.is-open {
     display: flex;
   }
-  .hero-layout {
-    grid-template-columns: 1fr;
-  }
-  .hero-visual {
-    min-height: 230px;
-  }
   .grid-2,
   .grid-3 {
     grid-template-columns: 1fr;
@@ -468,9 +405,6 @@ p {
   }
   .section {
     padding-block: 58px;
-  }
-  .hero {
-    padding-block: 70px;
   }
   .page-hero {
     padding-block: 58px;

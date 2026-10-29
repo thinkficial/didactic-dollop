@@ -5,34 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Technology solutions, consulting, web applications and practical ICT training."
+      content="Turn ideas into practical technology. Discover Thinkficial Engineering Network's consulting, digital solutions and hands-on learning at TEN Academy."
     />
     <meta name="theme-color" content="#091529" />
-    <title>Home | Thinkficial Engineering Network</title>
-    <link rel="icon" type="image/png" href="asssets/images/TEN%20Logo.png" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/pages.css" />
+    <title>
+      Thinkficial Engineering Network | Ideas. Skills. Possibilities.
+    </title>
+    <link rel="icon" type="image/png" href="assets/images/TEN_svg.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/home.css" />
     <script src="js/main.js" defer></script>
+    <script src="js/home.js" defer></script>
   </head>
-  <body>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-    <header class="site-header">
-      <nav class="navbar container" aria-label="Main navigation">
+  <body class="home-page" id="top">
+    <a class="home-skip" href="#main-content">Skip to main content</a>
+    <svg
+      class="home-icons"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <defs>
+        <symbol id="icon-arrow" viewBox="0 0 24 24">
+          <path d="M5 12h14m-6-6 6 6-6 6" />
+        </symbol>
+        <symbol id="icon-diagonal" viewBox="0 0 24 24">
+          <path d="M6 18 18 6M6 6h12v12" />
+        </symbol>
+        <symbol id="icon-code" viewBox="0 0 32 32">
+          <path d="m11 8-8 8 8 8m10-16 8 8-8 8M19 4l-6 24" />
+        </symbol>
+        <symbol id="icon-network" viewBox="0 0 32 32">
+          <circle cx="16" cy="16" r="5" />
+          <circle cx="6" cy="6" r="3" />
+          <circle cx="26" cy="6" r="3" />
+          <circle cx="6" cy="26" r="3" />
+          <circle cx="26" cy="26" r="3" />
+          <path d="m8 8 5 5m6 6 5 5M24 8l-5 5m-6 6-5 5" />
+        </symbol>
+        <symbol id="icon-research" viewBox="0 0 32 32">
+          <circle cx="14" cy="14" r="10" />
+          <path d="m21 21 8 8M9 17l4-5 4 3 4-6" />
+        </symbol>
+        <symbol id="icon-learn" viewBox="0 0 32 32">
+          <path d="m2 12 14-7 14 7-14 7-14-7Zm6 4v8c5 4 11 4 16 0v-8m6-4v12" />
+        </symbol>
+        <symbol id="icon-spark" viewBox="0 0 32 32">
+          <path
+            d="m16 3 3.5 9.5L29 16l-9.5 3.5L16 29l-3.5-9.5L3 16l9.5-3.5L16 3Z"
+          />
+        </symbol>
+        <symbol id="icon-check" viewBox="0 0 24 24">
+          <path d="m5 12 4 4L19 6" />
+        </symbol>
+      </defs>
+    </svg>
+    <header class="home-header">
+      <nav class="home-nav home-container" aria-label="Main navigation">
         <a
-          class="brand"
+          class="home-brand"
           href="index.html"
           aria-label="Thinkficial Engineering Network, home"
-        >
-          <img
-            src="asssets/images/TEN%20Logo.png"
-            alt="Thinkficial Engineering Network logo"
-            width="52"
-            height="55"
-          />
-          <span>THINKFICIAL<br />ENGINEERING NETWORK</span>
-        </a>
+          ><img
+            src="assets/images/TEN_Logo.png"
+            alt="Thinkficial Engineering Network"
+            width="1184"
+            height="461"
+        /></a>
         <button
-          class="menu-btn"
+          class="menu-btn home-menu"
           type="button"
           aria-controls="site-navigation"
           aria-expanded="false"
@@ -40,188 +85,531 @@
         >
           ☰
         </button>
-        <ul class="nav-links" id="site-navigation">
-          <li><a href="index.html">Home</a></li>
+        <ul class="nav-links home-nav-links" id="site-navigation">
+          <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="academy.html">Academy</a></li>
           <li><a href="management.html">Management</a></li>
-          <li><a href="contact.html" class="nav-contact">Contact</a></li>
+          <li>
+            <a class="home-nav-contact" href="contact.html"
+              >Let’s Talk
+              <svg aria-hidden="true"><use href="#icon-diagonal" /></svg
+            ></a>
+          </li>
         </ul>
       </nav>
     </header>
     <main id="main-content">
-      <section class="hero">
-        <div class="container hero-layout">
-          <div>
-            <p class="eyebrow">Technology • Training • Innovation</p>
-            <h1>Building practical solutions for a digital future.</h1>
-            <p class="lead">
-              Thinkficial Engineering Network provides ICT and AI solutions,
-              technology consulting, web applications, information research and
-              digital-skills training.
+      <section class="home-hero" aria-labelledby="hero-heading">
+        <div class="home-container home-hero-layout">
+          <div class="home-hero-copy">
+            <p class="home-intro-line">
+              <span aria-hidden="true"></span> Technology With Purpose
             </p>
-            <div class="btn-row">
-              <a class="btn btn-light" href="services.html"
-                >Explore Our Services</a
+            <h1 id="hero-heading">
+              Engineering A<br />Better Digital<br />Future
+            </h1>
+            <p class="home-hero-description">
+              Big ideas deserve thoughtful execution. We bring technology,
+              creativity and practical learning together to help you move
+              forward.
+            </p>
+            <div class="home-actions">
+              <a class="home-button home-button-primary" href="services.html"
+                >Explore Our Services
+                <svg aria-hidden="true"><use href="#icon-diagonal" /></svg
+              ></a>
+              <a class="home-text-link" href="academy.html"
+                >Discover TEN Academy
+                <svg aria-hidden="true"><use href="#icon-arrow" /></svg
+              ></a>
+            </div>
+            <div class="home-hero-footnote">
+              <span class="home-small-mark" aria-hidden="true">✳</span>
+              <p>
+                For people with ideas.<br /><strong
+                  >And the ambition to build them.</strong
+                >
+              </p>
+            </div>
+          </div>
+          <div class="home-network" aria-hidden="true">
+            <div class="home-network-grid"></div>
+            <svg class="home-network-art" viewBox="0 0 640 640" fill="none">
+              <defs>
+                <radialGradient id="sphere-fill" cx=".35" cy=".25" r=".8">
+                  <stop stop-color="var(--home-blue)" stop-opacity=".55" />
+                  <stop
+                    offset=".55"
+                    stop-color="var(--home-navy-light)"
+                    stop-opacity=".7"
+                  />
+                  <stop offset="1" stop-color="var(--home-navy)" />
+                </radialGradient>
+                <linearGradient
+                  id="orbit-stroke"
+                  x1="80"
+                  y1="520"
+                  x2="550"
+                  y2="100"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="var(--home-navy-light)" stop-opacity="0" />
+                  <stop offset=".45" stop-color="var(--home-cyan)" />
+                  <stop offset=".75" stop-color="var(--home-white)" />
+                  <stop
+                    offset="1"
+                    stop-color="var(--home-blue)"
+                    stop-opacity=".15"
+                  />
+                </linearGradient>
+                <radialGradient id="sphere-halo">
+                  <stop stop-color="var(--home-cyan)" stop-opacity=".19" />
+                  <stop
+                    offset="1"
+                    stop-color="var(--home-cyan)"
+                    stop-opacity="0"
+                  />
+                </radialGradient>
+                <clipPath id="sphere-clip">
+                  <circle cx="320" cy="320" r="185" />
+                </clipPath>
+              </defs>
+              <circle cx="320" cy="320" r="310" fill="url(#sphere-halo)" />
+              <g class="home-orbit-outer">
+                <circle
+                  cx="320"
+                  cy="320"
+                  r="275"
+                  stroke="var(--home-cyan)"
+                  stroke-opacity=".15"
+                  stroke-dasharray="2 10"
+                />
+                <circle cx="320" cy="45" r="4" fill="var(--home-cyan)" />
+                <circle cx="320" cy="595" r="3" fill="var(--home-cyan)" />
+              </g>
+              <circle
+                cx="320"
+                cy="320"
+                r="235"
+                stroke="var(--home-cyan)"
+                stroke-opacity=".12"
+              />
+              <circle
+                cx="320"
+                cy="320"
+                r="185"
+                fill="url(#sphere-fill)"
+                stroke="var(--home-cyan)"
+                stroke-opacity=".6"
+              />
+              <g
+                clip-path="url(#sphere-clip)"
+                stroke="var(--home-cyan)"
+                stroke-opacity=".23"
+                stroke-width=".8"
               >
-              <a class="btn btn-outline" href="academy.html"
-                >Discover TEN Academy</a
+                <ellipse cx="320" cy="320" rx="52" ry="185" />
+                <ellipse cx="320" cy="320" rx="112" ry="185" />
+                <ellipse cx="320" cy="320" rx="164" ry="185" />
+                <ellipse cx="320" cy="320" rx="185" ry="42" />
+                <ellipse cx="320" cy="320" rx="185" ry="105" />
+                <ellipse cx="320" cy="320" rx="185" ry="156" />
+                <path d="M135 320h370M320 135v370" />
+                <path
+                  d="m166 217 90 47 89-72 70 80 70-20M154 393l102-37 89 90 70-78 75 26M256 264v92m89-164v254m70-174v96"
+                  stroke-opacity=".5"
+                />
+              </g>
+              <ellipse
+                class="home-orbit-sweep"
+                cx="320"
+                cy="320"
+                rx="284"
+                ry="90"
+                transform="rotate(-32 320 320)"
+                stroke="url(#orbit-stroke)"
+                stroke-width="2"
+              />
+              <ellipse
+                cx="320"
+                cy="320"
+                rx="260"
+                ry="112"
+                transform="rotate(48 320 320)"
+                stroke="var(--home-cyan)"
+                stroke-opacity=".26"
+              />
+              <g fill="var(--home-white)">
+                <circle cx="256" cy="264" r="4" />
+                <circle cx="345" cy="192" r="4" />
+                <circle cx="415" cy="368" r="4" />
+                <circle cx="256" cy="356" r="3" />
+              </g>
+              <g class="home-network-signal">
+                <circle
+                  cx="415"
+                  cy="368"
+                  r="13"
+                  stroke="var(--home-cyan)"
+                  stroke-opacity=".6"
+                />
+                <circle
+                  cx="256"
+                  cy="264"
+                  r="11"
+                  stroke="var(--home-cyan)"
+                  stroke-opacity=".5"
+                />
+              </g>
+            </svg>
+            <div class="home-orbit-label home-orbit-label-top">
+              <svg><use href="#icon-network" /></svg
+              ><span>Thoughtful Strategy</span
+              ><span class="home-label-dot"></span>
+            </div>
+            <div class="home-orbit-label home-orbit-label-bottom">
+              <svg><use href="#icon-code" /></svg
+              ><span>Practical Solutions</span>
+            </div>
+            <div class="home-network-caption">
+              <span class="home-caption-line"></span> A network of possibilities
+            </div>
+          </div>
+        </div>
+        <div class="home-container home-hero-bottom">
+          <a href="#our-approach" class="home-scroll-link"
+            ><span class="home-scroll-icon" aria-hidden="true">↓</span> A little
+            further. A lot to discover.</a
+          >
+          <button
+            class="home-motion-toggle"
+            type="button"
+            aria-pressed="false"
+            hidden
+          >
+            <span class="home-pause-symbol" aria-hidden="true">Ⅱ</span
+            ><span data-motion-label>Pause animation</span>
+          </button>
+        </div>
+      </section>
+      <div class="home-capabilities" aria-label="Our areas of expertise">
+        <div class="home-marquee">
+          <div class="home-marquee-group">
+            <span>Technology Consulting</span><i aria-hidden="true">✳</i
+            ><span>Web Development</span><i aria-hidden="true">✳</i
+            ><span>Artificial Intelligence</span><i aria-hidden="true">✳</i
+            ><span>Digital Skills</span><i aria-hidden="true">✳</i
+            ><span>Information Research</span><i aria-hidden="true">✳</i>
+          </div>
+          <div class="home-marquee-group" aria-hidden="true">
+            <span>Technology Consulting</span><i>✳</i
+            ><span>Web Development</span><i>✳</i
+            ><span>Artificial Intelligence</span><i>✳</i
+            ><span>Digital Skills</span><i>✳</i><span>Information Research</span
+            ><i>✳</i>
+          </div>
+        </div>
+      </div>
+      <section
+        class="home-about home-section"
+        id="our-approach"
+        aria-labelledby="about-heading"
+      >
+        <div class="home-container home-about-layout">
+          <div class="home-section-aside">
+            <span class="home-section-kicker">The TEN Approach</span>
+            <div class="home-connection-mark" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="home-about-copy" data-reveal>
+            <h2 id="about-heading">
+              Great Technology Starts With Understanding People.
+            </h2>
+            <div class="home-about-detail">
+              <p>
+                We’re Thinkficial Engineering Network. A meeting point for
+                technical thinking, creative ideas and the people ready to put
+                them to work.
+              </p>
+              <div>
+                <p>
+                  From your next digital project to your first line of code, we
+                  help turn complex challenges into clear, practical next steps.
+                </p>
+                <a class="home-text-link home-link-dark" href="about.html"
+                  >Get To Know TEN
+                  <svg aria-hidden="true"><use href="#icon-arrow" /></svg
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="home-services home-section"
+        aria-labelledby="services-heading"
+      >
+        <div class="home-container">
+          <div class="home-section-top">
+            <div>
+              <span class="home-section-kicker">Our Expertise</span>
+              <h2 id="services-heading">
+                Your Ambition. Our Thinking, In Action.
+              </h2>
+            </div>
+            <a class="home-text-link home-link-dark" href="services.html"
+              >Explore Our Services
+              <svg aria-hidden="true"><use href="#icon-arrow" /></svg
+            ></a>
+          </div>
+          <div
+            class="home-service-track"
+            id="home-services-track"
+            tabindex="0"
+            role="region"
+            aria-label="Services. Scroll horizontally to explore."
+          >
+            <a class="home-service-card" href="services.html"
+              ><span class="home-service-icon"
+                ><svg aria-hidden="true">
+                  <use href="#icon-network" /></svg></span
+              ><span class="home-card-category">Clarity &amp; Direction</span>
+              <h3>Technology<br />&amp; AI Consulting</h3>
+              <p>
+                Make informed decisions with technical guidance and a digital
+                strategy shaped around your goals.
+              </p>
+              <span class="home-card-footer"
+                >Find Your Direction
+                <svg aria-hidden="true">
+                  <use href="#icon-diagonal" /></svg></span
+            ></a>
+            <a class="home-service-card" href="services.html"
+              ><span class="home-service-icon"
+                ><svg aria-hidden="true"><use href="#icon-code" /></svg></span
+              ><span class="home-card-category">Ideas &amp; Execution</span>
+              <h3>Web &amp; Digital<br />Development</h3>
+              <p>
+                Bring your ideas to life with responsive websites and web
+                applications built for real people.
+              </p>
+              <span class="home-card-footer"
+                >Build Something Meaningful
+                <svg aria-hidden="true">
+                  <use href="#icon-diagonal" /></svg></span
+            ></a>
+            <a class="home-service-card" href="academy.html"
+              ><span class="home-service-icon"
+                ><svg aria-hidden="true"><use href="#icon-learn" /></svg></span
+              ><span class="home-card-category"
+                >Learning &amp; Possibility</span
+              >
+              <h3>ICT &amp; digital<br />Skills Training</h3>
+              <p>
+                Develop useful skills, build digital confidence and take your
+                next step with practical learning.
+              </p>
+              <span class="home-card-footer"
+                >Discover Your Next Skill
+                <svg aria-hidden="true">
+                  <use href="#icon-diagonal" /></svg></span
+            ></a>
+            <a class="home-service-card" href="services.html"
+              ><span class="home-service-icon"
+                ><svg aria-hidden="true">
+                  <use href="#icon-research" /></svg></span
+              ><span class="home-card-category">Insight &amp; support</span>
+              <h3>Information<br />&amp; research</h3>
+              <p>
+                Move forward with focused information research and digital
+                support for your next challenge.
+              </p>
+              <span class="home-card-footer"
+                >Turn information into insight
+                <svg aria-hidden="true">
+                  <use href="#icon-diagonal" /></svg></span
+            ></a>
+          </div>
+          <div class="home-slider-footer">
+            <p>Different disciplines. One connected approach.</p>
+            <div class="home-slider-controls" hidden>
+              <span
+                class="home-slider-status"
+                aria-live="polite"
+                aria-atomic="true"
+              ></span
+              ><button
+                class="home-slider-button"
+                type="button"
+                data-slide="previous"
+                aria-label="Previous services"
+                aria-controls="home-services-track"
+              >
+                <svg aria-hidden="true"><use href="#icon-arrow" /></svg></button
+              ><button
+                class="home-slider-button"
+                type="button"
+                data-slide="next"
+                aria-label="Next services"
+                aria-controls="home-services-track"
+              >
+                <svg aria-hidden="true"><use href="#icon-arrow" /></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="home-academy home-section"
+        aria-labelledby="academy-heading"
+      >
+        <div class="home-container home-academy-panel">
+          <div class="home-academy-copy" data-reveal>
+            <span class="home-section-kicker">Meet TEN Academy</span>
+            <h2 id="academy-heading">
+              Your Next Chapter<br />Starts With A Skill
+            </h2>
+            <p>
+              Curiosity is a good beginning. Give it somewhere to go. Explore
+              practical training that connects what you learn with what you can
+              create.
+            </p>
+            <a class="home-button home-button-primary" href="academy.html"
+              >Explore The Academy
+              <svg aria-hidden="true"><use href="#icon-diagonal" /></svg
+            ></a>
+            <div class="home-academy-note">
+              <svg aria-hidden="true"><use href="#icon-check" /></svg
+              ><span
+                >Guided learning. Practical projects. Real Possibilities.</span
               >
             </div>
           </div>
-          <div class="hero-visual">
-            <img
-              src="asssets/images/TEN%20Logo%202.png"
-              alt="Thinkficial Engineering Network Academy logo"
-              width="260"
-              height="180"
-            />
-            <strong>Ideas. Skills. Solutions.</strong>
-            <p>Supporting people and organizations through technology.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" aria-labelledby="intro-heading">
-        <div class="container about-layout">
-          <div>
-            <p class="eyebrow">Who we are</p>
-            <h2 id="intro-heading">
-              Technology solutions built around people and ideas.
-            </h2>
-            <p>
-              We combine technical knowledge, creativity and practical learning
-              to help individuals and organizations address digital challenges.
-            </p>
-            <a class="btn btn-primary" href="about.html">Learn About TEN</a>
-          </div>
-          <div class="highlight-panel">
-            <strong>Our areas of focus</strong>
-            <ul class="check-list">
-              <li>Technology and AI consulting</li>
-              <li>Web application development</li>
-              <li>Information research and digital support</li>
-              <li>ICT training and skills development</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-alt" aria-labelledby="services-heading">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Our services</p>
-            <h2 id="services-heading">What we can help you with</h2>
-            <p>
-              Practical technology services for individuals, businesses and
-              organizations.
-            </p>
-          </div>
-          <div class="grid grid-3">
-            <article class="card">
-              <div class="card-icon" aria-hidden="true">01</div>
-              <h3>Technology Consulting</h3>
-              <p>
-                Technical guidance and digital strategy based on your goals.
-              </p>
-            </article>
-            <article class="card">
-              <div class="card-icon" aria-hidden="true">02</div>
-              <h3>Web Applications</h3>
-              <p>Responsive websites and web-based solutions.</p>
-            </article>
-            <article class="card">
-              <div class="card-icon" aria-hidden="true">03</div>
-              <h3>ICT Training</h3>
-              <p>
-                Practical learning in computer skills, development and digital
-                tools.
-              </p>
-            </article>
-          </div>
-          <div class="btn-row btn-row-center">
-            <a class="btn btn-primary" href="services.html">See All Services</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" aria-labelledby="academy-heading">
-        <div class="container about-layout">
-          <div>
-            <p class="eyebrow">TEN Academy</p>
-            <h2 id="academy-heading">Learn skills you can use.</h2>
-            <p>
-              Explore training in front-end development, Python, design, digital
-              marketing, cybersecurity, data analysis and other technology
-              disciplines.
-            </p>
-            <a class="btn btn-primary" href="academy.html">Explore Courses</a>
-          </div>
-          <div class="highlight-panel">
-            <strong>Practical learning</strong>
-            <p>
-              Our academy focuses on developing digital confidence and useful
-              technology skills through guided learning and project-based
-              practice.
+          <div class="home-academy-visual">
+            <div class="home-academy-visual-heading">
+              <span class="home-academy-emblem" aria-hidden="true"
+                ><svg><use href="#icon-spark" /></svg></span
+              ><span>Find Your Starting Point</span
+              ><span class="home-academy-wordmark"
+                >TEN<span>ACADEMY</span></span
+              >
+            </div>
+            <div class="home-learning-paths">
+              <a href="academy.html" class="home-learning-path"
+                ><span class="home-path-icon"
+                  ><svg aria-hidden="true"><use href="#icon-code" /></svg></span
+                ><span
+                  ><strong>Build for the Web</strong
+                  ><small>Front-end development &amp; Python</small></span
+                ><svg class="home-path-arrow" aria-hidden="true">
+                  <use href="#icon-diagonal" /></svg
+              ></a>
+              <a href="academy.html" class="home-learning-path"
+                ><span class="home-path-icon"
+                  ><svg aria-hidden="true">
+                    <use href="#icon-research" /></svg></span
+                ><span
+                  ><strong>Make Sense of Data</strong
+                  ><small>Data analysis &amp; digital tools</small></span
+                ><svg class="home-path-arrow" aria-hidden="true">
+                  <use href="#icon-diagonal" /></svg
+              ></a>
+              <a href="academy.html" class="home-learning-path"
+                ><span class="home-path-icon"
+                  ><svg aria-hidden="true">
+                    <use href="#icon-spark" /></svg></span
+                ><span
+                  ><strong>Think. Design. Create.</strong
+                  ><small>Design &amp; digital marketing</small></span
+                ><svg class="home-path-arrow" aria-hidden="true">
+                  <use href="#icon-diagonal" /></svg
+              ></a>
+            </div>
+            <p class="home-course-note">
+              Explore these and other training areas.<br />Contact TEN for
+              current courses and availability.
             </p>
           </div>
         </div>
       </section>
-
-      <section class="cta">
-        <div class="container">
-          <div>
-            <h2>Have a project or training enquiry?</h2>
-            <p>Tell our team what you want to achieve.</p>
+      <section
+        class="home-contact home-section"
+        aria-labelledby="contact-heading"
+      >
+        <div class="home-container home-contact-layout">
+          <div data-reveal>
+            <span class="home-section-kicker">Let’s Make a Start</span>
+            <h2 id="contact-heading">What’s Your<br />Next Big Idea?</h2>
+            <p>
+              A project to build. A challenge to solve. A skill to learn.<br
+                class="home-desktop-break"
+              />
+              We’d love to hear what’s on your mind.
+            </p>
           </div>
-          <a class="btn btn-light" href="contact.html">Contact Us</a>
+          <a class="home-contact-circle" href="contact.html"
+            ><svg aria-hidden="true"><use href="#icon-diagonal" /></svg
+            ><span>Start a Conversation</span></a
+          >
         </div>
+        <span class="home-contact-watermark" aria-hidden="true">Together.</span>
       </section>
     </main>
-
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div>
-          <h2>Thinkficial Engineering Network</h2>
-          <p>
-            Technology, consultancy, digital solutions and practical ICT
-            training.
-          </p>
+    <footer class="home-footer">
+      <div class="home-container home-footer-grid">
+        <div class="home-footer-brand">
+          <a
+            href="index.html"
+            aria-label="Thinkficial Engineering Network, home"
+            ><img
+              src="assets/images/TEN_Logo.png"
+              alt="Thinkficial Engineering Network"
+              width="1184"
+              height="461"
+              loading="lazy"
+          /></a>
+          <p>Ideas. Skills. Possibilities.<br />Thoughtfully connected.</p>
         </div>
         <div>
-          <h3>Quick Links</h3>
-          <ul class="footer-links">
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="academy.html">Academy</a></li>
-            <li><a href="management.html">Our Team</a></li>
+          <h2>Explore TEN</h2>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="academy.html">TEN Academy</a></li>
+            <li><a href="management.html">Our People</a></li>
           </ul>
         </div>
         <div>
-          <h3>Contact</h3>
-          <ul class="footer-links">
+          <h2>Get In Touch</h2>
+          <ul>
             <li>
               <a href="mailto:thinkficialengineeringnetwork@gmail.com"
-                >Email us</a
-              >
+                >Email Our team
+                <svg aria-hidden="true"><use href="#icon-diagonal" /></svg
+              ></a>
             </li>
-            <li><a href="tel:+2349063577772">Call us</a></li>
+            <li><a href="tel:+2349063577772">Call Us</a></li>
             <li>
               <a
                 href="https://wa.me/2349082965308"
                 target="_blank"
                 rel="noopener noreferrer"
-                >WhatsApp</a
-              >
+                >Chat On WhatsApp
+                <svg aria-hidden="true"><use href="#icon-diagonal" /></svg
+              ></a>
             </li>
-            <li><a href="contact.html">Contact form</a></li>
+            <li><a href="contact.html">Contact Details</a></li>
           </ul>
         </div>
       </div>
-      <div class="container footer-bottom">
-        &copy; <span data-year>2026</span> Thinkficial Engineering Network. All
-        rights reserved.
+      <div class="home-container home-footer-bottom">
+        <p>
+          &copy; <span data-year>2026</span> Thinkficial Engineering Network.
+        </p>
+        <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
       </div>
     </footer>
   </body>
