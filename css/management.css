@@ -1,0 +1,783 @@
+
+/* ==========================================
+   THINKFICIAL ENGINEERING NETWORK
+   PREMIUM MANAGEMENT PAGE
+========================================== */
+
+.management-page {
+  --management-bg: #071321;
+  --management-panel: #0d1c2d;
+  --management-card: #102238;
+  --management-cyan: #19d8d0;
+  --management-white: #f4f7fa;
+  --management-muted: #9baaba;
+
+  background: var(--management-bg);
+  color: var(--management-white);
+  overflow-x: hidden;
+}
+
+/* GENERAL */
+
+.management-page main {
+  background: var(--management-bg);
+}
+
+.management-container {
+  width: min(1180px, 90%);
+  margin: 0 auto;
+}
+
+.management-eyebrow {
+  color: var(--management-cyan);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+/* ==========================================
+   HERO SECTION
+========================================== */
+
+.management-hero {
+  position: relative;
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 78% 52%,
+      rgba(0, 211, 209, 0.12),
+      transparent 35%
+    ),
+    linear-gradient(120deg, #071321, #0b1929 65%, #091b2b);
+  border-bottom: 1px solid rgba(25, 216, 208, 0.15);
+}
+
+.management-hero-inner {
+  width: min(1180px, 90%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 50px;
+  padding: 90px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  max-width: 590px;
+}
+
+.hero-content h1 {
+  font-size: clamp(48px, 6.5vw, 82px);
+  font-weight: 850;
+  line-height: 1.02;
+  letter-spacing: -4px;
+  color: #f6f3ec;
+  margin: 0 0 28px;
+}
+
+.hero-content h1 span {
+  color: var(--management-cyan);
+  text-shadow: 0 0 30px rgba(25, 216, 208, 0.25);
+}
+
+.hero-description {
+  max-width: 490px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #b3c0ce;
+  margin-bottom: 32px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.management-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  padding: 16px 25px;
+  border-radius: 8px;
+  background: var(--management-cyan);
+  color: #061724;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 25px rgba(25, 216, 208, 0.12);
+}
+
+.management-btn span {
+  font-size: 18px;
+}
+
+.management-btn:hover {
+  background: #ffffff;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 35px rgba(25, 216, 208, 0.3);
+}
+
+.hero-bottom-note {
+  margin-top: 65px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #8095a8;
+}
+
+.status-dot,
+.profile-status {
+  width: 8px;
+  height: 8px;
+  background: var(--management-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--management-cyan);
+}
+
+.hero-decoration {
+  position: absolute;
+  bottom: -180px;
+  left: -120px;
+  width: 350px;
+  height: 350px;
+  border: 1px solid rgba(25, 216, 208, 0.08);
+  border-radius: 50%;
+}
+
+/* ==========================================
+   GLOWING TEN LOGO / ORBIT
+========================================== */
+
+.hero-visual {
+  height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.ten-emblem {
+  position: relative;
+  z-index: 3;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #152d42, #091625 75%);
+  border: 1px solid rgba(25, 216, 208, 0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow:
+    0 0 35px rgba(25, 216, 208, 0.13),
+    inset 0 0 35px rgba(25, 216, 208, 0.08);
+}
+
+.ten-emblem img {
+  width: 85px;
+  height: 85px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.ten-fallback {
+  display: none;
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: -3px;
+}
+
+.ten-emblem img:not([src]),
+.ten-emblem img[src=""] {
+  display: none;
+}
+
+.ten-emblem small {
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--management-cyan);
+}
+
+.orbit {
+  position: absolute;
+  border: 1px solid rgba(25, 216, 208, 0.19);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.orbit-one {
+  width: 290px;
+  height: 290px;
+  animation: orbitPulse 5s ease-in-out infinite;
+}
+
+.orbit-two {
+  width: 360px;
+  height: 360px;
+  border-color: rgba(25, 216, 208, 0.12);
+  animation: orbitPulse 5s ease-in-out infinite 1s;
+}
+
+.orbit-three {
+  width: 420px;
+  height: 420px;
+  border-color: rgba(25, 216, 208, 0.07);
+}
+
+.orbit-label {
+  position: absolute;
+  z-index: 4;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #b6c8d5;
+}
+
+.orbit-label-top {
+  top: 35px;
+  right: 5%;
+}
+
+.orbit-label-bottom {
+  bottom: 35px;
+  left: 3%;
+}
+
+@keyframes orbitPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
+/* ==========================================
+   TEAM SECTION
+========================================== */
+
+.management-team-section {
+  padding: 115px 0 125px;
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(17, 72, 91, 0.15),
+      transparent 55%
+    ),
+    #081522;
+}
+
+.management-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 65px;
+}
+
+.management-section-heading h2 {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 800;
+  letter-spacing: -2px;
+  margin: 0 0 18px;
+}
+
+.management-section-heading h2 span {
+  color: var(--management-cyan);
+}
+
+.management-section-heading p:not(.management-eyebrow) {
+  max-width: 570px;
+  color: var(--management-muted);
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.team-count {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-bottom: 12px;
+}
+
+.team-count strong {
+  font-size: 66px;
+  line-height: 1;
+  color: var(--management-cyan);
+  font-weight: 800;
+}
+
+.team-count span {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #8c9eaf;
+  margin-top: 8px;
+}
+
+/* ==========================================
+   MANAGEMENT GRID
+========================================== */
+
+.management-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.management-card {
+  position: relative;
+  min-width: 0;
+  padding: 27px 25px 22px;
+  background: linear-gradient(
+    145deg,
+    rgba(18, 40, 61, 0.98),
+    rgba(9, 25, 42, 0.98)
+  );
+  border: 1px solid rgba(148, 180, 198, 0.12);
+  border-radius: 15px;
+  overflow: hidden;
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    background 0.4s ease;
+}
+
+.management-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--management-cyan),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.management-card::after {
+  content: "";
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  right: -90px;
+  bottom: -90px;
+  border-radius: 50%;
+  background: rgba(25, 216, 208, 0.08);
+  filter: blur(35px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.management-card:hover {
+  transform: translateY(-12px);
+  border-color: rgba(25, 216, 208, 0.65);
+  background: linear-gradient(
+    145deg,
+    #15314a,
+    #0b1e30
+  );
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.3),
+    0 0 25px rgba(25, 216, 208, 0.13);
+}
+
+.management-card:hover::before,
+.management-card:hover::after {
+  opacity: 1;
+}
+
+.profile-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.profile-number {
+  color: #8295a7;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.profile-status {
+  width: 7px;
+  height: 7px;
+}
+
+/* CIRCULAR INITIALS */
+
+.profile-avatar {
+  width: 118px;
+  height: 118px;
+  margin: 0 auto 27px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(145deg, #153b50, #0b1d30);
+  border: 2px solid rgba(25, 216, 208, 0.35);
+  box-shadow:
+    0 0 0 7px rgba(25, 216, 208, 0.035),
+    0 0 25px rgba(25, 216, 208, 0.09);
+  transition: all 0.4s ease;
+}
+
+.profile-avatar::before {
+  content: "";
+  position: absolute;
+  inset: -9px;
+  border: 1px solid rgba(25, 216, 208, 0.12);
+  border-radius: 50%;
+  transition: all 0.4s ease;
+}
+
+.profile-avatar span {
+  color: var(--management-cyan);
+  font-size: 35px;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+.management-card:hover .profile-avatar {
+  transform: scale(1.07);
+  border-color: var(--management-cyan);
+  box-shadow:
+    0 0 0 8px rgba(25, 216, 208, 0.07),
+    0 0 35px rgba(25, 216, 208, 0.28);
+}
+
+.management-card:hover .profile-avatar::before {
+  inset: -14px;
+  border-color: rgba(25, 216, 208, 0.4);
+}
+
+.profile-details {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  min-height: 115px;
+}
+
+.profile-category {
+  color: var(--management-cyan);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.profile-details h3 {
+  font-size: 17px;
+  font-weight: 750;
+  line-height: 1.5;
+  margin: 12px 0 7px;
+  color: #f5f7fa;
+}
+
+.profile-details p {
+  color: #9baebe;
+  font-size: 13px;
+  margin: 0;
+}
+
+.profile-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #74899b;
+  font-size: 8px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.profile-arrow {
+  font-size: 17px;
+  color: var(--management-cyan);
+  transition: transform 0.3s ease;
+}
+
+.management-card:hover .profile-arrow {
+  transform: translate(4px, -4px);
+}
+
+/* ==========================================
+   CALL TO ACTION
+========================================== */
+
+.management-cta {
+  padding: 85px 0;
+  background:
+    radial-gradient(
+      ellipse at 85% 50%,
+      rgba(25, 216, 208, 0.12),
+      transparent 40%
+    ),
+    #0d1c2d;
+  border-top: 1px solid rgba(25, 216, 208, 0.12);
+}
+
+.cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.cta-content h2 {
+  font-size: clamp(29px, 4vw, 43px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin: 0 0 15px;
+}
+
+.cta-content h2 span {
+  color: var(--management-cyan);
+}
+
+.cta-content p:not(.management-eyebrow) {
+  color: var(--management-muted);
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 560px;
+}
+
+/* ==========================================
+   NAVIGATION AND FOOTER
+========================================== */
+
+.management-page .shared-header {
+  background: #071321;
+  border-bottom: 1px solid rgba(25, 216, 208, 0.2);
+}
+
+.management-page .shared-nav-links a[aria-current="page"] {
+  color: var(--management-cyan);
+}
+
+.management-page .shared-footer {
+  background: #050f1b;
+  border-top: 1px solid rgba(25, 216, 208, 0.15);
+}
+
+.management-page .shared-footer a {
+  color: #a9bdca;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.management-page .shared-footer a:hover {
+  color: var(--management-cyan);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 900px) {
+
+  .management-hero-inner {
+    grid-template-columns: 1fr 0.8fr;
+    gap: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 58px;
+  }
+
+  .hero-visual {
+    transform: scale(0.85);
+  }
+
+  .management-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+
+  .management-hero {
+    min-height: auto;
+  }
+
+  .management-hero-inner {
+    grid-template-columns: 1fr;
+    padding: 85px 0 55px;
+    gap: 10px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(48px, 13vw, 66px);
+    letter-spacing: -2.5px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .hero-bottom-note {
+    margin-top: 40px;
+    font-size: 8px;
+  }
+
+  .hero-visual {
+    height: 330px;
+    transform: scale(0.85);
+    margin-top: -5px;
+  }
+
+  .orbit-label-top {
+    right: 0;
+  }
+
+  .management-team-section {
+    padding: 80px 0;
+  }
+
+  .management-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  .team-count {
+    align-items: flex-start;
+  }
+
+  .team-count strong {
+    font-size: 48px;
+  }
+
+  .management-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .management-card {
+    padding: 25px;
+  }
+
+  .profile-details {
+    min-height: auto;
+    padding-bottom: 20px;
+  }
+
+  .cta-content {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .management-cta {
+    padding: 65px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .management-page *,
+  .management-page *::before,
+  .management-page *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =================================
+   MOVING TURQUOISE HEADLINE STRIP
+================================= */
+
+.management-marquee {
+  width: 100%;
+  overflow: hidden;
+  background: #19d8d0;
+  padding: 20px 0;
+  position: relative;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: managementMarquee 32s linear infinite;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 38px;
+  padding-right: 38px;
+}
+
+.marquee-content span {
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #071b2b;
+  white-space: nowrap;
+}
+
+.marquee-content b {
+  color: #071b2b;
+  font-size: 17px;
+}
+
+@keyframes managementMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause when the visitor hovers */
+
+.management-marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .management-marquee {
+    padding: 16px 0;
+  }
+
+  .marquee-content {
+    gap: 25px;
+    padding-right: 25px;
+  }
+
+  .marquee-content span {
+    font-size: 11px;
+  }
+}
