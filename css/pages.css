@@ -137,9 +137,9 @@
   .team-card:hover,
   .team-card:hover .avatar {
     transform: none;
+    box-shadow: none;
   }
 }
-
 /* ==========================================
    THINKFICIAL ACADEMY - PREMIUM ENHANCEMENTS
    ========================================== */
