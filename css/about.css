@@ -1,0 +1,660 @@
+/* =========================================
+   TEN ABOUT PAGE
+   Complete CSS + Animations
+========================================= */
+
+.about-page {
+  --about-navy: #091529;
+  --about-navy-light: #122a48;
+  --about-blue: #075cb5;
+  --about-cyan: #a5e7ff;
+  --about-paper: #f3f7fb;
+  --about-white: #ffffff;
+  --about-ink: #18273a;
+  --about-muted: #506178;
+  --about-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  margin: 0;
+  color: var(--about-ink);
+  background: var(--about-paper);
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.about-page *,
+.about-page *::before,
+.about-page *::after {
+  box-sizing: border-box;
+}
+
+html:has(.about-page) {
+  scroll-behavior: smooth;
+  scroll-padding-top: 110px;
+}
+
+.about-page ::selection {
+  background: var(--about-cyan);
+  color: var(--about-navy);
+}
+
+.about-page h1,
+.about-page h2,
+.about-page h3 {
+  margin-top: 0;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-weight: 600;
+}
+
+.about-page p {
+  color: var(--about-muted);
+}
+
+.about-page a {
+  text-decoration: none;
+}
+
+.about-page :focus-visible {
+  outline: 3px solid var(--about-blue);
+  outline-offset: 6px;
+}
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.about-page .container {
+  width: min(100% - 112px, 1320px);
+  margin-inline: auto;
+}
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.about-page .section {
+  padding-block: clamp(76px, 8vw, 128px);
+}
+
+.about-page .section-alt {
+  background: var(--about-white);
+}
+
+.about-page .section-heading {
+  max-width: 760px;
+  margin-bottom: clamp(32px, 4vw, 58px);
+}
+
+/* =========================================
+   SECTION LABEL
+========================================= */
+
+.about-page .eyebrow {
+  display: block;
+  margin-bottom: 22px;
+  color: var(--about-blue);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   HEADINGS
+========================================= */
+
+.about-page h1 {
+  font-size: clamp(2.8rem, 5.5vw, 5.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.065em;
+}
+
+.about-page h2 {
+  font-size: clamp(2.1rem, 3.5vw, 3.65rem);
+  line-height: 1.15;
+  letter-spacing: -0.055em;
+}
+
+.about-page h3 {
+  font-size: clamp(1.25rem, 1.8vw, 1.6rem);
+  line-height: 1.3;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.about-page .page-hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(90px, 11vw, 160px);
+  color: var(--about-white);
+  background:
+    radial-gradient(circle at 85% 20%, rgba(7, 92, 181, 0.35), transparent 35%),
+    var(--about-navy);
+}
+
+.about-page .page-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.about-page .page-hero .eyebrow {
+  color: var(--about-cyan);
+}
+
+.about-page .page-hero h1 {
+  max-width: 1000px;
+}
+
+.about-page .lead {
+  max-width: 650px;
+  margin-top: 26px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  line-height: 1.8;
+}
+
+/* =========================================
+   ABOUT LAYOUT
+========================================= */
+
+.about-page .about-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: clamp(36px, 7vw, 100px);
+}
+
+.about-page .about-layout > div:first-child > p:not(.eyebrow) {
+  max-width: 700px;
+  margin-top: 22px;
+  font-size: 1.0625rem;
+  line-height: 1.85;
+}
+
+/* =========================================
+   HIGHLIGHT PANEL
+========================================= */
+
+.about-page .highlight-panel {
+  padding: clamp(30px, 4vw, 48px);
+  border: 1px solid rgba(80, 97, 120, 0.2);
+  border-radius: 12px;
+  background: var(--about-white);
+  transition:
+    transform 0.4s var(--about-ease),
+    box-shadow 0.4s ease,
+    border-color 0.3s ease;
+}
+
+.about-page .highlight-panel:hover {
+  transform: translateY(-7px);
+  border-color: var(--about-cyan);
+  box-shadow: 0 18px 45px rgba(9, 21, 41, 0.12);
+}
+
+.about-page .highlight-panel strong {
+  display: block;
+  margin-bottom: 16px;
+  color: var(--about-navy);
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* =========================================
+   CARDS
+========================================= */
+
+.about-page .grid {
+  display: grid;
+  gap: 22px;
+}
+
+.about-page .grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.about-page .card {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  padding: clamp(28px, 3.5vw, 46px);
+  border: 1px solid rgba(80, 97, 120, 0.2);
+  border-radius: 10px;
+  background: var(--about-white);
+  transition:
+    transform 0.35s var(--about-ease),
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.about-page .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #075cb5, #a5e7ff);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.about-page .card h3 {
+  margin-bottom: 16px;
+  color: var(--about-navy);
+}
+
+.about-page .card p {
+  font-size: 1.0625rem;
+  line-height: 1.85;
+}
+
+.about-page .card:hover {
+  transform: translateY(-8px);
+  border-color: var(--about-cyan);
+  background: var(--about-navy-light);
+  box-shadow: 0 18px 40px rgba(9, 21, 41, 0.1);
+}
+
+.about-page .card:hover::before {
+  transform: scaleX(1);
+}
+
+.about-page .card:hover h3 {
+  color: var(--about-cyan);
+}
+
+.about-page .card:hover p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* =========================================
+   CALL TO ACTION
+========================================= */
+
+.about-page .cta {
+  padding-block: clamp(60px, 7vw, 100px);
+  color: var(--about-white);
+  background: var(--about-navy);
+}
+
+.about-page .cta .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+}
+
+.about-page .cta h2 {
+  max-width: 700px;
+}
+
+.about-page .cta p {
+  margin-top: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.0625rem;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.about-page .btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 54px;
+  padding: 15px 25px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.about-page .btn-light {
+  flex-shrink: 0;
+  color: var(--about-navy);
+  background: var(--about-cyan);
+}
+
+.about-page .btn-light:hover {
+  transform: translateY(-4px);
+  color: var(--about-white);
+  background: var(--about-blue);
+}
+
+.about-page .btn:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.site-header .nav-links a[aria-current="page"] {
+  color: var(--about-blue);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.about-page .ten-footer {
+  padding: 64px 0 0;
+  color: var(--about-white);
+  background: var(--about-navy);
+  border-top: 1px solid rgba(165, 231, 255, 0.25);
+}
+
+.about-page .ten-footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.7fr 0.8fr;
+  gap: clamp(28px, 5vw, 72px);
+  padding-bottom: 46px;
+}
+
+.about-page .ten-footer h2 {
+  margin: 0 0 18px;
+  color: var(--about-cyan);
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.about-page .ten-footer p {
+  max-width: 390px;
+  margin: 14px 0 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.about-page .ten-footer-title {
+  display: inline-block;
+  color: var(--about-white);
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  transition: color 0.3s ease;
+}
+
+.about-page .ten-footer-title:hover {
+  color: var(--about-cyan);
+}
+
+.about-page .ten-footer-links {
+  display: grid;
+  gap: 11px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-page .ten-footer-links a {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.8);
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.about-page .ten-footer-links a:hover {
+  color: var(--about-cyan);
+  transform: translateX(5px);
+}
+
+.about-page .ten-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-block: 22px;
+  border-top: 1px solid rgba(165, 231, 255, 0.2);
+}
+
+.about-page .ten-footer-bottom p {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.about-page .ten-footer-bottom a {
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.25s ease;
+}
+
+.about-page .ten-footer-bottom a:hover {
+  color: var(--about-cyan);
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes aboutFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes aboutSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes aboutHeroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(45px);
+    filter: blur(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes aboutGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(165, 231, 255, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 28px rgba(165, 231, 255, 0.15);
+  }
+}
+
+@keyframes aboutBackgroundMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* HERO ENTRANCE */
+
+.about-page .page-hero {
+  animation: aboutFadeIn 1s ease both;
+}
+
+.about-page .page-hero .eyebrow {
+  animation: aboutSlideUp 0.7s ease 0.1s both;
+}
+
+.about-page .page-hero h1 {
+  animation: aboutHeroReveal 1s cubic-bezier(0.2, 0.7, 0.2, 1) 0.2s both;
+}
+
+.about-page .page-hero .lead {
+  animation: aboutSlideUp 0.8s ease 0.45s both;
+}
+
+/* SCROLL REVEAL */
+
+.about-page-ready [data-about-reveal] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.about-page-ready [data-about-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 900px) {
+  .about-page .container {
+    width: min(100% - 56px, 1320px);
+  }
+
+  .about-page .about-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .about-page .page-hero {
+    padding-block: 90px;
+  }
+}
+
+/* =========================================
+   FOOTER TABLET LAYOUT
+========================================= */
+
+@media (max-width: 760px) {
+  .about-page .ten-footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-page .ten-footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 600px) {
+  .about-page .container {
+    width: min(100% - 36px, 1320px);
+  }
+
+  .about-page .section {
+    padding-block: 68px;
+  }
+
+  .about-page .page-hero {
+    padding-block: 76px;
+  }
+
+  .about-page h1 {
+    font-size: clamp(2.45rem, 10vw, 3.6rem);
+  }
+
+  .about-page h2 {
+    font-size: clamp(2rem, 8vw, 2.7rem);
+  }
+
+  .about-page .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .about-page .cta .container {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .about-page .highlight-panel,
+  .about-page .card {
+    padding: 28px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE FOOTER
+========================================= */
+
+@media (max-width: 520px) {
+  .about-page .ten-footer {
+    padding-top: 46px;
+  }
+
+  .about-page .ten-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-page .ten-footer-brand {
+    grid-column: auto;
+  }
+
+  .about-page .ten-footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY: REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html:has(.about-page) {
+    scroll-behavior: auto;
+  }
+
+  .about-page *,
+  .about-page *::before,
+  .about-page *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  .about-page-ready [data-about-reveal] {
+    opacity: 1 !important;
+  }
+}

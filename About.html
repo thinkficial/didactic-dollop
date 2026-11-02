@@ -3,29 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <meta
       name="description"
       content="Learn about Thinkficial Engineering Network, our mission, vision and values."
     />
     <meta name="theme-color" content="#091529" />
+
     <title>About Us | Thinkficial Engineering Network</title>
-    <link rel="icon" type="image/png" href="asssets/images/TEN%20Logo.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/png" href="assets/images/TEN_Logo.png" />
+
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/about.css" />
+
     <script src="js/main.js" defer></script>
+    <script src="js/about.js" defer></script>
   </head>
-  <body>
+
+  <body class="about-page" id="top">
     <a class="skip-link" href="#main-content">Skip to main content</a>
-    <header class="site-header">
+
+    <!-- GENERAL NAVIGATION -->
+    <header data-site-header class="site-header shared-fallback">
       <nav class="navbar container" aria-label="Main navigation">
         <a
           class="brand"
-          href="index.html"
-          aria-label="Thinkficial Engineering Network, home"
+          href="home.html"
+          aria-label="Thinkficial Engineering Network Home"
         >
-          <img src="asssets/images/TEN%20Logo.png" alt="" width="52" height="55" />
+          <img
+            src="assets/images/TEN_Logo.png"
+            alt="TEN Logo"
+            width="52"
+            height="55"
+          />
+
           <span>THINKFICIAL<br />ENGINEERING NETWORK</span>
         </a>
+
         <button
           class="menu-btn"
           type="button"
@@ -35,9 +60,10 @@
         >
           ☰
         </button>
+
         <ul class="nav-links" id="site-navigation">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="academy.html">Academy</a></li>
           <li><a href="management.html">Management</a></li>
@@ -46,11 +72,15 @@
       </nav>
     </header>
 
+    <!-- MAIN CONTENT -->
     <main id="main-content">
+      <!-- HERO -->
       <section class="page-hero">
         <div class="container">
-          <p class="eyebrow">About us</p>
-          <h1>Technology, engineering and innovation that serve people.</h1>
+          <p class="eyebrow">About Us</p>
+
+          <h1>Technology, Engineering and Innovation That Serve People.</h1>
+
           <p class="lead">
             Get to know Thinkficial Engineering Network and the values behind
             our work.
@@ -58,24 +88,30 @@
         </div>
       </section>
 
+      <!-- WHO WE ARE -->
       <section class="section">
         <div class="container about-layout">
           <div>
-            <p class="eyebrow">Who we are</p>
+            <p class="eyebrow">Who We Are</p>
+
             <h2>Thinkficial Engineering Network</h2>
+
             <p>
               Thinkficial Engineering Network (TEN) is a technology-focused
               organization offering digital solutions, consultancy, information
               research and practical ICT training for individuals and
               organizations.
             </p>
+
             <p>
               Our approach brings together technology, creative thinking and
               continuous learning to develop useful outcomes.
             </p>
           </div>
+
           <div class="highlight-panel">
-            <strong>Our approach</strong>
+            <strong>Our Approach</strong>
+
             <p>
               Understand the need, choose the appropriate tools, deliver
               practical work and keep learning as technology evolves.
@@ -84,22 +120,27 @@
         </div>
       </section>
 
+      <!-- MISSION AND VISION -->
       <section class="section section-alt">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow">Our direction</p>
-            <h2>Mission and vision</h2>
+            <p class="eyebrow">Our Direction</p>
+            <h2>Mission and Vision</h2>
           </div>
+
           <div class="grid grid-2">
             <article class="card">
               <h3>Our Mission</h3>
+
               <p>
                 To promote technological and engineering development through
                 innovative solutions, practical training and technical services.
               </p>
             </article>
+
             <article class="card">
               <h3>Our Vision</h3>
+
               <p>
                 To build a forward-looking network that empowers people,
                 develops technical capabilities and contributes to the digital
@@ -110,34 +151,43 @@
         </div>
       </section>
 
+      <!-- OUR VALUES -->
       <section class="section">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow">Our principles</p>
-            <h2>Values that guide our work</h2>
+            <p class="eyebrow">Our Principles</p>
+            <h2>Values That Guide Our Work</h2>
           </div>
+
           <div class="grid grid-2">
             <article class="card">
               <h3>Innovation</h3>
+
               <p>
                 Exploring useful ideas and technologies to solve real problems.
               </p>
             </article>
+
             <article class="card">
               <h3>Excellence</h3>
+
               <p>
                 Working toward high standards in every service and learning
                 experience.
               </p>
             </article>
+
             <article class="card">
               <h3>Continuous Learning</h3>
+
               <p>
                 Building knowledge through practice, feedback and improvement.
               </p>
             </article>
+
             <article class="card">
               <h3>Integrity</h3>
+
               <p>
                 Communicating responsibly and earning trust through our actions.
               </p>
@@ -146,59 +196,84 @@
         </div>
       </section>
 
+      <!-- CONTACT CALL TO ACTION -->
       <section class="cta">
         <div class="container">
           <div>
-            <h2>Let's build something useful.</h2>
+            <h2>Let's Build Something Useful.</h2>
+
             <p>Contact us about projects, partnerships or training.</p>
           </div>
-          <a class="btn btn-light" href="contact.html">Get in Touch</a>
+
+          <a class="btn btn-light" href="contact.html"> Get in Touch </a>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div>
-          <h2>Thinkficial Engineering Network</h2>
+    <!-- SHARED FOOTER -->
+    <footer data-site-footer class="shared-footer shared-fallback">
+      <div class="shared-container">
+        <div class="ten-footer-brand">
+          <a class="ten-footer-title" href="home.html">
+            Thinkficial Engineering Network
+          </a>
+
           <p>
             Technology, consultancy, digital solutions and practical ICT
             training.
           </p>
         </div>
+
         <div>
-          <h3>Quick Links</h3>
-          <ul class="footer-links">
-            <li><a href="about.html">About</a></li>
+          <h2>Quick Links</h2>
+
+          <ul class="ten-footer-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html" aria-current="page">About</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="academy.html">Academy</a></li>
             <li><a href="management.html">Our Team</a></li>
           </ul>
         </div>
+
         <div>
-          <h3>Contact</h3>
-          <ul class="footer-links">
+          <h2>Contact</h2>
+
+          <ul class="ten-footer-links">
             <li>
-              <a href="mailto:thinkficialengineeringnetwork@gmail.com"
-                >Email us</a
-              >
+              <a href="mailto:thinkficialengineeringnetwork@gmail.com">
+                Email Our Team
+              </a>
             </li>
-            <li><a href="tel:+2349063577772">Call us</a></li>
+
+            <li>
+              <a href="tel:+2349063577772">Call Us</a>
+            </li>
+
             <li>
               <a
                 href="https://wa.me/2349082965308"
                 target="_blank"
                 rel="noopener noreferrer"
-                >WhatsApp</a
               >
+                WhatsApp
+              </a>
             </li>
-            <li><a href="contact.html">Contact form</a></li>
+
+            <li>
+              <a href="contact.html">Contact Form</a>
+            </li>
           </ul>
         </div>
       </div>
-      <div class="container footer-bottom">
-        &copy; <span data-year>2026</span> Thinkficial Engineering Network. All
-        rights reserved.
+
+      <div class="shared-container ten-footer-bottom">
+        <p>
+          &copy; <span data-year>2026</span>
+          Thinkficial Engineering Network. All rights reserved.
+        </p>
+
+        <a href="#top">Back to top ↑</a>
       </div>
     </footer>
   </body>
