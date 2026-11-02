@@ -1,5 +1,7 @@
 /* TEN WEBSITE | Global design system and shared components */
 :root {
+  --font-body: "DM Sans", "Segoe UI", sans-serif;
+  --font-heading: "Manrope", "Segoe UI", sans-serif;
   --navy: #091529;
   --navy-light: #122a48;
   --blue: #075cb5;
@@ -27,10 +29,7 @@ body {
   margin: 0;
   background: var(--white);
   color: var(--ink);
-  font:
-    16px/1.65 Arial,
-    Helvetica,
-    sans-serif;
+  font: 16px/1.65 var(--font-body);
 }
 img {
   display: block;
@@ -69,84 +68,11 @@ button {
   top: 12px;
 }
 
-/* Shared header and navigation */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--navy);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.13);
-}
-.navbar {
-  min-height: 78px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-}
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 11px;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 800;
-  line-height: 1.25;
-}
-.brand img {
-  width: 52px;
-  height: 55px;
-  object-fit: contain;
-}
-.brand span {
-  max-width: 180px;
-  font-size: 14px;
-}
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-.nav-links a {
-  display: block;
-  padding: 9px 0;
-  color: #eef5ff;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 14px;
-}
-.nav-links a:hover,
-.nav-links a[aria-current="page"] {
-  color: var(--cyan);
-}
-.nav-links .nav-contact {
-  padding: 9px 16px;
-  background: var(--blue);
-  border-radius: 8px;
-  color: #fff;
-}
-.nav-links .nav-contact:hover {
-  background: #126cca;
-  color: #fff;
-}
-.menu-btn {
-  display: none;
-  color: #fff;
-  background: transparent;
-  border: 1px solid #a5b9d2;
-  border-radius: 8px;
-  font-size: 24px;
-  line-height: 1;
-  padding: 9px 13px;
-}
-
 /* Shared typography, sections and cards */
 h1,
 h2,
 h3 {
+  font-family: var(--font-heading);
   line-height: 1.2;
   letter-spacing: -0.02em;
 }
@@ -191,9 +117,7 @@ p {
 .section-heading p:last-child {
   color: var(--muted);
 }
-.text-muted {
-  color: var(--muted);
-}
+
 .grid {
   display: grid;
   gap: 22px;
@@ -215,9 +139,7 @@ p {
 .card p:last-child {
   margin-bottom: 0;
 }
-.stack > * + * {
-  margin-top: 18px;
-}
+
 .check-list {
   padding-left: 20px;
   margin: 16px 0 0;
@@ -246,13 +168,7 @@ p {
 .btn:hover {
   transform: translateY(-2px);
 }
-.btn-primary {
-  background: var(--blue);
-  color: #fff;
-}
-.btn-primary:hover {
-  background: #004b99;
-}
+
 .btn-light {
   background: #fff;
   color: var(--navy);
@@ -305,95 +221,20 @@ p {
 .cta h2 {
   margin-bottom: 9px;
 }
-.site-footer {
-  padding: 48px 0 18px;
-  background: var(--navy);
-  color: #ebf4ff;
-}
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 35px;
-}
-.site-footer h2 {
-  font-size: 1.25rem;
-}
-.site-footer h3 {
-  font-size: 1rem;
-}
-.site-footer p {
-  color: #d3e0f0;
-}
-.footer-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.footer-links li {
-  margin-bottom: 8px;
-}
-.site-footer a {
-  color: #e4f1ff;
-  text-decoration: none;
-  overflow-wrap: anywhere;
-}
-.site-footer a:hover {
-  text-decoration: underline;
-}
-.footer-bottom {
-  margin-top: 38px;
-  padding-top: 16px;
-  border-top: 1px solid #354a63;
-  font-size: 0.88rem;
-  color: #d3e0f0;
-}
 
 @media (max-width: 960px) {
   .grid-3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .nav-links {
-    gap: 12px;
-  }
-  .nav-links a {
-    font-size: 13px;
-  }
 }
 @media (max-width: 800px) {
-  .navbar {
-    flex-wrap: wrap;
-    padding-block: 12px;
-  }
-  .menu-btn {
-    display: block;
-    margin-left: auto;
-  }
-  .nav-links {
-    order: 3;
-    width: 100%;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    padding-bottom: 12px;
-  }
-  .nav-links a {
-    padding: 11px 12px;
-    font-size: 15px;
-  }
   /* Without JavaScript, the menu stays visible and links remain usable. */
-  .js .nav-links {
-    display: none;
-  }
-  .js .nav-links.is-open {
-    display: flex;
-  }
+
   .grid-2,
   .grid-3 {
     grid-template-columns: 1fr;
   }
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+
   .cta .container {
     flex-direction: column;
     align-items: flex-start;
@@ -412,10 +253,7 @@ p {
   .card {
     padding: 22px;
   }
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 22px;
-  }
+
   .btn-row .btn {
     width: 100%;
   }
@@ -432,16 +270,13 @@ p {
   }
 }
 
-/* Shared layout from components/layout.html. Legacy page layouts above remain supported. */
+/* Shared navbar and footer imported from components/layout.html. */
 .shared-header,
 .shared-footer {
   --shared-on-dark: color-mix(in srgb, var(--white) 80%, var(--navy));
   --shared-dark-line: color-mix(in srgb, var(--cyan) 30%, transparent);
   --shared-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
-  font:
-    400 16px/1.7 "DM Sans",
-    "Segoe UI",
-    sans-serif;
+  font: 400 16px/1.7 var(--font-body);
 }
 .shared-container {
   width: min(100% - 112px, 1320px);
@@ -479,18 +314,36 @@ p {
   font-family: inherit;
   cursor: pointer;
 }
-.shared-fallback {
-  padding-block: 24px;
+/* Empty slots reserve the header height while the shared HTML loads. */
+[data-site-header] {
+  min-height: 100px;
+  background: var(--navy);
 }
-.shared-fallback .shared-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 24px;
-  align-items: center;
-  min-height: 52px;
+.site-notice,
+.site-layout-error {
+  margin: 0;
+  padding: 24px;
+  color: var(--white);
+  background: var(--navy);
+  text-align: center;
+  font: 16px/1.7 var(--font-body);
 }
-.shared-fallback p {
-  width: 100%;
+.site-layout-error button {
+  padding: 6px 16px;
+  margin-left: 8px;
+  color: var(--navy);
+  background: var(--cyan);
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.site-layout-error button:focus-visible {
+  outline: 3px solid var(--white);
+}
+@media (max-width: 1024px) {
+  [data-site-header] {
+    min-height: 81px;
+  }
 }
 .shared-header {
   position: sticky;
@@ -527,9 +380,7 @@ p {
 .shared-header::after {
   bottom: 0;
 }
-.shared-footer::before {
-  top: 0;
-}
+
 .shared-nav {
   display: flex;
   min-height: 100px;
@@ -561,16 +412,7 @@ p {
   transition: color 0.25s;
 }
 .shared-nav-links a:not(.shared-nav-contact)::after {
-  position: absolute;
-  content: "";
-  bottom: 4px;
-  left: 0;
-  width: 100%;
-  height: 1px;
   background: var(--cyan);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s var(--shared-ease);
 }
 .shared-nav-links a:hover,
 .shared-nav-links a[aria-current] {
@@ -613,10 +455,7 @@ p {
   line-height: 1;
 }
 .shared-footer {
-  position: relative;
   padding-top: 72px;
-  color: var(--shared-on-dark);
-  background: var(--navy);
 }
 .shared-footer-grid {
   display: grid;
@@ -624,20 +463,14 @@ p {
   gap: 80px;
   padding-bottom: 60px;
 }
-.shared-footer-brand img {
-  width: 190px;
-}
+
 .shared-footer-brand > a {
   display: inline-block;
 }
-.shared-footer-brand p {
-  margin-top: 20px;
-  color: var(--shared-on-dark);
-  font-size: 1rem;
-}
+
 .shared-footer h2 {
   margin: 6px 0 23px;
-  font-family: "DM Sans", sans-serif;
+  font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0;
@@ -667,12 +500,8 @@ p {
   height: 15px;
 }
 .shared-footer-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
   padding-block: 25px;
-  border-top: 1px solid color-mix(in srgb, var(--white) 9%, transparent);
+
   font-size: 0.875rem;
   color: var(--shared-on-dark);
 }
@@ -824,23 +653,14 @@ p {
   }
 }
 
-/* =========================================
-   THINKFICIAL PREMIUM SHARED FOOTER
-   ========================================= */
-
 /* 1. Main footer */
 .shared-footer {
   position: relative;
-  background: linear-gradient(
-    135deg,
-    #102c4a 0%,
-    #091529 60%,
-    #06101f 100%
-  );
+  background: linear-gradient(135deg, #102c4a 0%, #091529 60%, #06101f 100%);
 
   color: #ffffff;
   padding: 75px 0 0;
-  border-top: 1px solid rgba(56,189,248,0.25);
+  border-top: 1px solid rgba(56, 189, 248, 0.25);
 }
 
 /* 2. Elegant glowing top border */
@@ -852,14 +672,9 @@ p {
   width: 80%;
   height: 2px;
 
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #38bdf8,
-    transparent
-  );
+  background: linear-gradient(90deg, transparent, #38bdf8, transparent);
 
-  box-shadow: 0 0 18px rgba(56,189,248,0.45);
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.45);
 }
 
 /* 3. Footer column layout */
@@ -877,15 +692,14 @@ p {
   height: auto;
   display: block;
 
-  transition: transform 0.35s ease,
-              filter 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
 }
 
 .shared-footer-brand img:hover {
   transform: scale(1.04);
-  filter: drop-shadow(
-    0 0 12px rgba(56,189,248,0.3)
-  );
+  filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.3));
 }
 
 /* 5. Brand description */
@@ -948,7 +762,7 @@ p {
 .shared-footer-grid a:hover {
   color: #38bdf8;
   transform: translateX(5px);
-  text-shadow: 0 0 10px rgba(56,189,248,0.35);
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.35);
 }
 
 /* Keep the logo in its original position */
@@ -969,7 +783,7 @@ p {
 }
 
 .shared-footer-grid a:hover svg {
-  transform: translate(2px,-2px);
+  transform: translate(2px, -2px);
 }
 
 /* 10. Footer bottom */
@@ -983,7 +797,7 @@ p {
   padding-top: 25px;
   padding-bottom: 25px;
 
-  border-top: 1px solid rgba(255,255,255,0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 /* Copyright */
@@ -1054,7 +868,6 @@ p {
   }
 }
 
-
 @media (max-width: 360px) {
   .shared-footer-brand {
     align-items: flex-start;
@@ -1113,11 +926,6 @@ p {
   }
 }
 
-/* =========================================
-   THINKFICIAL SHARED NAVBAR PREMIUM DESIGN
-   ========================================= */
-
-/* 1. Curved navbar */
 /* Navbar shadow on hover */
 .shared-header:hover {
   box-shadow: 0 12px 30px rgba(0, 123, 255, 0.16);

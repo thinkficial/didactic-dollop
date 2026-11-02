@@ -8,8 +8,7 @@
   --contact-white: #ffffff;
   --contact-ink: #18273a;
   --contact-muted: #506178;
-  --contact-deep: var(--contact-navy);
-  --contact-silver: var(--contact-paper);
+
   --contact-line: color-mix(
     in srgb,
     var(--contact-muted) 20%,
@@ -708,17 +707,6 @@ html:has(.contact-page) {
   92% {
     opacity: 0;
     transform: rotateY(-35deg) scale(0.8);
-  }
-}
-
-@keyframes contact-enter {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
   }
 }
 

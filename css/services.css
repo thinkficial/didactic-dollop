@@ -4,12 +4,9 @@
    ========================================= */
 
 .services-page {
-  --sv-navy: #091529;
-  --sv-dark: #071426;
-  --sv-blue: #1264b7;
   --sv-cyan: #81e7ff;
   --sv-ink: #13243b;
-  --sv-muted: #64748b;
+
   font-family: "DM Sans", sans-serif;
   overflow-x: hidden;
 }
@@ -23,9 +20,9 @@
   margin-inline: auto;
 }
 
-.services-page h1,
-.services-page h2,
-.services-page h3 {
+.services-page main h1,
+.services-page main h2,
+.services-page main h3 {
   font-family: "Manrope", sans-serif;
   letter-spacing: -0.055em;
 }
@@ -40,17 +37,8 @@
   overflow: hidden;
   color: #fff;
   background:
-    radial-gradient(
-      ellipse at 78% 42%,
-      #123b65 0%,
-      transparent 46%
-    ),
-    linear-gradient(
-      135deg,
-      #071326,
-      #0c1e36 70%,
-      #071426
-    );
+    radial-gradient(ellipse at 78% 42%, #123b65 0%, transparent 46%),
+    linear-gradient(135deg, #071326, #0c1e36 70%, #071426);
   padding: 108px 0 25px;
 }
 
@@ -138,7 +126,9 @@
   text-decoration: none !important;
   font-weight: 800;
   font-size: 0.87rem;
-  transition: transform 0.25s, background 0.25s;
+  transition:
+    transform 0.25s,
+    background 0.25s;
 }
 
 .services-page .sv-button:hover {
@@ -258,7 +248,9 @@
 .services-page .sv-core-inner {
   position: relative;
   text-align: center;
-  font: 800 clamp(2.7rem, 6vw, 5.2rem)/1 "Manrope", sans-serif;
+  font:
+    800 clamp(2.7rem, 6vw, 5.2rem)/1 "Manrope",
+    sans-serif;
   letter-spacing: -0.09em;
   color: white;
   text-shadow: 0 0 30px #79dfff77;
@@ -267,7 +259,9 @@
 .services-page .sv-core-inner span {
   display: block;
   margin-top: 12px;
-  font: 700 clamp(0.36rem, 0.65vw, 0.6rem)/1.5 "DM Sans", sans-serif;
+  font:
+    700 clamp(0.36rem, 0.65vw, 0.6rem)/1.5 "DM Sans",
+    sans-serif;
   letter-spacing: 0.2em;
   color: #aee8f8;
 }
@@ -452,7 +446,7 @@
     box-shadow 0.3s;
 }
 
-.services-page .sv-service:nth-child(n+3) {
+.services-page .sv-service:nth-child(n + 3) {
   grid-column: span 2;
 }
 
@@ -480,12 +474,7 @@
 }
 
 .services-page .sv-featured {
-  background: radial-gradient(
-    circle at 100% 0%,
-    #1e5678,
-    #0c2847 50%,
-    #091b32
-  );
+  background: radial-gradient(circle at 100% 0%, #1e5678, #0c2847 50%, #091b32);
   color: white;
   border-color: #123f63;
 }
@@ -739,11 +728,7 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  background: radial-gradient(
-    circle at 82% 30%,
-    #174e78,
-    #091529 55%
-  );
+  background: radial-gradient(circle at 82% 30%, #174e78, #091529 55%);
   color: white;
   padding: 105px 0 130px;
 }
@@ -789,7 +774,9 @@
   color: #09213c;
   text-decoration: none !important;
   transform: rotate(-10deg);
-  transition: transform 0.3s, background 0.3s;
+  transition:
+    transform 0.3s,
+    background 0.3s;
 }
 
 .services-page .sv-contact-circle:hover {
@@ -812,7 +799,9 @@
   position: absolute;
   bottom: -45px;
   left: 4%;
-  font: 800 clamp(4rem, 14vw, 14rem)/1 "Manrope", sans-serif;
+  font:
+    800 clamp(4rem, 14vw, 14rem)/1 "Manrope",
+    sans-serif;
   letter-spacing: -0.08em;
   color: #ffffff08;
   pointer-events: none;
@@ -823,13 +812,15 @@
    SCROLL REVEAL ANIMATIONS
    ========================================= */
 
-.services-page .sv-js [data-sv-reveal] {
+.sv-js .services-page [data-sv-reveal] {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
 }
 
-.services-page .sv-js [data-sv-reveal].sv-visible {
+.sv-js .services-page [data-sv-reveal].sv-visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -1003,7 +994,7 @@
     animation: none;
   }
 
-  .services-page .sv-js [data-sv-reveal] {
+  .sv-js .services-page [data-sv-reveal] {
     opacity: 1;
     transform: none;
     transition: none;

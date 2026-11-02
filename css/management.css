@@ -1,4 +1,3 @@
-
 /* ==========================================
    THINKFICIAL ENGINEERING NETWORK
    PREMIUM MANAGEMENT PAGE
@@ -6,9 +5,9 @@
 
 .management-page {
   --management-bg: #071321;
-  --management-panel: #0d1c2d;
-  --management-card: #102238;
-  --management-cyan: #19d8d0;
+
+  --management-cyan: var(--cyan);
+  font-family: "DM Sans", "Segoe UI", sans-serif;
   --management-white: #f4f7fa;
   --management-muted: #9baaba;
 
@@ -50,11 +49,12 @@
   background:
     radial-gradient(
       ellipse at 78% 52%,
-      rgba(0, 211, 209, 0.12),
+      color-mix(in srgb, var(--cyan) calc(0.12 * 100%), transparent),
       transparent 35%
     ),
     linear-gradient(120deg, #071321, #0b1929 65%, #091b2b);
-  border-bottom: 1px solid rgba(25, 216, 208, 0.15);
+  border-bottom: 1px solid
+    color-mix(in srgb, var(--cyan) calc(0.15 * 100%), transparent);
 }
 
 .management-hero-inner {
@@ -84,7 +84,8 @@
 
 .hero-content h1 span {
   color: var(--management-cyan);
-  text-shadow: 0 0 30px rgba(25, 216, 208, 0.25);
+  text-shadow: 0 0 30px
+    color-mix(in srgb, var(--cyan) calc(0.25 * 100%), transparent);
 }
 
 .hero-description {
@@ -114,7 +115,8 @@
   font-size: 13px;
   font-weight: 800;
   transition: all 0.3s ease;
-  box-shadow: 0 0 25px rgba(25, 216, 208, 0.12);
+  box-shadow: 0 0 25px
+    color-mix(in srgb, var(--cyan) calc(0.12 * 100%), transparent);
 }
 
 .management-btn span {
@@ -124,7 +126,8 @@
 .management-btn:hover {
   background: #ffffff;
   transform: translateY(-4px);
-  box-shadow: 0 10px 35px rgba(25, 216, 208, 0.3);
+  box-shadow: 0 10px 35px
+    color-mix(in srgb, var(--cyan) calc(0.3 * 100%), transparent);
 }
 
 .hero-bottom-note {
@@ -153,7 +156,8 @@
   left: -120px;
   width: 350px;
   height: 350px;
-  border: 1px solid rgba(25, 216, 208, 0.08);
+  border: 1px solid
+    color-mix(in srgb, var(--cyan) calc(0.08 * 100%), transparent);
   border-radius: 50%;
 }
 
@@ -176,14 +180,16 @@
   height: 210px;
   border-radius: 50%;
   background: radial-gradient(circle, #152d42, #091625 75%);
-  border: 1px solid rgba(25, 216, 208, 0.35);
+  border: 1px solid
+    color-mix(in srgb, var(--cyan) calc(0.35 * 100%), transparent);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   box-shadow:
-    0 0 35px rgba(25, 216, 208, 0.13),
-    inset 0 0 35px rgba(25, 216, 208, 0.08);
+    0 0 35px color-mix(in srgb, var(--cyan) calc(0.13 * 100%), transparent),
+    inset 0 0 35px
+      color-mix(in srgb, var(--cyan) calc(0.08 * 100%), transparent);
 }
 
 .ten-emblem img {
@@ -191,13 +197,6 @@
   height: 85px;
   object-fit: contain;
   margin-bottom: 8px;
-}
-
-.ten-fallback {
-  display: none;
-  font-size: 48px;
-  font-weight: 900;
-  letter-spacing: -3px;
 }
 
 .ten-emblem img:not([src]),
@@ -214,7 +213,8 @@
 
 .orbit {
   position: absolute;
-  border: 1px solid rgba(25, 216, 208, 0.19);
+  border: 1px solid
+    color-mix(in srgb, var(--cyan) calc(0.19 * 100%), transparent);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -228,14 +228,14 @@
 .orbit-two {
   width: 360px;
   height: 360px;
-  border-color: rgba(25, 216, 208, 0.12);
+  border-color: color-mix(in srgb, var(--cyan) calc(0.12 * 100%), transparent);
   animation: orbitPulse 5s ease-in-out infinite 1s;
 }
 
 .orbit-three {
   width: 420px;
   height: 420px;
-  border-color: rgba(25, 216, 208, 0.07);
+  border-color: color-mix(in srgb, var(--cyan) calc(0.07 * 100%), transparent);
 }
 
 .orbit-label {
@@ -258,7 +258,8 @@
 }
 
 @keyframes orbitPulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
     opacity: 0.7;
   }
@@ -276,11 +277,7 @@
 .management-team-section {
   padding: 115px 0 125px;
   background:
-    radial-gradient(
-      ellipse at 50% 0%,
-      rgba(17, 72, 91, 0.15),
-      transparent 55%
-    ),
+    radial-gradient(ellipse at 50% 0%, rgba(17, 72, 91, 0.15), transparent 55%),
     #081522;
 }
 
@@ -385,7 +382,7 @@
   right: -90px;
   bottom: -90px;
   border-radius: 50%;
-  background: rgba(25, 216, 208, 0.08);
+  background: color-mix(in srgb, var(--cyan) calc(0.08 * 100%), transparent);
   filter: blur(35px);
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -394,15 +391,11 @@
 
 .management-card:hover {
   transform: translateY(-12px);
-  border-color: rgba(25, 216, 208, 0.65);
-  background: linear-gradient(
-    145deg,
-    #15314a,
-    #0b1e30
-  );
+  border-color: color-mix(in srgb, var(--cyan) calc(0.65 * 100%), transparent);
+  background: linear-gradient(145deg, #15314a, #0b1e30);
   box-shadow:
     0 20px 45px rgba(0, 0, 0, 0.3),
-    0 0 25px rgba(25, 216, 208, 0.13);
+    0 0 25px color-mix(in srgb, var(--cyan) calc(0.13 * 100%), transparent);
 }
 
 .management-card:hover::before,
@@ -441,10 +434,11 @@
   justify-content: center;
   position: relative;
   background: linear-gradient(145deg, #153b50, #0b1d30);
-  border: 2px solid rgba(25, 216, 208, 0.35);
+  border: 2px solid
+    color-mix(in srgb, var(--cyan) calc(0.35 * 100%), transparent);
   box-shadow:
-    0 0 0 7px rgba(25, 216, 208, 0.035),
-    0 0 25px rgba(25, 216, 208, 0.09);
+    0 0 0 7px color-mix(in srgb, var(--cyan) calc(0.035 * 100%), transparent),
+    0 0 25px color-mix(in srgb, var(--cyan) calc(0.09 * 100%), transparent);
   transition: all 0.4s ease;
 }
 
@@ -452,7 +446,8 @@
   content: "";
   position: absolute;
   inset: -9px;
-  border: 1px solid rgba(25, 216, 208, 0.12);
+  border: 1px solid
+    color-mix(in srgb, var(--cyan) calc(0.12 * 100%), transparent);
   border-radius: 50%;
   transition: all 0.4s ease;
 }
@@ -468,13 +463,13 @@
   transform: scale(1.07);
   border-color: var(--management-cyan);
   box-shadow:
-    0 0 0 8px rgba(25, 216, 208, 0.07),
-    0 0 35px rgba(25, 216, 208, 0.28);
+    0 0 0 8px color-mix(in srgb, var(--cyan) calc(0.07 * 100%), transparent),
+    0 0 35px color-mix(in srgb, var(--cyan) calc(0.28 * 100%), transparent);
 }
 
 .management-card:hover .profile-avatar::before {
   inset: -14px;
-  border-color: rgba(25, 216, 208, 0.4);
+  border-color: color-mix(in srgb, var(--cyan) calc(0.4 * 100%), transparent);
 }
 
 .profile-details {
@@ -537,11 +532,12 @@
   background:
     radial-gradient(
       ellipse at 85% 50%,
-      rgba(25, 216, 208, 0.12),
+      color-mix(in srgb, var(--cyan) calc(0.12 * 100%), transparent),
       transparent 40%
     ),
     #0d1c2d;
-  border-top: 1px solid rgba(25, 216, 208, 0.12);
+  border-top: 1px solid
+    color-mix(in srgb, var(--cyan) calc(0.12 * 100%), transparent);
 }
 
 .cta-content {
@@ -570,39 +566,10 @@
 }
 
 /* ==========================================
-   NAVIGATION AND FOOTER
-========================================== */
-
-.management-page .shared-header {
-  background: #071321;
-  border-bottom: 1px solid rgba(25, 216, 208, 0.2);
-}
-
-.management-page .shared-nav-links a[aria-current="page"] {
-  color: var(--management-cyan);
-}
-
-.management-page .shared-footer {
-  background: #050f1b;
-  border-top: 1px solid rgba(25, 216, 208, 0.15);
-}
-
-.management-page .shared-footer a {
-  color: #a9bdca;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.management-page .shared-footer a:hover {
-  color: var(--management-cyan);
-}
-
-/* ==========================================
    RESPONSIVE DESIGN
 ========================================== */
 
 @media (max-width: 900px) {
-
   .management-hero-inner {
     grid-template-columns: 1fr 0.8fr;
     gap: 20px;
@@ -622,7 +589,6 @@
 }
 
 @media (max-width: 650px) {
-
   .management-hero {
     min-height: auto;
   }
@@ -705,79 +671,5 @@
   .management-page *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
-  }
-}
-
-/* =================================
-   MOVING TURQUOISE HEADLINE STRIP
-================================= */
-
-.management-marquee {
-  width: 100%;
-  overflow: hidden;
-  background: #19d8d0;
-  padding: 20px 0;
-  position: relative;
-  border-top: 1px solid rgba(255,255,255,0.2);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: managementMarquee 32s linear infinite;
-}
-
-.marquee-content {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  gap: 38px;
-  padding-right: 38px;
-}
-
-.marquee-content span {
-  font-size: 13px;
-  font-weight: 900;
-  letter-spacing: 2px;
-  color: #071b2b;
-  white-space: nowrap;
-}
-
-.marquee-content b {
-  color: #071b2b;
-  font-size: 17px;
-}
-
-@keyframes managementMarquee {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-/* Pause when the visitor hovers */
-
-.management-marquee:hover .marquee-track {
-  animation-play-state: paused;
-}
-
-/* Mobile */
-
-@media (max-width: 600px) {
-  .management-marquee {
-    padding: 16px 0;
-  }
-
-  .marquee-content {
-    gap: 25px;
-    padding-right: 25px;
-  }
-
-  .marquee-content span {
-    font-size: 11px;
   }
 }

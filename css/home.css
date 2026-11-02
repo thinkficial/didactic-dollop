@@ -8,7 +8,7 @@
   --home-white: #ffffff;
   --home-ink: #18273a;
   --home-muted: #506178;
-  --home-deep: var(--home-navy);
+
   --home-silver: var(--home-paper);
   --home-line: color-mix(in srgb, var(--home-muted) 20%, var(--home-white));
   --home-on-dark: color-mix(in srgb, var(--home-white) 80%, var(--home-navy));

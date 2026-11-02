@@ -22,6 +22,11 @@
     <script src="js/contact.js" defer></script>
   </head>
   <body class="contact-page" id="top">
+    <noscript
+      ><p class="site-notice">
+        Enable JavaScript to load the site navigation and footer.
+      </p></noscript
+    >
     <a class="contact-skip" href="#main-content">Skip to main content</a>
     <svg
       class="contact-icons"
@@ -55,17 +60,7 @@
         </symbol>
       </defs>
     </svg>
-    <!-- Replaced by components/layout.html; these links also work without JavaScript. -->
-    <header data-site-header class="shared-header shared-fallback">
-      <nav class="shared-container" aria-label="Main navigation">
-        <a href="index.html">TEN Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="academy.html">Academy</a>
-        <a href="management.html">Management</a>
-        <a href="#enquiry-form">Let’s Talk</a>
-      </nav>
-    </header>
+    <header data-site-header></header>
     <main id="main-content">
       <section class="contact-hero" aria-labelledby="contact-heading">
         <div class="contact-container contact-hero-layout">
@@ -344,15 +339,6 @@
         </div>
       </section>
     </main>
-    <footer data-site-footer class="shared-footer shared-fallback">
-      <div class="shared-container">
-        <p>Thinkficial Engineering Network</p>
-        <a href="mailto:thinkficialengineeringnetwork@gmail.com"
-          >Email Our Team</a
-        >
-        <a href="contact.html">Contact Details</a>
-        <a href="#top">Back to top ↑</a>
-      </div>
-    </footer>
+    <footer data-site-footer></footer>
   </body>
 </html>

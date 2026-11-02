@@ -9,7 +9,7 @@
     const slots = [
       ...document.querySelectorAll("[data-site-header], [data-site-footer]"),
     ];
-    if (!slots.length) return;
+    if (!slots.length) return true;
     try {
       const response = await fetch(new URL("components/layout.html", siteRoot));
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -45,17 +45,31 @@
       replacements.forEach(({ slot, component }) =>
         slot.replaceWith(component),
       );
+      return true;
     } catch (error) {
-      // Keep the fallback links usable if offline, opened via file://, or unavailable.
-      console.warn(
-        "Shared layout could not load; using fallback links.",
-        error,
-      );
+      console.warn("Shared layout could not load.", error);
+      const header = document.querySelector("[data-site-header]");
+      if (header) {
+        const message = document.createElement("p");
+        message.className = "site-layout-error";
+        message.setAttribute("role", "status");
+        message.append("Navigation is unavailable. ");
+        const retry = document.createElement("button");
+        retry.type = "button";
+        retry.textContent = "Retry";
+        retry.addEventListener("click", async () => {
+          retry.disabled = true;
+          await initializeLayout();
+        });
+        message.append(retry);
+        header.replaceChildren(message);
+      }
+      return false;
     }
   }
 
   function initializeNavigation() {
-    const menuButton = document.querySelector(".shared-menu, .menu-btn");
+    const menuButton = document.querySelector(".shared-menu");
     const navigation = document.querySelector("#site-navigation");
     const closeMenu = (restoreFocus = false) => {
       if (!menuButton || !navigation) return;
@@ -104,6 +118,12 @@
     });
   }
 
+  async function initializeLayout() {
+    if (!(await loadLayout())) return;
+    initializeNavigation();
+    document.dispatchEvent(new CustomEvent("site:layout-ready"));
+  }
+
   // Follow the existing page animation controls without coupling their scripts to imports.
   function initializeLayoutMotion() {
     const update = () =>
@@ -122,8 +142,6 @@
 
   document.addEventListener("DOMContentLoaded", async () => {
     initializeLayoutMotion();
-    await loadLayout();
-    initializeNavigation();
-    document.dispatchEvent(new CustomEvent("site:layout-ready"));
+    await initializeLayout();
   });
 })();
