@@ -39,23 +39,23 @@ html:has(.about-page) {
   color: var(--about-navy);
 }
 
-.about-page h1,
-.about-page h2,
-.about-page h3 {
+.about-page main h1,
+.about-page main h2,
+.about-page main h3 {
   margin-top: 0;
   font-family: "Manrope", "Segoe UI", sans-serif;
   font-weight: 600;
 }
 
-.about-page p {
+.about-page main p {
   color: var(--about-muted);
 }
 
-.about-page a {
+.about-page main a {
   text-decoration: none;
 }
 
-.about-page :focus-visible {
+.about-page main :focus-visible {
   outline: 3px solid var(--about-blue);
   outline-offset: 6px;
 }
@@ -104,19 +104,19 @@ html:has(.about-page) {
    HEADINGS
 ========================================= */
 
-.about-page h1 {
+.about-page main h1 {
   font-size: clamp(2.8rem, 5.5vw, 5.5rem);
   line-height: 1.08;
   letter-spacing: -0.065em;
 }
 
-.about-page h2 {
+.about-page main h2 {
   font-size: clamp(2.1rem, 3.5vw, 3.65rem);
   line-height: 1.15;
   letter-spacing: -0.055em;
 }
 
-.about-page h3 {
+.about-page main h3 {
   font-size: clamp(1.25rem, 1.8vw, 1.6rem);
   line-height: 1.3;
 }
@@ -340,107 +340,6 @@ html:has(.about-page) {
 }
 
 /* =========================================
-   NAVIGATION
-========================================= */
-
-.site-header .nav-links a[aria-current="page"] {
-  color: var(--about-blue);
-}
-
-/* =========================================
-   FOOTER
-========================================= */
-
-.about-page .ten-footer {
-  padding: 64px 0 0;
-  color: var(--about-white);
-  background: var(--about-navy);
-  border-top: 1px solid rgba(165, 231, 255, 0.25);
-}
-
-.about-page .ten-footer-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 0.7fr 0.8fr;
-  gap: clamp(28px, 5vw, 72px);
-  padding-bottom: 46px;
-}
-
-.about-page .ten-footer h2 {
-  margin: 0 0 18px;
-  color: var(--about-cyan);
-  font-family: "Manrope", "Segoe UI", sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0;
-}
-
-.about-page .ten-footer p {
-  max-width: 390px;
-  margin: 14px 0 0;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.95rem;
-  line-height: 1.8;
-}
-
-.about-page .ten-footer-title {
-  display: inline-block;
-  color: var(--about-white);
-  font-family: "Manrope", "Segoe UI", sans-serif;
-  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  transition: color 0.3s ease;
-}
-
-.about-page .ten-footer-title:hover {
-  color: var(--about-cyan);
-}
-
-.about-page .ten-footer-links {
-  display: grid;
-  gap: 11px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.about-page .ten-footer-links a {
-  display: inline-block;
-  color: rgba(255, 255, 255, 0.8);
-  transition:
-    color 0.25s ease,
-    transform 0.25s ease;
-}
-
-.about-page .ten-footer-links a:hover {
-  color: var(--about-cyan);
-  transform: translateX(5px);
-}
-
-.about-page .ten-footer-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding-block: 22px;
-  border-top: 1px solid rgba(165, 231, 255, 0.2);
-}
-
-.about-page .ten-footer-bottom p {
-  margin: 0;
-  font-size: 0.875rem;
-}
-
-.about-page .ten-footer-bottom a {
-  color: rgba(255, 255, 255, 0.8);
-  transition: color 0.25s ease;
-}
-
-.about-page .ten-footer-bottom a:hover {
-  color: var(--about-cyan);
-}
-
-/* =========================================
    ANIMATIONS
 ========================================= */
 
@@ -477,31 +376,6 @@ html:has(.about-page) {
     opacity: 1;
     transform: translateY(0);
     filter: blur(0);
-  }
-}
-
-@keyframes aboutGlow {
-  0%,
-  100% {
-    box-shadow: 0 0 0 rgba(165, 231, 255, 0);
-  }
-
-  50% {
-    box-shadow: 0 0 28px rgba(165, 231, 255, 0.15);
-  }
-}
-
-@keyframes aboutBackgroundMove {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
   }
 }
 
@@ -558,20 +432,6 @@ html:has(.about-page) {
 }
 
 /* =========================================
-   FOOTER TABLET LAYOUT
-========================================= */
-
-@media (max-width: 760px) {
-  .about-page .ten-footer-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .about-page .ten-footer-brand {
-    grid-column: 1 / -1;
-  }
-}
-
-/* =========================================
    MOBILE RESPONSIVENESS
 ========================================= */
 
@@ -588,11 +448,11 @@ html:has(.about-page) {
     padding-block: 76px;
   }
 
-  .about-page h1 {
+  .about-page main h1 {
     font-size: clamp(2.45rem, 10vw, 3.6rem);
   }
 
-  .about-page h2 {
+  .about-page main h2 {
     font-size: clamp(2rem, 8vw, 2.7rem);
   }
 
@@ -608,30 +468,6 @@ html:has(.about-page) {
   .about-page .highlight-panel,
   .about-page .card {
     padding: 28px;
-  }
-}
-
-/* =========================================
-   SMALL MOBILE FOOTER
-========================================= */
-
-@media (max-width: 520px) {
-  .about-page .ten-footer {
-    padding-top: 46px;
-  }
-
-  .about-page .ten-footer-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .about-page .ten-footer-brand {
-    grid-column: auto;
-  }
-
-  .about-page .ten-footer-bottom {
-    align-items: flex-start;
-    flex-direction: column;
   }
 }
 

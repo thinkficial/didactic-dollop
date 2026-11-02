@@ -4,16 +4,12 @@
 */
 
 (() => {
-  const items = document.querySelectorAll(
-    "[data-sv-reveal]"
-  );
+  const items = document.querySelectorAll("[data-sv-reveal]");
 
   if (
     !items.length ||
     !("IntersectionObserver" in window) ||
-    window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
   ) {
     return;
   }
@@ -29,8 +25,8 @@
     },
     {
       threshold: 0.08,
-      rootMargin: "0px 0px 40px 0px"
-    }
+      rootMargin: "0px 0px 40px 0px",
+    },
   );
 
   document.documentElement.classList.add("sv-js");

@@ -24,6 +24,11 @@
     <script src="js/home.js" defer></script>
   </head>
   <body class="home-page" id="top">
+    <noscript
+      ><p class="site-notice">
+        Enable JavaScript to load the site navigation and footer.
+      </p></noscript
+    >
     <a class="home-skip" href="#main-content">Skip to main content</a>
     <svg
       class="home-icons"
@@ -65,17 +70,7 @@
         </symbol>
       </defs>
     </svg>
-    <!-- Replaced by components/layout.html; these links also work without JavaScript. -->
-    <header data-site-header class="shared-header shared-fallback">
-      <nav class="shared-container" aria-label="Main navigation">
-        <a href="index.html">TEN Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="academy.html">Academy</a>
-        <a href="management.html">Management</a>
-        <a href="contact.html">Let’s Talk</a>
-      </nav>
-    </header>
+    <header data-site-header></header>
     <main id="main-content">
       <section class="home-hero" aria-labelledby="hero-heading">
         <div class="home-container home-hero-layout">
@@ -275,16 +270,17 @@
           <div class="home-marquee-group">
             <span>Technology Consulting</span><i aria-hidden="true">✳</i
             ><span>Web Development</span><i aria-hidden="true">✳</i
-            ><span>Artificial Intelligence</span><i aria-hidden="true">✳</i
+            ><span>AI Solutions</span><i aria-hidden="true">✳</i
             ><span>Digital Skills</span><i aria-hidden="true">✳</i
-            ><span>Information Research</span><i aria-hidden="true">✳</i>
+            ><span>Information Research</span
+            ><i aria-hidden="true">✳</i> &gt;<span>ICT Training</span
+            ><i aria-hidden="true">✳</i>
           </div>
           <div class="home-marquee-group" aria-hidden="true">
             <span>Technology Consulting</span><i>✳</i
-            ><span>Web Development</span><i>✳</i
-            ><span>Artificial Intelligence</span><i>✳</i
-            ><span>Digital Skills</span><i>✳</i><span>Information Research</span
-            ><i>✳</i>
+            ><span>Web Development</span><i>✳</i><span>AI Solutions</span
+            ><i>✳</i><span>Digital Skills</span><i>✳</i
+            ><span>Information Research</span><i>✳</i>
           </div>
         </div>
       </div>
@@ -383,7 +379,7 @@
               ><span class="home-card-category"
                 >Learning &amp; Possibility</span
               >
-              <h3>ICT &amp; digital<br />Skills Training</h3>
+              <h3>ICT &amp; Digital<br />Skills Training</h3>
               <p>
                 Develop useful skills, build digital confidence and take your
                 next step with practical learning.
@@ -397,8 +393,8 @@
               ><span class="home-service-icon"
                 ><svg aria-hidden="true">
                   <use href="#icon-research" /></svg></span
-              ><span class="home-card-category">Insight &amp; support</span>
-              <h3>Information<br />&amp; research</h3>
+              ><span class="home-card-category">Insight &amp; Support</span>
+              <h3>Information<br />&amp; Research</h3>
               <p>
                 Move forward with focused information research and digital
                 support for your next challenge.
@@ -534,15 +530,6 @@
         <span class="home-contact-watermark" aria-hidden="true">Together.</span>
       </section>
     </main>
-    <footer data-site-footer class="shared-footer shared-fallback">
-      <div class="shared-container">
-        <p>Thinkficial Engineering Network</p>
-        <a href="mailto:thinkficialengineeringnetwork@gmail.com"
-          >Email Our Team</a
-        >
-        <a href="contact.html">Contact Details</a>
-        <a href="#top">Back to top ↑</a>
-      </div>
-    </footer>
+    <footer data-site-footer></footer>
   </body>
 </html>
