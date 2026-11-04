@@ -1,6 +1,6 @@
 /* =========================================
    TEN ABOUT PAGE
-   Complete CSS + Animations
+   Complete CSS + Orbit Animation
 ========================================= */
 
 .about-page {
@@ -39,6 +39,42 @@ html:has(.about-page) {
   color: var(--about-navy);
 }
 
+/* CONTAINER */
+
+.about-page .container {
+  width: min(100% - 112px, 1320px);
+  margin-inline: auto;
+}
+
+/* SECTIONS */
+
+.about-page .section {
+  padding-block: clamp(76px, 8vw, 128px);
+}
+
+.about-page .section-alt {
+  background: var(--about-white);
+}
+
+.about-page .section-heading {
+  max-width: 760px;
+  margin-bottom: clamp(32px, 4vw, 58px);
+}
+
+/* SECTION LABEL */
+
+.about-page .eyebrow {
+  display: block;
+  margin-bottom: 22px;
+  color: var(--about-blue);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+/* HEADINGS */
+
 .about-page main h1,
 .about-page main h2,
 .about-page main h3 {
@@ -60,50 +96,6 @@ html:has(.about-page) {
   outline-offset: 6px;
 }
 
-/* =========================================
-   CONTAINER
-========================================= */
-
-.about-page .container {
-  width: min(100% - 112px, 1320px);
-  margin-inline: auto;
-}
-
-/* =========================================
-   SECTIONS
-========================================= */
-
-.about-page .section {
-  padding-block: clamp(76px, 8vw, 128px);
-}
-
-.about-page .section-alt {
-  background: var(--about-white);
-}
-
-.about-page .section-heading {
-  max-width: 760px;
-  margin-bottom: clamp(32px, 4vw, 58px);
-}
-
-/* =========================================
-   SECTION LABEL
-========================================= */
-
-.about-page .eyebrow {
-  display: block;
-  margin-bottom: 22px;
-  color: var(--about-blue);
-  font-size: 0.9375rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-}
-
-/* =========================================
-   HEADINGS
-========================================= */
-
 .about-page main h1 {
   font-size: clamp(2.8rem, 5.5vw, 5.5rem);
   line-height: 1.08;
@@ -120,24 +112,34 @@ html:has(.about-page) {
   font-size: clamp(1.25rem, 1.8vw, 1.6rem);
   line-height: 1.3;
 }
-
 /* =========================================
-   HERO SECTION
+   HERO SECTION - RESPONSIVE LAYOUT
 ========================================= */
 
 .about-page .page-hero {
   position: relative;
+  isolation: isolate;
   overflow: hidden;
-  padding-block: clamp(90px, 11vw, 160px);
+  min-height: 650px;
+  padding-block: 100px;
   color: var(--about-white);
   background:
     radial-gradient(circle at 85% 20%, rgba(7, 92, 181, 0.35), transparent 35%),
     var(--about-navy);
 }
 
+.about-page .page-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(350px, 0.85fr);
+  align-items: center;
+  gap: 35px;
+}
+
 .about-page .page-hero .container {
   position: relative;
-  z-index: 1;
+  z-index: 3;
+  width: min(100% - 112px, 1320px);
+  margin-inline: auto;
 }
 
 .about-page .page-hero .eyebrow {
@@ -145,15 +147,320 @@ html:has(.about-page) {
 }
 
 .about-page .page-hero h1 {
-  max-width: 1000px;
+  max-width: 750px;
+  color: var(--about-white);
 }
 
-.about-page .lead {
+.about-page .page-hero .lead {
   max-width: 650px;
   margin-top: 26px;
   color: rgba(255, 255, 255, 0.8);
   font-size: clamp(1.05rem, 1.5vw, 1.25rem);
   line-height: 1.8;
+}
+
+/* DESKTOP ORBIT */
+
+.about-page .about-orbit {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 650px;
+  height: 470px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* TABLET AND MOBILE */
+
+@media (max-width: 900px) {
+  .about-page .page-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-block: 80px 35px;
+  }
+
+  .about-page .page-hero .container {
+    width: min(100% - 56px, 1320px);
+  }
+
+  .about-page .about-orbit {
+    width: 100%;
+    max-width: 650px;
+    height: 410px;
+    margin: 15px auto 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-page .page-hero {
+    padding-block: 70px 25px;
+  }
+
+  .about-page .page-hero .container {
+    width: min(100% - 36px, 1320px);
+  }
+
+  .about-page .about-orbit {
+    height: 320px;
+    margin-top: 10px;
+  }
+}
+
+/* =========================================
+   ORBIT ANIMATION
+   Place the orbit after the hero container.
+========================================= */
+
+.about-page .about-orbit {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 760px);
+  height: 470px;
+  margin: 35px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+}
+
+/* CENTRAL GLOBE */
+
+.about-page .orbit-globe {
+  position: relative;
+  z-index: 2;
+  width: 190px;
+  height: 190px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border: 2px solid rgba(165, 231, 255, 0.85);
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      rgba(165, 231, 255, 0.95),
+      transparent 9%
+    ),
+    radial-gradient(circle at 35% 35%, #176cb1 0%, #0b376d 38%, #06152e 75%);
+  box-shadow:
+    0 0 25px rgba(75, 190, 255, 0.45),
+    0 0 70px rgba(7, 92, 181, 0.4),
+    inset -20px -15px 35px rgba(0, 0, 0, 0.55),
+    inset 10px 8px 25px rgba(165, 231, 255, 0.25);
+  animation: globePulse 4s ease-in-out infinite;
+}
+
+.about-page .globe-grid {
+  position: absolute;
+  inset: -15%;
+  border: 1px solid rgba(165, 231, 255, 0.4);
+  border-radius: 50%;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 21px,
+      rgba(165, 231, 255, 0.15) 22px,
+      transparent 23px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 21px,
+      rgba(165, 231, 255, 0.15) 22px,
+      transparent 23px
+    );
+  transform: rotate(-20deg);
+}
+
+/* ORBITAL RINGS */
+
+.about-page .orbit-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 440px;
+  height: 180px;
+  border: 1px solid rgba(165, 231, 255, 0.65);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.about-page .orbit-ring-one {
+  animation: orbitRotateOne 12s linear infinite;
+}
+
+.about-page .orbit-ring-two {
+  width: 520px;
+  height: 230px;
+  border-color: rgba(7, 140, 220, 0.65);
+  transform: translate(-50%, -50%) rotate(55deg);
+  animation: orbitRotateTwo 16s linear infinite;
+}
+
+.about-page .orbit-ring-three {
+  width: 570px;
+  height: 270px;
+  border-color: rgba(165, 231, 255, 0.3);
+  transform: translate(-50%, -50%) rotate(-55deg);
+  animation: orbitRotateThree 20s linear infinite;
+}
+
+/* FLOATING PARTICLES */
+
+.about-page .orbit-particle {
+  position: absolute;
+  z-index: 4;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--about-cyan);
+  box-shadow:
+    0 0 10px var(--about-cyan),
+    0 0 25px rgba(165, 231, 255, 0.8);
+}
+
+.about-page .particle-one {
+  top: 22%;
+  left: 19%;
+  animation: particleFloat 4s ease-in-out infinite;
+}
+
+.about-page .particle-two {
+  right: 18%;
+  bottom: 24%;
+  animation: particleFloat 5s ease-in-out infinite 1s;
+}
+
+.about-page .particle-three {
+  top: 18%;
+  right: 27%;
+  width: 8px;
+  height: 8px;
+  animation: particleFloat 4.5s ease-in-out infinite 0.5s;
+}
+
+/* FLOATING INFORMATION LABELS */
+
+.about-page .orbit-info {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 125px;
+  padding: 11px 17px;
+  border: 1px solid rgba(165, 231, 255, 0.5);
+  border-radius: 6px;
+  color: var(--about-cyan);
+  background: rgba(9, 21, 41, 0.88);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  backdrop-filter: blur(10px);
+  animation: labelFloat 5s ease-in-out infinite;
+}
+
+.about-page .orbit-info-one {
+  top: 12%;
+  left: 5%;
+}
+
+.about-page .orbit-info-two {
+  right: 4%;
+  top: 45%;
+  animation-delay: 1s;
+}
+
+.about-page .orbit-info-three {
+  bottom: 12%;
+  left: 12%;
+  animation-delay: 2s;
+}
+
+/* =========================================
+   ORBIT KEYFRAMES
+========================================= */
+
+@keyframes globePulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 25px rgba(75, 190, 255, 0.45),
+      0 0 70px rgba(7, 92, 181, 0.4),
+      inset -20px -15px 35px rgba(0, 0, 0, 0.55),
+      inset 10px 8px 25px rgba(165, 231, 255, 0.25);
+  }
+
+  50% {
+    box-shadow:
+      0 0 40px rgba(75, 190, 255, 0.7),
+      0 0 100px rgba(7, 92, 181, 0.65),
+      inset -20px -15px 35px rgba(0, 0, 0, 0.55),
+      inset 10px 8px 25px rgba(165, 231, 255, 0.35);
+  }
+}
+
+@keyframes orbitRotateOne {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes orbitRotateTwo {
+  from {
+    transform: translate(-50%, -50%) rotate(55deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(415deg);
+  }
+}
+
+@keyframes orbitRotateThree {
+  from {
+    transform: translate(-50%, -50%) rotate(-55deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(305deg);
+  }
+}
+
+@keyframes particleFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: translateY(-18px);
+    opacity: 1;
+  }
+}
+
+@keyframes labelFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 /* =========================================
@@ -174,9 +481,7 @@ html:has(.about-page) {
   line-height: 1.85;
 }
 
-/* =========================================
-   HIGHLIGHT PANEL
-========================================= */
+/* HIGHLIGHT PANEL */
 
 .about-page .highlight-panel {
   padding: clamp(30px, 4vw, 48px);
@@ -204,9 +509,7 @@ html:has(.about-page) {
   font-weight: 700;
 }
 
-/* =========================================
-   CARDS
-========================================= */
+/* CARDS */
 
 .about-page .grid {
   display: grid;
@@ -274,9 +577,7 @@ html:has(.about-page) {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* =========================================
-   CALL TO ACTION
-========================================= */
+/* CALL TO ACTION */
 
 .about-page .cta {
   padding-block: clamp(60px, 7vw, 100px);
@@ -301,9 +602,7 @@ html:has(.about-page) {
   font-size: 1.0625rem;
 }
 
-/* =========================================
-   BUTTONS
-========================================= */
+/* BUTTONS */
 
 .about-page .btn {
   position: relative;
@@ -340,7 +639,7 @@ html:has(.about-page) {
 }
 
 /* =========================================
-   ANIMATIONS
+   PAGE ANIMATIONS
 ========================================= */
 
 @keyframes aboutFadeIn {
@@ -378,8 +677,6 @@ html:has(.about-page) {
     filter: blur(0);
   }
 }
-
-/* HERO ENTRANCE */
 
 .about-page .page-hero {
   animation: aboutFadeIn 1s ease both;
@@ -427,7 +724,30 @@ html:has(.about-page) {
   }
 
   .about-page .page-hero {
-    padding-block: 90px;
+    padding-top: 85px;
+    padding-bottom: 35px;
+  }
+
+  .about-page .about-orbit {
+    width: 100%;
+    max-width: 650px;
+    height: 410px;
+    margin-top: 25px;
+  }
+
+  .about-page .orbit-ring-one {
+    width: 390px;
+    height: 165px;
+  }
+
+  .about-page .orbit-ring-two {
+    width: 440px;
+    height: 195px;
+  }
+
+  .about-page .orbit-ring-three {
+    width: 480px;
+    height: 220px;
   }
 }
 
@@ -445,15 +765,87 @@ html:has(.about-page) {
   }
 
   .about-page .page-hero {
-    padding-block: 76px;
+    padding-top: 70px;
+    padding-bottom: 25px;
   }
 
   .about-page main h1 {
-    font-size: clamp(2.45rem, 10vw, 3.6rem);
+    font-size: clamp(2.35rem, 10vw, 3.4rem);
+    line-height: 1.12;
   }
 
   .about-page main h2 {
     font-size: clamp(2rem, 8vw, 2.7rem);
+  }
+
+  .about-page .page-hero .lead {
+    margin-top: 20px;
+    font-size: 1rem;
+  }
+
+  .about-page .about-orbit {
+    width: 100%;
+    height: 320px;
+    margin-top: 25px;
+    overflow: hidden;
+  }
+
+  .about-page .orbit-globe {
+    width: 125px;
+    height: 125px;
+  }
+
+  .about-page .orbit-ring-one {
+    width: 270px;
+    height: 110px;
+  }
+
+  .about-page .orbit-ring-two {
+    width: 315px;
+    height: 135px;
+  }
+
+  .about-page .orbit-ring-three {
+    width: 345px;
+    height: 155px;
+  }
+
+  .about-page .orbit-info {
+    min-width: 0;
+    max-width: 110px;
+    padding: 7px 9px;
+    font-size: 0.57rem;
+    letter-spacing: 0.06em;
+  }
+
+  .about-page .orbit-info-one {
+    top: 5%;
+    left: 0;
+  }
+
+  .about-page .orbit-info-two {
+    top: 43%;
+    right: 0;
+  }
+
+  .about-page .orbit-info-three {
+    bottom: 5%;
+    left: 3%;
+  }
+
+  .about-page .particle-one {
+    top: 17%;
+    left: 12%;
+  }
+
+  .about-page .particle-two {
+    right: 12%;
+    bottom: 17%;
+  }
+
+  .about-page .particle-three {
+    top: 13%;
+    right: 20%;
   }
 
   .about-page .grid-2 {
@@ -471,9 +863,40 @@ html:has(.about-page) {
   }
 }
 
-/* =========================================
-   ACCESSIBILITY: REDUCED MOTION
-========================================= */
+/* SMALL MOBILE DEVICES */
+
+@media (max-width: 380px) {
+  .about-page .about-orbit {
+    height: 285px;
+  }
+
+  .about-page .orbit-globe {
+    width: 105px;
+    height: 105px;
+  }
+
+  .about-page .orbit-ring-one {
+    width: 230px;
+    height: 95px;
+  }
+
+  .about-page .orbit-ring-two {
+    width: 265px;
+    height: 115px;
+  }
+
+  .about-page .orbit-ring-three {
+    width: 290px;
+    height: 130px;
+  }
+
+  .about-page .orbit-info {
+    font-size: 0.52rem;
+    padding: 6px 7px;
+  }
+}
+
+/* ACCESSIBILITY: REDUCED MOTION */
 
 @media (prefers-reduced-motion: reduce) {
   html:has(.about-page) {
@@ -493,4 +916,24 @@ html:has(.about-page) {
   .about-page-ready [data-about-reveal] {
     opacity: 1 !important;
   }
+}
+/* FIX ORBIT BACKGROUND */
+
+.about-page .page-hero {
+  background-color: #091529;
+  background-image: radial-gradient(
+    circle at 85% 20%,
+    rgba(7, 92, 181, 0.35),
+    transparent 35%
+  );
+  background-repeat: no-repeat;
+}
+
+.about-page .about-orbit {
+  background: transparent;
+}
+
+.about-page .page-hero .container,
+.about-page .about-orbit {
+  background-color: transparent;
 }
